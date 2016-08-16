@@ -24,11 +24,6 @@
 	<meta property="og:image:width" content="210" />
 	<meta property="og:image:height" content="110" />
 	<meta property="fb:app_id" content="1347718481909811" />
-	<meta name="twitter:card" content="summary" />
-	<meta name="twitter:site" content="@anageorgina" />
-	<meta name="twitter:title" content="Ana Georgina Photography" />
-	<meta name="twitter:description" content="" />
-	<meta name="twitter:image" content="<?php echo get_stylesheet_directory_uri(); ?>/images/share.jpg" alt="photography wedding" />
 
 	<!-- Sitemap Google Verify -->
 	<meta name="google-site-verification" content="4Bt7KHVG0kzwetxi_LnrYR8QUCkKFdSNGA4PU2hpaDs" />
