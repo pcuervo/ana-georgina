@@ -104,3 +104,12 @@ input, textarea {
 	border: none!important;
 	background-color: #fbf1ea!important;
 }
+
+/*Single category*/
+.vc_grid-item-mini.vc_is-hover .vc_gitem-animate-scaleRotateIn .vc_gitem-zone-a {
+	-webkit-transform: scale(1.1) rotate(2deg)!important; /* Chrome, Safari, Opera */
+	-moz-transform: scale(1.1) rotate(2deg)!important; /* IE 9 */
+	-ms-transform: scale(1.1) rotate(2deg)!important; /* IE 9 */
+	-o-transform: scale(1.1) rotate(2deg)!important; /* Opera */
+	transform: scale(1.1) rotate(2deg)!important;
+}
