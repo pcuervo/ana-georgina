@@ -17,8 +17,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 .style-toggle.close,
 .entry-meta,
 .single #comments,
-.zo-blog-image,
-.social-share { display: none; }
+.zo-blog-image { display: none; }
 
 /**/
 .text-center { text-align: center; }
@@ -107,7 +106,9 @@ footer .textwidget { font-size: 10px; }
 .single .zo-blog-meta { display: none; }
 
 	/*Share*/
-.social-share h2 { display: none; }
+.social-share h2,
+.social-share a.linedin,
+.social-share a.google { display: none!important; }
 .single .social-list li a { background-color: transparent!important; color: #595a5c!important; }
 
 /*CONTACT*/
