@@ -16,12 +16,13 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 .style-toggle.close,
 .entry-meta,
-.social-share,
 .single #comments,
-.zo-blog-image { display: none; }
+.zo-blog-image,
+.social-share { display: none; }
 
 /**/
 .text-center { text-align: center; }
+@media(max-width:600px){ .text-center--xs { text-align: center; } }
 .text-right { text-align: right; }
 
 .padding-left { padding-left: 15px!important; }
@@ -45,16 +46,10 @@ a, h2, footer { letter-spacing: 5px!important; }
 	display: none;
 }
 
-body.home.page {
-	background-image: url(images/home.png) !important;
-	background-position: center !important;
-	background-repeat: no-repeat !important;
-	background-size: cover !important;
-	max-height: 100vh;
-	overflow: hidden;
-}
+body.home.page #page,
+body.home.page .main-body { height: 100vh; }
 
-body.home.page #page {
+body.home.page #logo-initial {
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -67,12 +62,25 @@ body.home.page #page {
 
 body.home.page .wpb_single_image .vc_single_image-wrapper { margin-bottom: 0px; }
 
+#logo-initial
+
 /*HEADER*/
-
+@media(min-width:1200px){#zo-header-navigation.nav-inline .main-navigation .menu-main-menu { text-align: right!important; }}
 #zo-header-navigation .main-navigation .menu-main-menu > li > a { padding-bottom: 10px!important; }
+#zo-header-navigation.nav-inline .main-navigation .menu-main-menu > li > a { margin-left: 20px!important; margin-right: 0px!important; }
 #zo-header-navigation .main-navigation .menu-main-menu > li:hover > a { border-bottom-color: #fcd0b0!important; }
-
 #zo-header-navigation .main-navigation .menu-main-menu > li.current-menu-item > a { border-bottom-color: #fcd0b0!important; }
+
+@media(min-width:768px){
+	.main-logo { text-align: center; }
+	.main-logo img { max-width: 100%; }
+}
+@media(max-width:600px){
+	.main-logo img { max-width: 250px; }
+}
+#zo-menu-mobile { top: 45px!important; }
+
+
 
 /*FOOTER*/
 .zo-social {
@@ -98,12 +106,24 @@ footer .textwidget { font-size: 10px; }
 .single .zo-blog-category,
 .single .zo-blog-meta { display: none; }
 
+	/*Share*/
+.social-share h2 { display: none; }
+.single .social-list li a { background-color: transparent!important; color: #595a5c!important; }
+
 /*CONTACT*/
 .wpcf7-form label { font-weight: 100!important; }
-input, textarea {
+input, textarea, select {
 	border: none!important;
 	background-color: #fbf1ea!important;
+	font-weight: 100!important;
+	text-transform: uppercase;
+	font-size: 14px!important;
 }
+select { height: 48px; }
+textarea { max-height: 80px!important; }
+
+.wpcf7-form .wpcf7-validation-errors { color: #595a5c!important; }
+.ajax-loader { width: 20px; }
 
 /*Single category*/
 .vc_grid-item-mini.vc_is-hover .vc_gitem-animate-scaleRotateIn .vc_gitem-zone-a {
@@ -112,4 +132,25 @@ input, textarea {
 	-ms-transform: scale(1.1) rotate(2deg)!important; /* IE 9 */
 	-o-transform: scale(1.1) rotate(2deg)!important; /* Opera */
 	transform: scale(1.1) rotate(2deg)!important;
+}
+
+/*Fijar footer*/
+html,
+body { height: 100%; }
+
+.main-body {
+  min-height: -moz-calc(100vh - 120px);
+  min-height: -o-calc(100vh - 120px);
+  min-height: -webkit-calc(100vh - 120px);
+  min-height: calc(100vh - 120px);
+  position: relative;
+}
+
+footer{
+  width: 100%;
+  position: absolute!important; bottom: 0;
+}
+
+.header-complete{
+  width: 100%;
 }

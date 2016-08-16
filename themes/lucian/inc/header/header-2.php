@@ -58,7 +58,7 @@
                     <div id="zo-header-navigation" class="col-xs-12">
                 <?php } ?>
                 <?php if( ! is_page('category') ) { ?>
-                    <div id="zo-header-navigation" class="col-xs-12 col-lg-10 [ text-right ]">
+                    <div id="zo-header-navigation" class="col-xs-12 col-lg-10 [ nav-inline ]">
                 <?php } ?>
 
             <?php endif; ?>

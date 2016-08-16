@@ -27,8 +27,9 @@
 <?php zo_get_page_loading(); ?>
 <?php zo_presets_selector(); ?>
 <div id="page">
-	<header id="masthead" class="site-header">
+	<header id="masthead" class="site-header [ js-header ]">
 		<?php zo_header(); ?>
 	</header>
-    <?php zo_page_title(); ?>
-	<div id="main">
+	<div class="[ main-body ]">
+	    <?php zo_page_title(); ?>
+		<div id="main">

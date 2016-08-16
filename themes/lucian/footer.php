@@ -45,5 +45,6 @@
 </footer><!-- #site-footer -->
 </div><!-- #page -->
 <?php wp_footer(); ?>
+</div>
 </body>
 </html>
