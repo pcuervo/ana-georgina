@@ -22,6 +22,9 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 /**/
 .text-center { text-align: center; }
+.text-right { text-align: right; }
+
+.padding-left { padding-left: 15px!important; }
 
 /*Color*/
 .color-gray { color: #595a5c; }
@@ -69,6 +72,8 @@ body.home.page .wpb_single_image .vc_single_image-wrapper { margin-bottom: 0px; 
 #zo-header-navigation .main-navigation .menu-main-menu > li > a { padding-bottom: 10px!important; }
 #zo-header-navigation .main-navigation .menu-main-menu > li:hover > a { border-bottom-color: #fcd0b0!important; }
 
+#zo-header-navigation .main-navigation .menu-main-menu > li.current-menu-item > a { border-bottom-color: #fcd0b0!important; }
+
 /*FOOTER*/
 .zo-social {
 	margin: 0px!important;
@@ -92,3 +97,10 @@ footer .textwidget { font-size: 10px; }
 .single .zo-blog-title,
 .single .zo-blog-category,
 .single .zo-blog-meta { display: none; }
+
+/*CONTACT*/
+.wpcf7-form label { font-weight: 100!important; }
+input, textarea {
+	border: none!important;
+	background-color: #fbf1ea!important;
+}

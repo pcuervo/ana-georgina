@@ -10,7 +10,7 @@
 get_header(); ?>
 <div class="<?php zo_main_class(); ?>">
     <div class="row">
-        <div id="primary" class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
+        <div id="primary" class="col-xs-12"> <!--  col-sm-9 col-md-9 col-lg-9 -->
             <div id="content" role="main">
 
                 <?php while ( have_posts() ) : the_post(); ?>
