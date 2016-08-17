@@ -55,7 +55,7 @@
             <div id="zo-header-navigation" class="col-xs-12">
             <?php else : ?>
                 <?php if(is_page('category') ) { ?>
-                    <div id="zo-header-navigation" class="col-xs-12">
+                    <div id="zo-header-navigation" class="col-xs-12 [ nav-initial ]">
                 <?php } ?>
                 <?php if( ! is_page('category') ) { ?>
                     <div id="zo-header-navigation" class="col-xs-12 col-lg-10 [ nav-inline ]">

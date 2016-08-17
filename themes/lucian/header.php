@@ -19,7 +19,7 @@
 
 	<!-- Facebook, Twitter metas -->
 	<meta property="og:title" content="Ana Georgina Photography">
-	<meta name="og:description" content="" />
+	<meta name="og:description" content="Ana Georgina Photography" />
 	<meta property="og:image" content="<?php echo get_stylesheet_directory_uri(); ?>/images/share.jpg" alt="photography wedding">
 	<meta property="og:image:width" content="210" />
 	<meta property="og:image:height" content="110" />
