@@ -20,19 +20,45 @@
         </div>
     </div>
 <?php endif;?>
-<div id="zo-header" class="zo-main-header zo-header-2 <?php if ( !$smof_data['menu_sticky'] && empty($zo_meta->_zo_enable_header_fixed) ) {
-    echo 'no-sticky';
-} ?> <?php if ($smof_data['menu_sticky_tablets']) {
-    echo 'sticky-tablets';
-} ?> <?php if ($smof_data['menu_sticky_mobile']) {
-    echo 'sticky-mobile';
-} ?> <?php if (!empty($zo_meta->_zo_enable_header_fixed)) {
-    echo 'header-fixed-page';
-} ?> <?php if (!empty($zo_meta->_zo_enable_header_menu)) {
-    echo 'header-menu-custom';
-} ?>">
-    <div class="container">
-        <div class="row">
+<?php if(is_page('category') ) { ?>
+    <div id="zo-header" class="[ min-height--100vh--l ] zo-main-header zo-header-2 <?php if ( !$smof_data['menu_sticky'] && empty($zo_meta->_zo_enable_header_fixed) ) {
+        echo 'no-sticky';
+    } ?> <?php if ($smof_data['menu_sticky_tablets']) {
+        echo 'sticky-tablets';
+    } ?> <?php if ($smof_data['menu_sticky_mobile']) {
+        echo 'sticky-mobile';
+    } ?> <?php if (!empty($zo_meta->_zo_enable_header_fixed)) {
+        echo 'header-fixed-page';
+    } ?> <?php if (!empty($zo_meta->_zo_enable_header_menu)) {
+        echo 'header-menu-custom';
+    } ?>">
+<?php } ?>
+<?php if( ! is_page('category') ) { ?>
+    <div id="zo-header" class="zo-main-header zo-header-2 <?php if ( !$smof_data['menu_sticky'] && empty($zo_meta->_zo_enable_header_fixed) ) {
+        echo 'no-sticky';
+    } ?> <?php if ($smof_data['menu_sticky_tablets']) {
+        echo 'sticky-tablets';
+    } ?> <?php if ($smof_data['menu_sticky_mobile']) {
+        echo 'sticky-mobile';
+    } ?> <?php if (!empty($zo_meta->_zo_enable_header_fixed)) {
+        echo 'header-fixed-page';
+    } ?> <?php if (!empty($zo_meta->_zo_enable_header_menu)) {
+        echo 'header-menu-custom';
+    } ?>">
+<?php } ?>
+    <?php if(is_page('category') ) { ?>
+        <div class="container [ min-height--100vh--l ]">
+    <?php } ?>
+    <?php if( ! is_page('category') ) { ?>
+        <div class="container">
+    <?php } ?>
+        <?php if(is_page('category') ) { ?>
+            <div class="row [ center-full--l width--100p--l ]">
+        <?php } ?>
+        <?php if( ! is_page('category') ) { ?>
+            <div class="row">
+        <?php } ?>
+
             <?php if(is_page('category') ) { ?>
                 <div id="zo-header-logo" class="col-xs-12 [ text-center ]">
             <?php } ?>
@@ -44,11 +70,12 @@
                 <?php endif; ?>
                 <a class="main-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
                     <?php if(is_page('category') ) { ?>
-                         <img alt="logo ana georgina" src="<?php echo esc_url(zo_page_header_logo()); ?>">
+                         <img alt="logo ana georgina" class="[ logo-desktop ]" src="<?php echo esc_url(zo_page_header_logo()); ?>">
                     <?php } ?>
                     <?php if( ! is_page('category') ) { ?>
-                         <img alt="logo ana georgina" src="http://localhost:8888/ana-georgina/wp-content/themes/lucian/images/logo-1.png">
+                         <img alt="logo ana georgina" class="[ logo-desktop ]" src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo-1.png">
                     <?php } ?>
+                    <img alt="logo ana georgina" class="[ logo-mobile ]" src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo-g.png">
                 </a>
             </div>
             <?php if (is_active_sidebar('header-right')): ?>
@@ -85,6 +112,11 @@
                     wp_nav_menu($attr); ?>
                 </nav>
             </div>
+    <?php if(is_page('category') ) { ?>
+        <div class="[ text-center ][ hidden--xs ]">
+            <a rel="m_PageScroll2id" href="<?php echo get_the_permalink() ?>#start-scroll" href="" class="_mPS2id-h"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/arrow.png" alt="flecha para scroll"></a>
+        </div>
+    <?php } ?>
             <?php if (is_active_sidebar('header-right')): ?>
                 <div id="zo-header-right" class="col-xs-12 col-sm-1 col-md-1 col-lg-1">
                     <?php dynamic_sidebar('header-right'); ?>
@@ -93,6 +125,7 @@
             <div id="zo-menu-mobile" class="collapse navbar-collapse"><i class="pe-7s-menu"></i></div>
         </div>
     </div>
+
     <!-- #site-navigation -->
 </div>
 <!--#zo-header-->
