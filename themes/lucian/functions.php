@@ -870,3 +870,26 @@ if( function_exists('zo_image_resize')) {
         return do_shortcode('<img src="'.esc_url($url).'" alt="' . get_the_title() . '" />');
     }
 }
+
+
+/**
+* Enqueue frontend scripts and styles
+**/
+add_action( 'wp_enqueue_scripts', function(){
+
+	if(is_page('contact-form')){
+		// styles
+		wp_enqueue_style( 'form-normalize', get_template_directory_uri() . '/assets/form/css/normalize.css');
+		wp_enqueue_style( 'form-demo', get_template_directory_uri() . '/assets/form/css/demo.css');
+		wp_enqueue_style( 'form-component', get_template_directory_uri() . '/assets/form/css/component.css');
+		wp_enqueue_style( 'form-cs-select', get_template_directory_uri() . '/assets/form/css/cs-select.css');
+		wp_enqueue_style( 'form-cs-skin-boxes', get_template_directory_uri() . '/assets/form/css/cs-skin-boxes.css');
+
+		// scripts
+		wp_enqueue_script( 'form-modernizr', get_template_directory_uri() . '/assets/form/js/modernizr.custom.js', array('jquery'), '1.0', true );
+		wp_enqueue_script( 'form-classie', get_template_directory_uri() . '/assets/form/js/classie.js', array('jquery'), '1.0', true );
+		wp_enqueue_script( 'form-selectFx', get_template_directory_uri() . '/assets/form/js/selectFx.js', array('jquery'), '1.0', true );
+		wp_enqueue_script( 'form-fullscreenForm', get_template_directory_uri() . '/assets/form/js/fullscreenForm.js', array('jquery'), '1.0', true );
+	}
+
+});

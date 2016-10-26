@@ -1,8 +1,8 @@
 === Newsletter ===
 Tags: newsletter,email,subscription,mass mail,list build,email marketing,direct mailing,automation,automated
 Requires at least: 3.4.0
-Tested up to: 4.6.0
-Stable tag: 4.6.0
+Tested up to: 4.6.1
+Stable tag: 4.6.8
 Contributors: satollo,webagile,michael-travan
 
 Add a real newsletter system to your blog. For free. With unlimited newsletters and subscribers.
@@ -76,6 +76,44 @@ Thank you, The Newsletter Team
 3. The Reports extension
 
 == Changelog ==
+
+= 4.6.8 =
+
+* Fixed the image browser/upload URL error in themes
+
+= 4.6.7 =
+
+* Fixed blank page without a newsletter dedicated page
+
+= 4.6.6 =
+
+* Fixed the blocks reload
+
+= 4.6.5 =
+
+* Fixed the style stripped when switching back and forth betwenn the visual and raw editor (from version 4.6.4)
+
+= 4.6.4 =
+
+* Fixed the profile link in admin panels
+* Fixed the composer editor
+* Cleanup of old code
+* Force the composer editor to keep the absolute urls
+
+= 4.6.3 =
+
+* Fixed the profile save with new action url
+
+= 4.6.2 =
+
+* Fixed the import option "override status" not working in update mode
+* Fixed the missing http when the couldflare plugin is installed (!)
+* Improved controls and security on open tracking link
+* Added few new diagnostic parameters
+
+= 4.6.1 =
+
+* Fixed a security issue on admin side only exploitable by logged in admins
 
 = 4.6.0 =
 

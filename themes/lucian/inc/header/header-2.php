@@ -114,7 +114,11 @@
             </div>
     <?php if(is_page('category') ) { ?>
         <div class="[ text-center ][ hidden--xs ]">
-            <a rel="m_PageScroll2id" href="<?php echo get_the_permalink() ?>#start-scroll" href="" class="_mPS2id-h"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/arrow.png" alt="flecha para scroll"></a>
+            <a rel="m_PageScroll2id" href="<?php echo get_the_permalink() ?>#start-scroll" class="_mPS2id-h">
+                <!-- <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/arrow.png" alt="flecha para scroll"> -->
+                <p class="[ margin-bottom--xsmall ][ font-size--12 ][ font-family--typewriter ]">Scroll</p>
+                <div class="[ line ]"></div>
+            </a>
         </div>
     <?php } ?>
             <?php if (is_active_sidebar('header-right')): ?>
