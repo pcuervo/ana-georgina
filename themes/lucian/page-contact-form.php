@@ -1,8 +1,4 @@
 <?php get_header(); ?>
-				<!-- <div class="content-iframe">
-					<iframe frameBorder="0" id="contact-form" src="<?php echo get_template_directory_uri(); ?>/contact-form/index.html"" frameborder="0" allowfullscreen></iframe> --> <!-- width="640" height="360" -->
-				<!--</div> -->
-
 <div id="page-default" class="container">
 	<div id="primary" class="row">
 		<div id="content" role="main">
