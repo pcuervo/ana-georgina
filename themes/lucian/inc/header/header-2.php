@@ -63,7 +63,7 @@
                 <div id="zo-header-logo" class="col-xs-12 [ text-center ]">
             <?php } ?>
             <?php if( ! is_page('category') ) { ?>
-                <div id="zo-header-logo" class="col-xs-12 col-lg-2 [ padding-left ]">
+                <div id="zo-header-logo" class="col-xs-12 col-lg-3 [ padding-left ]">
             <?php } ?>
                 <?php if( $smof_data['sticky_logo_enable'] || (isset($zo_meta->_zo_sticky_logo_enable) && !empty($zo_meta->_zo_sticky_logo_enable)) ) : ?>
                 <a class="sticky-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>"><img alt="" src="<?php echo esc_url(zo_page_header_sticky_logo()); ?>"></a>
@@ -73,9 +73,9 @@
                          <img alt="logo ana georgina" class="[ logo-desktop ]" src="<?php echo esc_url(zo_page_header_logo()); ?>">
                     <?php } ?>
                     <?php if( ! is_page('category') ) { ?>
-                         <img alt="logo ana georgina" class="[ logo-desktop ]" src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo-1.png">
+                         <img alt="logo ana georgina" class="[ logo-desktop ]" src="<?php echo esc_url(zo_page_header_logo()); ?>">
                     <?php } ?>
-                    <img alt="logo ana georgina" class="[ logo-mobile ]" src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo-g.png">
+                    <img alt="logo ana georgina" class="[ logo-mobile ]" src="<?php echo esc_url(zo_page_header_logo()); ?>">
                 </a>
             </div>
             <?php if (is_active_sidebar('header-right')): ?>
@@ -85,7 +85,7 @@
                     <div id="zo-header-navigation" class="col-xs-12 [ nav-initial ]">
                 <?php } ?>
                 <?php if( ! is_page('category') ) { ?>
-                    <div id="zo-header-navigation" class="col-xs-12 col-lg-10 [ nav-inline ]">
+                    <div id="zo-header-navigation" class="col-xs-12 col-lg-9 [ nav-inline ]">
                 <?php } ?>
 
             <?php endif; ?>

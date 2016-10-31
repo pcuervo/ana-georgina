@@ -1,4 +1,4 @@
-<?php 
+<?php
     /* get categories */
     $taxonomy = 'portfolio-category';
     $_category = array();
@@ -48,7 +48,7 @@
             ?>
             <div class="zo-masonry-item item-w<?php echo esc_attr($size['width']); ?> item-h<?php echo esc_attr($size['height']); ?>"
                      data-groups='[<?php echo implode(',', $groups);?>]' data-index="<?php echo esc_attr($i); ?>" data-id="<?php echo esc_attr($atts['post_id']); ?>">
-                <?php 
+                <?php
                     if(has_post_thumbnail()):
                         $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' );
                         $thumbnail = $thumbnail[0];

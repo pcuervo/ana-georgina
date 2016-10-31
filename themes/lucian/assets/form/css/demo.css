@@ -1,4 +1,4 @@
-
+z
 
 *, *:after, *:before { -webkit-box-sizing: border-box; box-sizing: border-box; }
 .clearfix:before, .clearfix:after { content: ''; display: table; }
@@ -105,5 +105,15 @@ html, body, .container {
 
 
 /*Ajustes*/
-
-#myform { min-height: 500px; }
+@media(max-width:991px){
+	#myform {
+		min-height: 500px;
+		padding-right: 50px;
+	}
+}
+@media(min-width:992px){
+	#myform {
+		min-height: 500px;
+		padding-right: 30px;
+	}
+}

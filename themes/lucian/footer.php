@@ -16,13 +16,13 @@
 			<div class="container">
 				<div class="row">
 					<?php if (is_active_sidebar('sidebar-5')) : ?>
-						<div class="col-xs-12 col-sm-9 footer-first"><?php dynamic_sidebar('sidebar-5'); ?></div>
+						<div class="col-xs-12 col-sm-2 footer-first"><?php dynamic_sidebar('sidebar-5'); ?></div>
 					<?php endif; ?>
 					<?php if (is_active_sidebar('sidebar-6')) : ?>
-						<div class="col-xs-12 col-sm-3 footer-second"><?php dynamic_sidebar('sidebar-6'); ?></div>
+						<div class="col-xs-12 col-sm-7 footer-second"><?php dynamic_sidebar('sidebar-6'); ?></div>
 					<?php endif; ?>
 					<?php if (is_active_sidebar('sidebar-7')) : ?>
-						<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 footer-third"><?php dynamic_sidebar('sidebar-7'); ?></div>
+						<div class="col-xs-12 col-sm-3 footer-third [ clear-inherit no-margin-bottom ]"><?php dynamic_sidebar('sidebar-7'); ?></div>
 					<?php endif; ?>
 					<?php if (is_active_sidebar('sidebar-8')) : ?>
 						<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 footer-four"><?php dynamic_sidebar('sidebar-8'); ?></div>

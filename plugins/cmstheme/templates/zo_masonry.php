@@ -1,4 +1,4 @@
-<?php 
+<?php
     /* get categories */
     $taxonomy = 'category';
     $_category = array();
@@ -33,22 +33,22 @@
 					foreach ($atts['categories'] as $category):
 						if(!empty($taxs)){
 							if(in_array($category,$taxs)) {
-								$term = get_term($category, $taxonomy); 
+								$term = get_term($category, $taxonomy);
 					?>
 								<li><a href="#" data-group="<?php echo esc_attr('category-' . $term->slug); ?>"><?php echo esc_attr($term->name); ?></a></li>
 				<?php 		}
 						}else{
-							$term = get_term($category, $taxonomy); 
+							$term = get_term($category, $taxonomy);
 				?>
 							<li><a href="#" data-group="<?php echo esc_attr('category-' . $term->slug); ?>"><?php echo esc_attr($term->name); ?></a></li>
 				<?php
-						} 
-					endforeach; 
+						}
+					endforeach;
 				?>
             </ul>
         </div>
     <?php endif; ?>
-	
+
     <div class="row zo-masonry">
         <?php
         $posts = $atts['posts'];
@@ -67,29 +67,37 @@
              */
             $size = zo_masonry_size($atts['post_id'] , $atts['html_id'], $i);
             ?>
-            <div class="zo-masonry-item item-w<?php echo esc_attr($size['width']); ?> item-h<?php echo esc_attr($size['height']); ?>"
-                     data-groups='[<?php echo implode(',', $groups);?>]' data-index="<?php echo esc_attr($i); ?>" data-id="<?php echo esc_attr($atts['post_id']); ?>">
-                <?php 
-                    if(has_post_thumbnail()):
-                        $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' );
-                        $thumbnail = $thumbnail[0];
-                    else:
-                        $thumbnail = ZO_IMAGES.'no-image.jpg';
-                    endif;
+                <div class="zo-masonry-item item-w<?php echo esc_attr($size['width']); ?> item-h<?php echo esc_attr($size['height']); ?>"
+                         data-groups='[<?php echo implode(',', $groups);?>]' data-index="<?php echo esc_attr($i); ?>" data-id="<?php echo esc_attr($atts['post_id']); ?>">
+                    <?php
+                        if(has_post_thumbnail()):
+                            $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' );
+                            $thumbnail = $thumbnail[0];
+                        else:
+                            $thumbnail = ZO_IMAGES.'no-image.jpg';
+                        endif;
 
-                ?>
-                <div class="zo-masonry-inner" style="background-image: url('<?php echo esc_url($thumbnail); ?>')">
-                    <div class="zo-masonry-title">
-                        <?php the_title();?>
+                    ?>
+
+               <!--  <a href="<?php the_permalink(); ?>" class="inline-block"> -->
+
+                    <!-- <div class="zo-masonry-inner prueba" style="background-image: url('<?php echo esc_url($thumbnail); ?>')" -->
+                    <div class="zo-masonry-inner" style="background-image: url('<?php echo esc_url($thumbnail); ?>')">
+                        <a href="<?php the_permalink(); ?>"  class="[ inline-block ][ width--100 ][ height--100 ]">
+                            <!-- <div class="zo-masonry-title">
+                                <?php the_title();?>
+                            </div> -->
+                            <!-- <div class="zo-masonry-time">
+                                <?php the_time('l, F jS, Y');?>
+                            </div> -->
+                            <!-- <div class="zo-masonry-categories">
+                                <?php echo get_the_term_list( get_the_ID(), $taxonomy, 'Category: ', ', ', '' ); ?>
+                            </div> -->
+                        </a>
                     </div>
-                    <div class="zo-masonry-time">
-                        <?php the_time('l, F jS, Y');?>
-                    </div>
-                    <div class="zo-masonry-categories">
-                        <?php echo get_the_term_list( get_the_ID(), $taxonomy, 'Category: ', ', ', '' ); ?>
-                    </div>
-                </div>
-            </div>
+                  <!-- </a> -->
+
+                </div> <!-- end permalink -->
             <?php
             $i++;
         }

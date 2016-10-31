@@ -1,8 +1,12 @@
+.fs-nav-dots,
+.fs-numbers{ display: none; }
+
 /* Main form wrapper */
 .fs-form-wrap {
 	position: relative;
-	width: 100%;
+	width: 90%;
 	height: 100%;
+	margin: auto;
 	color: #595a5c;
 }
 
@@ -11,7 +15,7 @@
 }
 
 /* Title */
-h1 { font-size: 15px; }
+h1 { font-size: 18px!important; }
 .fs-title {
 	position: absolute;
 	top: 0;
@@ -29,7 +33,7 @@ h1 { font-size: 15px; }
 .fs-form {
 	position: relative;
 	text-align: left;
-	font-size: 20px;
+	font-size: 12px;
 }
 
 .no-js .fs-form {
@@ -42,16 +46,16 @@ h1 { font-size: 15px; }
 .fs-form-overview {
 	width: 100%; height: 100%;
 	color: #3b3f45;
-	font-size: 1.2em;
+	font-size: 12px;
 }
 
 .fs-form-overview .fs-fields::before {
 	display: block;
-	margin-bottom: 2.5em;
+	margin-bottom: 10px;
 	color: #3b3f45;
-	content: 'Review & Submit';
+	content: '¡Welcome on board well contact you soon!';
 	font-weight: 700;
-	font-size: 1.85em;
+	font-size: 20px;
 }
 
 /* Switch view animation (we hide the current view, switch the view class and show it again) */
@@ -186,7 +190,6 @@ button.fs-continue,
 	font-weight: 700;
 	font-style: italic;
 	font-size: 14px;
-	font-family: Georgia, serif;
 	line-height: 20px;
 	cursor: pointer;
 	pointer-events: auto;
@@ -199,7 +202,7 @@ button.fs-continue,
     padding: 0 0 10px;
     min-width: 200px;
 	content: attr(data-info);
-	font-size: 0.4em;
+	font-size: 12px;
 	color: #6a7b7e;
     opacity: 0;
     -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
@@ -234,8 +237,14 @@ button.fs-continue,
 	background-color: transparent;
 	color: #595a5c;
 	text-overflow: ellipsis;
-	font-size: 20px;
+	font-size: 12px;
 	border-radius: 0;
+}
+
+@media(max-width: 479px){
+	.fs-fields input {
+		width: 160px;
+	}
 }
 
 .fs-fields input:invalid {
@@ -255,56 +264,57 @@ button.fs-continue,
 }
 
 .fs-form-overview .fs-fields input {
-	font-size: 1.2em;
+	font-size: 12px;
 }
 
 .fs-fields .fs-radio-custom input[type="radio"] {
 	position: absolute;
 	display: block;
-	margin: 30px auto 20px;
-	margin: 0 auto 20px;
+	/*margin: 30px auto 20px;
+	margin: 0 auto 20px;*/
 	width: 100%;
-	height: 100%;
+	height: 40px;
 	opacity: 0;
 	cursor: pointer;
 }
 
 .fs-fields > li .fs-radio-custom span {
 	float: left;
-	position: relative;
+	padding: 15px 0;
+	width: 100%;
+	height: 45px;
+	font-size: 12px;
+	/*position: relative;
 	margin-right: 3%;
-	padding: 10px;
 	max-width: 200px;
-	width: 30%;
-	text-align: center;
-	font-weight: 700;
-	font-size: 50%;
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	-align: center;
+	font-weight: 700;*/
 }
 
 .fs-fields > li .fs-radio-custom span label {
-	color: rgba(0,0,0,0.4);
 	-webkit-transition: color 0.3s;
 	transition: color 0.3s;
 }
+
+.fs-fields > li .fs-radio-custom span label:hover { border-bottom: 1px solid #000000; }
 
 .fs-form-overview .fs-fields > li .fs-radio-custom span {
 	max-width: 140px;
 }
 
 .fs-form-overview .fs-fields > li .fs-radio-custom span {
-	font-size: 75%;
+	font-size: 12px;
 }
 
 .fs-fields > li .fs-radio-custom label {
-	display: block;
-	padding-top: 100%;
-	width: 100%;
-	height: 100%;
+	display: inline-block;
+	padding-top: 0%; /*padding-top: 0%;
+	width: 100%;*/
+	height: 30px;
 	cursor: pointer;
 }
 
-.fs-fields .fs-radio-custom label::after {
+/*.fs-fields .fs-radio-custom label::after {
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -321,17 +331,11 @@ button.fs-continue,
 	transform: translate(-50%,-50%);
 }
 
-.fs-fields .fs-radio-custom label.radio-mobile::after {
-	background-image: url(../img/mobile.svg);
-}
-
-.fs-fields .fs-radio-custom label.radio-social::after {
-	background-image: url(../img/social.svg);
-}
-
-.fs-fields .fs-radio-custom label.radio-conversion::after {
-	background-image: url(../img/conversion.svg);
-}
+.fs-fields .fs-radio-custom label.radio-wedding::after { background-image: url(../../../../../uploads/2016/08/wedding.png); }
+.fs-fields .fs-radio-custom label.radio-portrait::after { background-image: url(../../../../../uploads/2016/08/portrait.png); }
+.fs-fields .fs-radio-custom label.radio-arquitecture::after { background-image: url(../../../../../uploads/2016/08/artbook.png); }
+.fs-fields .fs-radio-custom label.radio-product::after { background-image: url(../../../../../uploads/2016/08/projects.png); }
+.fs-fields .fs-radio-custom label.radio-other::after { background-image: url(../../../../../uploads/2016/08/prints.png); }*/
 
 .fs-fields .fs-radio-custom label:hover::after,
 .fs-fields input[type="radio"]:focus + label::after,
@@ -351,11 +355,12 @@ button.fs-continue,
 	padding: 0.25em;
 	width: 100%;
 	height: 150px;
+	border-radius: 0px!important;
 	border: 2px solid rgba(0,0,0,0.2);
 	background-color: transparent;
 	margin-bottom: 20px;
 	color: #595a5c;
-	font-size: 16px;
+	font-size: 12px;
 	resize: none;
 }
 
@@ -385,7 +390,7 @@ button.fs-continue,
 	border-radius: 5px;
 	width: 90px;
 	height: 70px;
-	font-size: 0.8em;
+	font-size: 12px;
 }
 
 .fs-form-overview .cs-skin-boxes > span::before {
@@ -505,10 +510,9 @@ button.fs-continue,
 	overflow: hidden;
 	color: rgba(0,0,0,0.4);
 	margin: 20px 0 0;
-	width: 2em;
+	width: 3em;
 	font-weight: 700;
-	font-size: 2em;
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 12px;
 	cursor: default;
 }
 
@@ -602,7 +606,7 @@ button.fs-continue,
 button.fs-submit,
 button.fs-continue {
 	padding: 0.6em 1.5em;
-	border: 3px solid #232529;
+	border: 2px solid #232529;
 	border-radius: 40px;
 	font-weight: 700;
 	color: rgba(0,0,0,0.4);
@@ -624,7 +628,7 @@ button.fs-continue {
 	right: 0;
 	bottom: 0;
 	margin: 0 0px 30px 0;
-	font-size: 1.25em;
+	font-size: 16px;
 }
 
 button.fs-submit:hover,
@@ -644,21 +648,19 @@ button.fs-continue:hover {
 	background: transparent;
 	color: rgba(0,0,0,0.6);
 	content: 'or press ENTER';
-	font-size: 0.65em;
+	font-size: 12px;
 	pointer-events: none;
 }
 
 /* Error message */
 .fs-message-error {
-	position: absolute;
-	bottom: 75%;
-	left: 50%;
+	position: relative; bottom: 0px; left: 0px;
 	z-index: 800;
 	max-width: 960px;
 	width: 70%;
 	color: #eb7e7f;
 	font-weight: 700;
-	font-size: 1em;
+	font-size: 14px;
 	opacity: 0;
 	-webkit-transform: translate3d(-50%,-5px,0);
 	transform: translate3d(-50%,-5px,0);
@@ -782,23 +784,23 @@ input[type=text]::-ms-clear {
 	}
 
 	.fs-form-wrap {
-		font-size: 70%;
+		font-size: 12px;
 	}
 
 	.fs-form {
-		top: 0;
+		top: 30px;
 		right: 2em;
 		left: 0;
 		padding: 0 3.75em 0 1em;
 		width: auto;
-		font-size: 2em;
+		font-size: 12px;
 	}
 
 	.fs-form.fs-form-overview {
 		top: 0;
 		right: 0;
 		padding: 1.5em 1em 8em 1em;
-		font-size: 1.5em;
+		font-size: 12px;
 	}
 
 	.fs-title {
@@ -821,7 +823,8 @@ input[type=text]::-ms-clear {
 		width: 50px;
 		height: 50px;
 		border-radius: 50%;
-		font-size: 2em;
+		font-size: 16px;
+		color: transparent;
 	}
 
 	button.fs-continue::before {
@@ -832,8 +835,9 @@ input[type=text]::-ms-clear {
 		height: 100%;
 		content: '\27A1';
 		text-align: center;
-		font-size: 1em;
+		font-size: 12px;
 		line-height: 50px;
+		color: rgba(0,0,0,0.4)
 	}
 
 	.fs-continue::after {
@@ -842,15 +846,16 @@ input[type=text]::-ms-clear {
 
 	button.fs-submit {
 		width: 100%;
-		font-size: 1.25em;
+		font-size: 12px;
 	}
 
 	.fs-message-error {
 		bottom: 1.75em;
+		bottom: 80px;
 		left: 0;
-		padding: 0 90px 0 2em;
+		padding: 10px;
 		width: 100%;
-		font-size: 1.5em;
+		font-size: 12px;
 		-webkit-transform: translate3d(0,-5px,0);
 		transform: translate3d(0,-5px,0);
 	}
@@ -862,8 +867,9 @@ input[type=text]::-ms-clear {
 }
 
 /*input date*/
-#date_event::-webkit-inner-spin-button,
-#date_event::-webkit-calendar-picker-indicator {
+#date_event::-webkit-inner-spin-button {
     display: none;
     -webkit-appearance: none;
 }
+
+#date_event::-webkit-calendar-picker-indicator { margin-right: 20px }
