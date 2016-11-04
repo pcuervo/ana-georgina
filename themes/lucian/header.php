@@ -8,6 +8,19 @@
  * @subpackage Zo Theme
  * @since 1.0.0
  */
+
+
+/*
+ * Función para imprimir la ruta de la imagen destacada.
+ * Ejemplo de utilización: echo atrib_imagen_destacada();
+ */
+function atrib_imagen_destacada() {
+    global $post;
+    $thumbID = get_post_thumbnail_id( $post->ID );
+    $imgDestacada = wp_get_attachment_image_src( $thumbID, 'thumbnail' ); // Sustituir por thumbnail, medium, large o full
+    return $imgDestacada[0]; // 0 = ruta, 1 = altura, 2 = anchura, 3 = boolean
+}
+
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -19,11 +32,18 @@
 
 	<!-- Facebook, Twitter metas -->
 	<meta property="og:title" content="Ana Georgina Photography">
-	<meta name="og:description" content="Ana Georgina Photography" />
-	<meta property="og:image" content="<?php echo get_stylesheet_directory_uri(); ?>/images/share.jpg" alt="photography wedding">
+	<meta property="og:type" content="article" />
+	<meta name="og:description" content="Ana Georgina photography: wedding, portrait, arquitecture, projects, prints." />
+	<meta name="og:url" content="<?php echo get_the_permalink(); ?>" />
+	<meta property="og:image" content="<?php echo atrib_imagen_destacada(); ?>" alt="photography Ana Georgina">
 	<meta property="og:image:width" content="210" />
 	<meta property="og:image:height" content="110" />
 	<meta property="fb:app_id" content="1347718481909811" />
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:site" content="@anageorginaphoto" />
+	<meta name="twitter:title" content="Ana Georgina Photography" />
+	<meta name="twitter:description" content="Ana Georgina photography: wedding, portrait, arquitecture, projects, prints." />
+	<meta name="twitter:image" content="<?php echo atrib_imagen_destacada(); ?>" alt="photography Ana Georgina">
 
 	<!-- Sitemap Google Verify -->
 	<meta name="google-site-verification" content="4Bt7KHVG0kzwetxi_LnrYR8QUCkKFdSNGA4PU2hpaDs" />

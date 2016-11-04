@@ -97,12 +97,12 @@ class Jetpack_Twitter_Cards {
 		}
 
 		// Make sure we have a description for Twitter, their validator isn't happy without some content (single space not valid).
-		if ( ! isset( $og_tags['og:description'] ) || '' == trim( $og_tags['og:description'] ) || __('Visit the post for more.', 'jetpack') == $og_tags['og:description'] ) { // empty( trim( $og_tags['og:description'] ) ) isn't valid php
+		if ( ! isset( $og_tags['og:description'] ) || '' == trim( $og_tags['og:description'] ) || __('Ana Georgina photography: wedding, portrait, arquitecture, projects, prints.', 'jetpack') == $og_tags['og:description'] ) { // empty( trim( $og_tags['og:description'] ) ) isn't valid php
 			$has_creator = ( ! empty($og_tags['twitter:creator']) && '@wordpressdotcom' != $og_tags['twitter:creator'] ) ? true : false;
 			if ( ! empty( $extract ) && 'video' == $extract['type'] ) { // use $extract['type'] since $card_type is 'summary' for video posts
 				$og_tags['twitter:description'] = ( $has_creator ) ? sprintf( __('Video post by %s.', 'jetpack'), $og_tags['twitter:creator'] ) : __('Video post.', 'jetpack');
 			} else {
-				$og_tags['twitter:description'] = ( $has_creator ) ? sprintf( __('Post by %s.', 'jetpack'), $og_tags['twitter:creator'] ) : __('Visit the post for more.', 'jetpack');
+				$og_tags['twitter:description'] = ( $has_creator ) ? sprintf( __('Post by %s.', 'jetpack'), $og_tags['twitter:creator'] ) : __('Ana Georgina photography: wedding, portrait, arquitecture, projects, prints.', 'jetpack');
 			}
 		}
 

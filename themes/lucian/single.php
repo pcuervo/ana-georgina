@@ -23,10 +23,12 @@ get_header(); ?>
 	                </div>
 	                <?php endif; ?>
 
-                    <div class="social-share">
+                    <?php //echo do_shortcode('[addtoany buttons="facebook,twitter,email]'); ?>
+
+                   <!--  <div class="social-share">
 	                    <h2><?php esc_html_e('Share with', 'lucian'); ?></h2>
                         <?php zo_social_share() ?>
-                    </div>
+                    </div> -->
 
 	                <?php zo_post_nav(); ?><!-- pagination -->
 

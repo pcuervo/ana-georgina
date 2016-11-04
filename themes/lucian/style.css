@@ -17,8 +17,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 .style-toggle.close,
 .entry-meta,
 .single #comments,
-.zo-blog-image,
-.social-share { display: none; }
+.zo-blog-image { display: none; }
 
 /*Fonts*/
 
@@ -89,6 +88,8 @@ body #page .main-body #main { margin-bottom: 30px; }
 
 .uppercase { text-transform: uppercase; }
 
+.underline--hover a:hover { text-decoration: underline!important; }
+
 .margin-top { margin-top: 20px; }
 .margin-top--large { margin-top: 40px; }
 .margin-bottom { margin-bottom: 20px; }
@@ -106,6 +107,8 @@ body #page .main-body #main { margin-bottom: 30px; }
 /*Font*/
 
 a, h2, footer { letter-spacing: 5px!important; }
+
+.color-dark { color: #000000; }
 
 .font-size--10 { font-size: 10px; }
 .font-size--12 { font-size: 12px; }
@@ -186,7 +189,8 @@ footer .textwidget { font-size: 10px; }
 
 @media( max-width:992px ){
 	.zo-social,
-	footer .textwidget { text-align: center!important; }
+	footer .textwidget,
+  .social-share { text-align: center!important; }
 }
 
 .zo-social.default li a:hover { color: #9e9e9e!important; }
@@ -200,11 +204,21 @@ footer .textwidget { font-size: 10px; }
 .single .zo-blog-meta { display: none; }
 
 	/*Share*/
-.social-share h2,
-.social-share a.linedin,
-.social-share a.google { display: none!important; }
+.social-list li:nth-child(4),
+.social-list li:nth-child(5){ display: none!important; }
+/*.social-share a.linedin,
+.social-share a.google*/
 .single .social-list li a { background-color: transparent!important; color: #595a5c!important; }
 
+.single .social-list li a {
+  border:1px solid #565656;
+  border-radius: 0px!important;
+  width: 30px!important;
+  height: 30px!important;
+  line-height: 30px!important;
+}
+
+.single .social-list li a i.fa { margin-left: 6px; }
 /*CONTACT*/
 .wpcf7-form label { font-weight: 100!important; }
 input, textarea, select {
@@ -324,3 +338,46 @@ footer{
   height: 100%;
 }
 
+/*.cita-inicial {
+
+}*/
+
+/*Contact lucian*/
+.wpcf7-form .wpcf7-form-control-wrap { display: inline-block!important; margin-right: 10px; }
+.wpcf7-form input { border-radius: 0px!important; }
+.wpcf7-form label {
+  display: inline!important;
+  vertical-align: bottom;
+  line-height: 53px;
+ }
+.width--250{ width: 250px!important; }
+@media(max-width:600px){
+  .width--250{ width: 100%!important; }
+  .wpcf7-form .wpcf7-form-control-wrap {
+    display: block!important;
+    margin-right: 0px;
+  }
+}
+
+input[type="submit"] {
+  float: right;
+  background-color: #3c3c3c!important;
+  color: #fff!important;
+  border-radius: 5px!important;
+  border: none!important;
+}
+input[type="submit"]:hover {
+  background-color: #fcd0b0!important;
+  color: #3c3c3c!important;
+}
+
+h2.title-section {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.block-question {
+  margin-bottom: 60px;
+}
+
+.wpcf7-exclusive-checkbox span.wpcf7-list-item { display: block!important; }
