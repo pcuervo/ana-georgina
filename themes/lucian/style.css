@@ -88,7 +88,26 @@ body #page .main-body #main { margin-bottom: 30px; }
 
 .uppercase { text-transform: uppercase; }
 
-.underline--hover a:hover { text-decoration: underline!important; }
+.underline--hover { position: relative; }
+.underline--hover a:before {
+  content: "";
+  position: absolute;
+  width: 150px;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+.underline--hover a:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
 
 .margin-top { margin-top: 20px; }
 .margin-top--large { margin-top: 40px; }
@@ -97,12 +116,14 @@ body #page .main-body #main { margin-bottom: 30px; }
 .margin-bottom--xsmall { margin-bottom: 5px; }
 .no-margin-bottom { margin-bottom: 0px!important; }
 .margin-top--12 { margin-top: 12px; }
+.padding-left--large { padding-left: 30px!important; }
 .padding-left { padding-left: 15px!important; }
 .padding-left--small { padding-left: 10px!important; }
 .padding-left--xsmall { padding-left: 5px!important; }
 
 /*Color*/
 .color-gray { color: #595a5c; }
+.color-gray-dark { color: #3c3c3c; }
 
 /*Font*/
 
@@ -113,6 +134,7 @@ a, h2, footer { letter-spacing: 5px!important; }
 .font-size--10 { font-size: 10px; }
 .font-size--12 { font-size: 12px; }
 .font-size--15 { font-size: 15px; }
+.font-size--16 { font-size: 16px; }
 
 .line-height--16 { line-height: 16px; }
 
@@ -345,10 +367,12 @@ footer{
 /*Contact lucian*/
 .wpcf7-form .wpcf7-form-control-wrap { display: inline-block!important; margin-right: 10px; }
 .wpcf7-form input { border-radius: 0px!important; }
+.wpcf7-form input { padding: 0 15px!important; }
+input, textarea, select { margin-bottom: 30px; outline:0px; }
 .wpcf7-form label {
   display: inline!important;
-  vertical-align: bottom;
-  line-height: 53px;
+  /*vertical-align: bottom;
+  line-height: 53px;*/
  }
 .width--250{ width: 250px!important; }
 @media(max-width:600px){
@@ -365,6 +389,7 @@ input[type="submit"] {
   color: #fff!important;
   border-radius: 5px!important;
   border: none!important;
+  padding: 20px 25px!important;
 }
 input[type="submit"]:hover {
   background-color: #fcd0b0!important;
@@ -381,3 +406,8 @@ h2.title-section {
 }
 
 .wpcf7-exclusive-checkbox span.wpcf7-list-item { display: block!important; }
+
+.wpcf7-form input[type="date"]::-webkit-inner-spin-button{
+    display: none;
+    -webkit-appearance: none;
+}
