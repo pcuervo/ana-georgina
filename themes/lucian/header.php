@@ -17,7 +17,7 @@
 function atrib_imagen_destacada() {
     global $post;
     $thumbID = get_post_thumbnail_id( $post->ID );
-    $imgDestacada = wp_get_attachment_image_src( $thumbID, 'thumbnail' ); // Sustituir por thumbnail, medium, large o full
+    $imgDestacada = wp_get_attachment_image_src( $thumbID, 'large' ); // Sustituir por thumbnail, medium, large o full
     return $imgDestacada[0]; // 0 = ruta, 1 = altura, 2 = anchura, 3 = boolean
 }
 
@@ -58,9 +58,15 @@ function atrib_imagen_destacada() {
 <?php zo_get_page_loading(); ?>
 <?php zo_presets_selector(); ?>
 <div id="page">
-	<header id="masthead" class="site-header [ js-header ]">
-		<?php zo_header(); ?>
-	</header>
+
+	<?php if ( ! in_category(array('portrait','arquitecture','prints','projects')) ) { ?>
+
+		<header id="masthead" class="site-header [ js-header ]">
+			<?php zo_header(); ?>
+		</header>
+
+	<?php } ?>
+
 	<div class="[ main-body ]">
 	    <?php zo_page_title(); ?>
 		<div id="main">

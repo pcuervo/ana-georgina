@@ -83,6 +83,18 @@
 
                     <!-- <div class="zo-masonry-inner prueba" style="background-image: url('<?php echo esc_url($thumbnail); ?>')" -->
                     <div class="zo-masonry-inner" style="background-image: url('<?php echo esc_url($thumbnail); ?>')">
+                        <button onclick="document.getElementById('id01').style.display='block'" class="btn-open-modal"></button>
+                        <div id="id01" class="w3-modal">
+                            <div class="w3-modal-content">
+                                <div class="w3-container">
+                                    <span onclick="document.getElementById('id01').style.display='none'" class="w3-closebtn">&times;</span>
+                                    <iframe src="<?php the_permalink(); ?>" frameborder="0"></iframe>
+                                    <?php //get_template_part( 'single-templates/single/content', get_post_format() ); ?>
+                                    <?php //the_content(); ?>
+                                </div>
+                            </div>
+                        </div>
+
                         <a href="<?php the_permalink(); ?>"  class="[ inline-block ][ width--100 ][ height--100 ]">
                             <!-- <div class="zo-masonry-title">
                                 <?php the_title();?>

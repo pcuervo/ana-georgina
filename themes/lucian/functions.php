@@ -598,11 +598,14 @@ function zo_post_nav($prev_title = NULL, $next_title = NULL) {
     if ( ! $next && ! $previous )
         return;
     ?>
+
+	<?php if ( ! in_category(array('portrait','arquitecture','prints','projects')) ) { ?>
+
 	<nav class="navigation post-navigation" role="navigation">
 		<div class="nav-links clearfix">
 			<!-- return -->
 			<a class="post-prev pull-left" href="javascript:history.go(-1)">
-				<i class="fa fa-angle-left"></i><span class="[ font-size--12 ]">BACK TO PROJECTS</span>
+				<i class="fa fa-angle-left"></i><span class="[ font-size--10 font-family--verb_light ]">BACK TO PROJECTS</span>
 			</a>
 
 			<?php
@@ -611,11 +614,14 @@ function zo_post_nav($prev_title = NULL, $next_title = NULL) {
 				$next_title = empty($next_title) ? esc_attr($next_post->post_title) : $next_title;
 			?>
 			  <a class="post-next pull-right" href="<?php echo get_permalink( $next_post->ID ); ?>" title="<?php echo get_the_title( $next_post->post_title ); ?>">
-				<i class="fa fa-angle-right"></i><span class="[ font-size--12 ]">NEX PROJECT: <strong><?php echo esc_attr($next_title); ?></strong></span>
+				<i class="fa fa-angle-right"></i><span class="[ font-size--10 font-family--verb_regular ]">NEX PROJECT: <strong class="[ font-family--verb_bold ]"><?php echo esc_attr($next_title); ?></strong></span>
 			  </a>
             <?php endif; ?>
         </div><!-- .nav-links -->
 	</nav><!-- .navigation -->
+
+	<?php } ?>
+
 	<?php
 }
 

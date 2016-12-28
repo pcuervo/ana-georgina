@@ -15,6 +15,14 @@ var $=jQuery.noConflict();
             footerBottom();
         });
 
+        $(".btn-open-modal").click(function() {
+            $('body').addClass("overflow-hidden");
+        });
+
+        $(".w3-closebtn").click(function() {
+            $('body').removeClass("overflow-hidden");
+        });
+
     });
 })(jQuery);
 

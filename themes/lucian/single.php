@@ -14,8 +14,12 @@ get_header(); ?>
             <div id="content" role="main">
 
                 <?php while ( have_posts() ) : the_post(); ?>
-                    <p class="[ padding-left--large ][ color-gray-dark ][ text-center ][ font-size--12 ][ font-family--typewriter ][ no-margin-bottom ]"><?php the_date(); ?></p>
-                    <h1 class="[ padding-left--large ][ text-center ][ font-family--verb_ultra ][ font-size--16 ][ no-margin-bottom ]"><?php the_title(); ?></h1>
+
+                    <?php if ( ! in_category(array('portrait','arquitecture','prints','projects')) ) { ?>
+                        <p class="[ padding-left--large ][ color-gray-dark ][ text-center ][ font-size--12 ][ font-family--typewriter ][ no-margin-bottom ]"><?php the_date(); ?></p>
+                        <h1 class="[ padding-left--large ][ text-center ][ font-family--verb_ultra ][ font-size--16 ][ no-margin-bottom ]"><?php the_title(); ?></h1>
+                    <?php } ?>
+
                     <?php get_template_part( 'single-templates/single/content', get_post_format() ); ?>
 
 	                <?php if( has_tag() ) : ?>
