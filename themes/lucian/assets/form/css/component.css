@@ -49,14 +49,14 @@ h1 { font-size: 18px!important; }
 	font-size: 12px;
 }
 
-.fs-form-overview .fs-fields::before {
+/*.fs-form-overview .fs-fields::before {
 	display: block;
 	margin-bottom: 10px;
 	color: #3b3f45;
 	content: '¡Welcome on board well contact you soon!';
 	font-weight: 700;
 	font-size: 20px;
-}
+}*/
 
 /* Switch view animation (we hide the current view, switch the view class and show it again) */
 .fs-form.fs-show {
@@ -254,7 +254,8 @@ button.fs-continue,
 
 .fs-form-overview .fs-fields input {
 	border-bottom-color: transparent;
-	color: rgba(0,0,0,0.5);
+	color: rgba(0,0,0,0.7);
+	font-size: 12px!important;
 }
 
 .fs-fields [required] {
@@ -262,10 +263,6 @@ button.fs-continue,
 	background-position: top right;
 	background-size: 18px;
 	background-repeat: no-repeat;
-}
-
-.fs-form-overview .fs-fields input {
-	font-size: 12px;
 }
 
 .fs-fields .fs-radio-custom input[type="radio"] {
@@ -300,7 +297,7 @@ button.fs-continue,
 .fs-fields > li .fs-radio-custom span label:hover { border-bottom: 1px solid #000000; }
 
 .fs-form-overview .fs-fields > li .fs-radio-custom span {
-	max-width: 140px;
+	max-width: 100%;
 }
 
 .fs-form-overview .fs-fields > li .fs-radio-custom span {
@@ -349,7 +346,8 @@ button.fs-continue,
 }
 
 .fs-form-overview .fs-fields .fs-radio-custom input[type="radio"]:checked + label {
-	color: rgba(0,0,0,0.8);
+	color: rgba(0,0,0,1);
+	border-bottom: 1px solid #000;
 }
 
 .fs-fields textarea {
@@ -639,7 +637,7 @@ button.fs-continue:hover {
 	color: #fff;
 }
 
-.fs-continue::after {
+/*.fs-continue::after {
 	position: absolute;
 	top: 100%;
 	left: 0;
@@ -651,7 +649,7 @@ button.fs-continue:hover {
 	content: 'or press ENTER';
 	font-size: 12px;
 	pointer-events: none;
-}
+}*/
 
 /* Error message */
 .fs-message-error {
@@ -874,3 +872,7 @@ input[type=text]::-ms-clear {
 }
 
 #date_event::-webkit-calendar-picker-indicator { margin-right: 20px }
+
+#not-available {
+	margin-top: 50px;
+}

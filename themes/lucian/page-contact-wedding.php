@@ -27,7 +27,7 @@
 														<li>
 															<label class="fs-field-label fs-anim-upper" for="date_event">My wedding is on</label>
 															<input class="fs-anim-lower" id="date_event" name="date_event" type="date" required/>
-															<p class="fs-field-label fs-anim-upper">Sorry we are not available, hope to see you in your next wedding</p>
+															<p id="not-available" class="fs-field-label fs-anim-upper [ hidden ]">Sorry we are not available, hope to see you in your next wedding</p>
 														</li>
 														<li data-input-trigger>
 															<h1 class="fs-field-label fs-anim-upper [ font-family--verb_bold ]">How much are you willing to ivest:</h1>
