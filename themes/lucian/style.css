@@ -506,3 +506,15 @@ h2.title-section {
 		width: 870px!important;
 	}
 }
+
+.home .rev_slider li.tp-revslider-slidesli { width: 100%!important; }
+
+// body *:hover{
+// 	-webkit-animation-name: slideInUp;
+//     animation-name: slideInUp;
+// }
+
+#row-animated1,
+#row-animated2 {
+	position: relative;
+}

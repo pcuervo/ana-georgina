@@ -4,7 +4,7 @@
 /* Main form wrapper */
 .fs-form-wrap {
 	position: relative;
-	width: 90%;
+	width: 100%;
 	height: 100%;
 	margin: auto;
 	color: #595a5c;
@@ -120,6 +120,7 @@ button.fs-continue,
 .fs-form-wrap input:focus,
 .fs-form-wrap button:focus {
 	outline: none;
+	border-bottom: 1px solid #8e8e8e!important;
 }
 
 /* Hide the submit button */
@@ -496,7 +497,7 @@ button.fs-continue,
 	position: absolute;
 	top: 0;
 	width: 0%;
-	height: 0.5em;
+	height: 2px;
 	background: #595a5c;
 	-webkit-transition: width 0.3s ease-in-out;
 	transition: width 0.3s ease-in-out;

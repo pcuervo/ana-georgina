@@ -883,7 +883,7 @@ if( function_exists('zo_image_resize')) {
 **/
 add_action( 'wp_enqueue_scripts', function(){
 
-	if(is_page('contact-form')){
+	// if(is_page('contact-wedding')){
 		// styles
 		wp_enqueue_style( 'form-normalize', get_template_directory_uri() . '/assets/form/css/normalize.css');
 		wp_enqueue_style( 'form-demo', get_template_directory_uri() . '/assets/form/css/demo.css');
@@ -896,6 +896,6 @@ add_action( 'wp_enqueue_scripts', function(){
 		wp_enqueue_script( 'form-classie', get_template_directory_uri() . '/assets/form/js/classie.js', array('jquery'), '1.0', true );
 		wp_enqueue_script( 'form-selectFx', get_template_directory_uri() . '/assets/form/js/selectFx.js', array('jquery'), '1.0', true );
 		wp_enqueue_script( 'form-fullscreenForm', get_template_directory_uri() . '/assets/form/js/fullscreenForm.js', array('jquery'), '1.0', true );
-	}
+	//}
 
 });
