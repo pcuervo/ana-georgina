@@ -91,7 +91,7 @@
 <?php wp_footer(); ?>
 
 <!-- footer Contact form -->
-<?php if ( is_page('contact-form') ) { ?>
+<?php if ( is_page(array('contact-form','contact-wedding','contact-portrait','contact-arquitecture','contact-product','contact-other',)) ) { ?>
 	<script>
 		(function() {
 			var formWrap = document.getElementById( 'fs-form-wrap' );
