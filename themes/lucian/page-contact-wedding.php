@@ -20,7 +20,7 @@
 															<label class="fs-field-label fs-anim-upper [ padding-left--xsmall ]" for="user_from">Im from </label>
 															<input class="fs-anim-lower" id="user_from" name="user_from" type="text" required/>
 															<label class="fs-field-label fs-anim-upper [ padding-left--xsmall ]" for="user_email">You can reach me via email </label>
-															<input class="fs-anim-lower" id="user_email" name="user_email" type="text" required/>
+															<input class="fs-anim-lower" id="user_email" name="user_email" type="email" required/>
 															<label class="fs-field-label fs-anim-upper [ padding-left--xsmall ]" for="user_page">My page is </label>
 															<input class="fs-anim-lower" id="user_page" name="user_page" type="text" />
 														</li>
@@ -50,7 +50,7 @@
 														<li>
 															<label class="fs-field-label fs-anim-upper [ margin-top--large ]" for="heard_ag">I heard about AGBA from?</label>
 															<input class="fs-anim-lower" id="heard_ag" name="heard_ag" type="text" required/> <label class="fs-field-label fs-anim-upper [ padding-left--xsmall ]">AND NOW MY PHOTOS WILL BE THE PRETTIEST OF THEM ALL.</label>
-															<input type="hidden" name="action" value="save_contact_post">
+															<input type="hidden" name="action" value="save_contact_wedding_post">
 														</li>
 													</ol><!-- /fs-fields -->
 													<button class="fs-submit" type="submit">Contact</button>

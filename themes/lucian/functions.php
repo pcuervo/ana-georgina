@@ -914,7 +914,7 @@ add_action( 'wp_enqueue_scripts', function(){
  * Save the data from the contact form as a post.
  * @return JSON $message - A success/error message about the status of the post.
 */
-function save_contact_post(){
+function save_contact_wedding_post(){
 
 	$name = $_POST['user_name'];
 	$ubication = $_POST['user_from'];
@@ -928,7 +928,7 @@ function save_contact_post(){
 
 	$to_email = 'nayeli@pcuervo.com';
 
-	$se_mando = send_email_contacto($name, $ubication, $email, $page, $date_event, $price, $idea, $location, $heard, $to_email );
+	$se_mando = send_email_wedding($name, $ubication, $email, $page, $date_event, $price, $idea, $location, $heard, $to_email );
 
 	if( $se_mando ){
 		$message = array(
@@ -945,35 +945,36 @@ function save_contact_post(){
 	);
 	echo json_encode($message , JSON_FORCE_OBJECT);
 	exit();
-}// save_contact_post
-add_action("wp_ajax_save_contact_post", "save_contact_post");
-add_action("wp_ajax_nopriv_save_contact_post", "save_contact_post");
+}// save_contact_wedding_post
+add_action("wp_ajax_save_contact_wedding_post", "save_contact_wedding_post");
+add_action("wp_ajax_nopriv_save_contact_wedding_post", "save_contact_wedding_post");
 
 
 
 /**
  * Mandar un correo para Ana Georgina.
- * @param string $name - Name of person requesting more info
- * @param string $email - Email of person requesting more info
- * @param string $tel - Telephone numbre of person requesting more info
- * @param string $state - State of person requesting more info
- * @param string $to_email - Email to where the info has to be sent
  */
-function send_email_contacto($name, $ubication, $email, $page, $date_event, $price, $idea, $location, $heard, $to_email){
+function send_email_wedding($name, $ubication, $email, $page, $date_event, $price, $idea, $location, $heard, $to_email){
 
-	$subject = 'Contact form Wedding';
+	$subject = 'Contact form WEDDING';
 	$headers = 'From: Site Ana Georgina <' . $to_email . '>' . "\r\n";
 	$message = '<html><body>';
-	$message .= '<h3>Contact form Wedding</h3>';
-	$message .= '<p>Hello my name is: '. $name . '</p>';
-	$message .= '<p>Im from: '. $ubication .'</p>';
-	$message .= '<p>You can reach me via email: ' . $email . '</p>';
-	if( $page != '' ) $message .= '<p>My page is: ' . $page . '</p>';
-	$message .= '<p>My wedding is on: ' . $date_event . '</p>';
-	$message .= '<p>How much are you willing to ivest: ' .$price. '</p>';
-	$message .= '<p>My wedding idea is: ' . $idea . '</p>';
-	$message .= '<p>My wedding location is in: ' . $location . '</p>';
-	$message .= '<p>I heard about AGBA from?: ' . $heard . '</p>';
+		$message = '<div style="max-width: 500px; border: 5px solid #7f8082; padding: 20px; border-radius: 10px; ">';
+			$message .= '<div style="text-align: center;">';
+				$message .= '<img style="margin: auto;" src="http://localhost:8888/ana-georgina/wp-content/uploads/2016/10/logo-new.png" alt="Logo Ana Georgina">';
+			$message .= '</div>';
+			$message .= '<h3 style="text-align: center;">Contact form</h3>';
+			$message .= '<h2 style="text-align: center;">WEDDING</h2>';
+			$message .= '<p style="margin-bottom: 10px; font-size: 18px; color: #000;"><span style="font-size: 18px; color: #7f8082;">Hello my name is: </span >'. $name . '</p>';
+			$message .= '<p style="margin-bottom: 10px; font-size: 18px; color: #000;"><span style="font-size: 18px; color: #7f8082;">Im from: </span >'. $ubication .'</p>';
+			$message .= '<p style="margin-bottom: 10px; font-size: 18px; color: #000;"><span style="font-size: 18px; color: #7f8082;">You can reach me via email: </span >' . $email . '</p>';
+			if( $page != '' ) $message .= '<p style="margin-bottom: 10px; font-size: 18px; color: #000;"><span style="font-size: 18px; color: #7f8082;">My page is: </span >' . $page . '</p>';
+			$message .= '<p style="margin-bottom: 10px; font-size: 18px; color: #000;"><span style="font-size: 18px; color: #7f8082;">My wedding is on: </span >' . $date_event . '</p>';
+			$message .= '<p style="margin-bottom: 10px; font-size: 18px; color: #000;"><span style="font-size: 18px; color: #7f8082;">How much are you willing to ivest: </span >' .$price. '</p>';
+			$message .= '<p style="margin-bottom: 10px; font-size: 18px; color: #000;"><span style="font-size: 18px; color: #7f8082;">My wedding idea is: </span >' . $idea . '</p>';
+			$message .= '<p style="margin-bottom: 10px; font-size: 18px; color: #000;"><span style="font-size: 18px; color: #7f8082;">My wedding location is in: </span >' . $location . '</p>';
+			$message .= '<p style="margin-bottom: 10px; font-size: 18px; color: #000;"><span style="font-size: 18px; color: #7f8082;">I heard about AGBA from?: </span >' . $heard . '</p>';
+		$message .= '</div>';
 	$message .= '</body></html>';
 
 	add_filter('wp_mail_content_type',create_function('', 'return "text/html"; '));
@@ -981,4 +982,288 @@ function send_email_contacto($name, $ubication, $email, $page, $date_event, $pri
 
 	return $email;
 
-}// send_email_contacto
+}// send_email_wedding
+
+
+/**
+ * Save the data from the contact form as a post.
+ * @return JSON $message - A success/error message about the status of the post.
+*/
+function save_contact_portrait_post(){
+
+	$name = $_POST['user_name'];
+	$ubication = $_POST['user_from'];
+	$email = $_POST['user_email'];
+	$page = $_POST['user_page'];
+	$need = $_POST['user_need'];
+	$price = $_POST['price'];
+	$heard = $_POST['heard_ag'];
+
+	$to_email = 'nayeli@pcuervo.com';
+
+	$se_mando = send_email_portrait($name, $ubication, $email, $page, $need, $price, $heard, $to_email );
+
+	if( $se_mando ){
+		$message = array(
+			'error'     => 0,
+			'message'   => '¡WELCOME ON BOARD WE’LL CONTACT YOU SOON!',
+		);
+		echo json_encode($message , JSON_FORCE_OBJECT);
+		exit();
+	}
+
+	$message = array(
+		'error'     => 1,
+		'message'   => 'There was an error trying to send your message. Please try again later.',
+	);
+	echo json_encode($message , JSON_FORCE_OBJECT);
+	exit();
+}// save_contact_portrait_post
+add_action("wp_ajax_save_contact_portrait_post", "save_contact_portrait_post");
+add_action("wp_ajax_nopriv_save_contact_portrait_post", "save_contact_portrait_post");
+
+
+/**
+ * Mandar un correo para Ana Georgina.
+ */
+function send_email_portrait($name, $ubication, $email, $page, $need, $price, $heard, $to_email){
+
+	$subject = 'Contact form PORTRAIT';
+	$headers = 'From: Site Ana Georgina <' . $to_email . '>' . "\r\n";
+	$message = '<html><body>';
+		$message = '<div style="max-width: 500px; border: 5px solid #7f8082; padding: 20px; border-radius: 10px; ">';
+			$message .= '<div style="text-align: center;">';
+				$message .= '<img style="margin: auto;" src="http://localhost:8888/ana-georgina/wp-content/uploads/2016/10/logo-new.png" alt="Logo Ana Georgina">';
+			$message .= '</div>';
+			$message .= '<h3 style="text-align: center;">Contact form</h3>';
+			$message .= '<h2 style="text-align: center;">PORTRAIT</h2>';
+			$message .= '<p style="margin-bottom: 10px; font-size: 18px; color: #000;"><span style="font-size: 18px; color: #7f8082;">Hello my name is: </span >'. $name . '</p>';
+			$message .= '<p style="margin-bottom: 10px; font-size: 18px; color: #000;"><span style="font-size: 18px; color: #7f8082;">Im from: </span >'. $ubication .'</p>';
+			$message .= '<p style="margin-bottom: 10px; font-size: 18px; color: #000;"><span style="font-size: 18px; color: #7f8082;">You can reach me via email: </span >' . $email . '</p>';
+			if( $page != '' ) $message .= '<p style="margin-bottom: 10px; font-size: 18px; color: #000;"><span style="font-size: 18px; color: #7f8082;">My page is: </span >' . $page . '</p>';
+			$message .= '<p style="margin-bottom: 10px; font-size: 18px; color: #000;"><span style="font-size: 18px; color: #7f8082;">What i need from agba is: </span >' . $need . '</p>';
+			$message .= '<p style="margin-bottom: 10px; font-size: 18px; color: #000;"><span style="font-size: 18px; color: #7f8082;">How much are you willing to ivest: </span >' .$price. '</p>';
+			$message .= '<p style="margin-bottom: 10px; font-size: 18px; color: #000;"><span style="font-size: 18px; color: #7f8082;">I heard about AGBA from?: </span >' . $heard . '</p>';
+		$message .= '</div>';
+	$message .= '</body></html>';
+
+	add_filter('wp_mail_content_type',create_function('', 'return "text/html"; '));
+	$email = wp_mail($to_email, $subject, $message, $headers );
+
+	return $email;
+
+}// send_email_portrait
+
+
+/**
+ * Save the data from the contact form as a post.
+ * @return JSON $message - A success/error message about the status of the post.
+*/
+function save_contact_arquitecture_post(){
+
+	$name = $_POST['user_name'];
+	$ubication = $_POST['user_from'];
+	$email = $_POST['user_email'];
+	$page = $_POST['user_page'];
+	$company = $_POST['name_company'];
+	$focused = $_POST['focused_company'];
+	$need = $_POST['need_company'];
+	$event = $_POST['date_event'];
+	$heard = $_POST['heard_ag'];
+
+	$to_email = 'nayeli@pcuervo.com';
+
+	$se_mando = send_email_arquitecture($name, $ubication, $email, $page, $company, $focused, $need, $event, $heard, $to_email );
+
+	if( $se_mando ){
+		$message = array(
+			'error'     => 0,
+			'message'   => '¡WELCOME ON BOARD WE’LL CONTACT YOU SOON!',
+		);
+		echo json_encode($message , JSON_FORCE_OBJECT);
+		exit();
+	}
+
+	$message = array(
+		'error'     => 1,
+		'message'   => 'There was an error trying to send your message. Please try again later.',
+	);
+	echo json_encode($message , JSON_FORCE_OBJECT);
+	exit();
+}// save_contact_arquitecture_post
+add_action("wp_ajax_save_contact_arquitecture_post", "save_contact_arquitecture_post");
+add_action("wp_ajax_nopriv_save_contact_arquitecture_post", "save_contact_arquitecture_post");
+
+
+/**
+ * Mandar un correo para Ana Georgina.
+ */
+function send_email_arquitecture($name, $ubication, $email, $page, $company, $focused, $need, $event, $heard, $to_email){
+
+	$subject = 'Contact form ARQUITECTURE';
+	$headers = 'From: Site Ana Georgina <' . $to_email . '>' . "\r\n";
+	$message = '<html><body>';
+		$message = '<div style="max-width: 500px; border: 5px solid #7f8082; padding: 20px; border-radius: 10px; ">';
+			$message .= '<div style="text-align: center;">';
+				$message .= '<img style="margin: auto;" src="http://localhost:8888/ana-georgina/wp-content/uploads/2016/10/logo-new.png" alt="Logo Ana Georgina">';
+			$message .= '</div>';
+			$message .= '<h3 style="text-align: center;">Contact form</h3>';
+			$message .= '<h2 style="text-align: center;">ARQUITECTURE</h2>';
+			$message .= '<p style="margin-bottom: 10px; font-size: 18px; color: #000;"><span style="font-size: 18px; color: #7f8082;">Hello my name is: </span >'. $name . '</p>';
+			$message .= '<p style="margin-bottom: 10px; font-size: 18px; color: #000;"><span style="font-size: 18px; color: #7f8082;">Im from: </span >'. $ubication .'</p>';
+			$message .= '<p style="margin-bottom: 10px; font-size: 18px; color: #000;"><span style="font-size: 18px; color: #7f8082;">You can reach me via email: </span >' . $email . '</p>';
+			if( $page != '' ) $message .= '<p style="margin-bottom: 10px; font-size: 18px; color: #000;"><span style="font-size: 18px; color: #7f8082;">My page is: </span >' . $page . '</p>';
+			$message .= '<p style="margin-bottom: 10px; font-size: 18px; color: #000;"><span style="font-size: 18px; color: #7f8082;">The name of the company is: </span >' . $company . '</p>';
+			$message .= '<p style="margin-bottom: 10px; font-size: 18px; color: #000;"><span style="font-size: 18px; color: #7f8082;">We are focused on: </span >' . $focused . '</p>';
+			$message .= '<p style="margin-bottom: 10px; font-size: 18px; color: #000;"><span style="font-size: 18px; color: #7f8082;">What i need from agba is: </span >' . $need . '</p>';
+			$message .= '<p style="margin-bottom: 10px; font-size: 18px; color: #000;"><span style="font-size: 18px; color: #7f8082;">When do i need my photos all done: </span >' .$event. '</p>';
+			$message .= '<p style="margin-bottom: 10px; font-size: 18px; color: #000;"><span style="font-size: 18px; color: #7f8082;">I heard about AGBA from?: </span >' . $heard . '</p>';
+		$message .= '</div>';
+	$message .= '</body></html>';
+
+	add_filter('wp_mail_content_type',create_function('', 'return "text/html"; '));
+	$email = wp_mail($to_email, $subject, $message, $headers );
+
+	return $email;
+
+}// send_email_arquitecture
+
+
+/**
+ * Save the data from the contact form as a post.
+ * @return JSON $message - A success/error message about the status of the post.
+*/
+function save_contact_product_post(){
+
+	$name = $_POST['user_name'];
+	$ubication = $_POST['user_from'];
+	$email = $_POST['user_email'];
+	$page = $_POST['user_page'];
+	$company = $_POST['name_company'];
+	$focused = $_POST['focused_company'];
+	$need = $_POST['need_company'];
+	$event = $_POST['date_event'];
+	$heard = $_POST['heard_ag'];
+
+	$to_email = 'nayeli@pcuervo.com';
+
+	$se_mando = send_email_product($name, $ubication, $email, $page, $company, $focused, $need, $event, $heard, $to_email );
+
+	if( $se_mando ){
+		$message = array(
+			'error'     => 0,
+			'message'   => '¡WELCOME ON BOARD WE’LL CONTACT YOU SOON!',
+		);
+		echo json_encode($message , JSON_FORCE_OBJECT);
+		exit();
+	}
+
+	$message = array(
+		'error'     => 1,
+		'message'   => 'There was an error trying to send your message. Please try again later.',
+	);
+	echo json_encode($message , JSON_FORCE_OBJECT);
+	exit();
+}// save_contact_product_post
+add_action("wp_ajax_save_contact_product_post", "save_contact_product_post");
+add_action("wp_ajax_nopriv_save_contact_product_post", "save_contact_product_post");
+
+
+/**
+ * Mandar un correo para Ana Georgina.
+ */
+function send_email_product($name, $ubication, $email, $page, $company, $focused, $need, $event, $heard, $to_email){
+
+	$subject = 'Contact form PRODUCT';
+	$headers = 'From: Site Ana Georgina <' . $to_email . '>' . "\r\n";
+	$message = '<html><body>';
+		$message = '<div style="max-width: 500px; border: 5px solid #7f8082; padding: 20px; border-radius: 10px; ">';
+			$message .= '<div style="text-align: center;">';
+				$message .= '<img style="margin: auto;" src="http://localhost:8888/ana-georgina/wp-content/uploads/2016/10/logo-new.png" alt="Logo Ana Georgina">';
+			$message .= '</div>';
+			$message .= '<h3 style="text-align: center;">Contact form</h3>';
+			$message .= '<h2 style="text-align: center;">PRODUCT</h2>';
+			$message .= '<p style="margin-bottom: 10px; font-size: 18px; color: #000;"><span style="font-size: 18px; color: #7f8082;">Hello my name is: </span >'. $name . '</p>';
+			$message .= '<p style="margin-bottom: 10px; font-size: 18px; color: #000;"><span style="font-size: 18px; color: #7f8082;">Im from: </span >'. $ubication .'</p>';
+			$message .= '<p style="margin-bottom: 10px; font-size: 18px; color: #000;"><span style="font-size: 18px; color: #7f8082;">You can reach me via email: </span >' . $email . '</p>';
+			if( $page != '' ) $message .= '<p style="margin-bottom: 10px; font-size: 18px; color: #000;"><span style="font-size: 18px; color: #7f8082;">My page is: </span >' . $page . '</p>';
+			$message .= '<p style="margin-bottom: 10px; font-size: 18px; color: #000;"><span style="font-size: 18px; color: #7f8082;">The name of the company is: </span >' . $company . '</p>';
+			$message .= '<p style="margin-bottom: 10px; font-size: 18px; color: #000;"><span style="font-size: 18px; color: #7f8082;">We are focused on: </span >' . $focused . '</p>';
+			$message .= '<p style="margin-bottom: 10px; font-size: 18px; color: #000;"><span style="font-size: 18px; color: #7f8082;">What i need from agba is: </span >' . $need . '</p>';
+			$message .= '<p style="margin-bottom: 10px; font-size: 18px; color: #000;"><span style="font-size: 18px; color: #7f8082;">When do i need my photos all done: </span >' .$event. '</p>';
+			$message .= '<p style="margin-bottom: 10px; font-size: 18px; color: #000;"><span style="font-size: 18px; color: #7f8082;">I heard about AGBA from?: </span >' . $heard . '</p>';
+		$message .= '</div>';
+	$message .= '</body></html>';
+
+	add_filter('wp_mail_content_type',create_function('', 'return "text/html"; '));
+	$email = wp_mail($to_email, $subject, $message, $headers );
+
+	return $email;
+
+}// send_email_product
+
+
+/**
+ * Save the data from the contact form as a post.
+ * @return JSON $message - A success/error message about the status of the post.
+*/
+function save_contact_other_post(){
+
+	$name = $_POST['user_name'];
+	$ubication = $_POST['user_from'];
+	$email = $_POST['user_email'];
+	$page = $_POST['user_page'];
+	$need = $_POST['need_company'];
+
+	$to_email = 'nayeli@pcuervo.com';
+
+	$se_mando = send_email_other($name, $ubication, $email, $page, $need, $to_email );
+
+	if( $se_mando ){
+		$message = array(
+			'error'     => 0,
+			'message'   => '¡WELCOME ON BOARD WE’LL CONTACT YOU SOON!',
+		);
+		echo json_encode($message , JSON_FORCE_OBJECT);
+		exit();
+	}
+
+	$message = array(
+		'error'     => 1,
+		'message'   => 'There was an error trying to send your message. Please try again later.',
+	);
+	echo json_encode($message , JSON_FORCE_OBJECT);
+	exit();
+}// save_contact_other_post
+add_action("wp_ajax_save_contact_other_post", "save_contact_other_post");
+add_action("wp_ajax_nopriv_save_contact_other_post", "save_contact_other_post");
+
+
+/**
+ * Mandar un correo para Ana Georgina.
+ */
+function send_email_other($name, $ubication, $email, $page, $need, $to_email ){
+
+	$subject = 'Contact form OTHER';
+	$headers = 'From: Site Ana Georgina <' . $to_email . '>' . "\r\n";
+	$message = '<html><body>';
+		$message = '<div style="max-width: 500px; border: 5px solid #7f8082; padding: 20px; border-radius: 10px; ">';
+			$message .= '<div style="text-align: center;">';
+				$message .= '<img style="margin: auto;" src="http://localhost:8888/ana-georgina/wp-content/uploads/2016/10/logo-new.png" alt="Logo Ana Georgina">';
+			$message .= '</div>';
+			$message .= '<h3 style="text-align: center;">Contact form</h3>';
+			$message .= '<h2 style="text-align: center;">OTHER</h2>';
+			$message .= '<p style="margin-bottom: 10px; font-size: 18px; color: #000;"><span style="font-size: 18px; color: #7f8082;">Hello my name is: </span >'. $name . '</p>';
+			$message .= '<p style="margin-bottom: 10px; font-size: 18px; color: #000;"><span style="font-size: 18px; color: #7f8082;">Im from: </span >'. $ubication .'</p>';
+			$message .= '<p style="margin-bottom: 10px; font-size: 18px; color: #000;"><span style="font-size: 18px; color: #7f8082;">You can reach me via email: </span >' . $email . '</p>';
+			if( $page != '' ) $message .= '<p style="margin-bottom: 10px; font-size: 18px; color: #000;"><span style="font-size: 18px; color: #7f8082;">My page is: </span >' . $page . '</p>';
+			$message .= '<p style="margin-bottom: 10px; font-size: 18px; color: #000;"><span style="font-size: 18px; color: #7f8082;">What i need from agba is: </span >' . $need . '</p>';
+		$message .= '</div>';
+	$message .= '</body></html>';
+
+	add_filter('wp_mail_content_type',create_function('', 'return "text/html"; '));
+	$email = wp_mail($to_email, $subject, $message, $headers );
+
+	return $email;
+
+}// send_email_other

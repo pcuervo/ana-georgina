@@ -11,7 +11,7 @@
 									<div class="vc_column-inner ">
 										<div class="wpb_wrapper">
 											<div class="fs-form-wrap" id="fs-form-wrap">
-												<form id="myform" class="fs-form fs-form-full" autocomplete="off">
+												<form id="myform" class="fs-form fs-form-full" autocomplete="off" name="contactportrait" role="form" method="POST">
 													<ol class="fs-fields [ uppercase ]">
 														<li>
 															<h1 class="fs-field-label fs-anim-upper [ font-family--verb_bold ]">My basic info:</h1>
@@ -20,27 +20,28 @@
 															<label class="fs-field-label fs-anim-upper [ padding-left--xsmall ]" for="user_from">Im from </label>
 															<input class="fs-anim-lower" id="user_from" name="user_from" type="text" required/>
 															<label class="fs-field-label fs-anim-upper [ padding-left--xsmall ]" for="user_email">You can reach me via email </label>
-															<input class="fs-anim-lower" id="user_email" name="user_email" type="text" required/>
+															<input class="fs-anim-lower" id="user_email" name="user_email" type="email" required/>
 															<label class="fs-field-label fs-anim-upper [ padding-left--xsmall ]" for="user_page">My page is </label>
 															<input class="fs-anim-lower" id="user_page" name="user_page" type="text" />
 														</li>
 														<li>
-															<label class="fs-field-label fs-anim-upper [ margin-top--large ]" for="event_other">What i need from agba is</label>
-															<input class="fs-anim-lower" id="event_other" name="event_other" type="text" placeholder="Dean Moriarty" required/>
+															<label class="fs-field-label fs-anim-upper [ margin-top--large ]" for="user_need">What i need from agba is</label>
+															<input class="fs-anim-lower" id="user_need" name="user_need" type="text" placeholder="Dean Moriarty" required/>
 														</li>
 														<li data-input-trigger>
 															<h1 class="fs-field-label fs-anim-upper [ font-family--verb_bold ]">How much are you willing to ivest:</h1>
-															<label class="fs-field-label fs-anim-upper [ hidden ]" for="price_portrait">How much are you willing to ivest:</label>
+															<label class="fs-field-label fs-anim-upper [ hidden ]" for="price">How much are you willing to ivest:</label>
 															<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
-																<span><input id="price_portrait1" name="price_portrait" type="radio" value="price_portrait1"/><label for="price_portrait1">6,000 MX /  LESS THAN 60 HUMANS</label></span>
-																<span><input id="price_portrait2" name="price_portrait" type="radio" value="price_portrait2"/><label for="price_portrait2">7,000 MX / I JUST WANT GOOD PHOTOS</label></span>
-																<span><input id="price_portrait3" name="price_portrait" type="radio" value="price_portrait3"/><label for="price_portrait3">8,800 MX / I WANT GOOD PHOTOS AND A PRETTY ALBUM</label></span>
-																<span><input id="price_portrait4" name="price_portrait" type="radio" value="price_portrait4"/><label for="price_portrait4">For special needs push this</label></span>
+																<span><input id="price1" name="price" type="radio" value="6,000 MX"/><label for="price1">6,000 MX /  LESS THAN 60 HUMANS</label></span>
+																<span><input id="price2" name="price" type="radio" value="7,000 MX"/><label for="price2">7,000 MX / I JUST WANT GOOD PHOTOS</label></span>
+																<span><input id="price3" name="price" type="radio" value="8,800 MX"/><label for="price3">8,800 MX / I WANT GOOD PHOTOS AND A PRETTY ALBUM</label></span>
+																<span><input id="price4" name="price" type="radio" value="Special needs"/><label for="price4">For special needs push this</label></span>
 															</div>
 														</li>
 														<li>
 															<label class="fs-field-label fs-anim-upper [ margin-top--large ]" for="heard_ag">I heard about AGBA from?</label>
 															<input class="fs-anim-lower" id="heard_ag" name="heard_ag" type="text" required/> <label class="fs-field-label fs-anim-upper [ padding-left--xsmall ]">AND NOW MY PHOTOS WILL BE THE PRETTIEST OF THEM ALL.</label>
+															<input type="hidden" name="action" value="save_contact_portrait_post">
 														</li>
 													</ol><!-- /fs-fields -->
 													<button class="fs-submit" type="submit">Contact</button>
