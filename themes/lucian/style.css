@@ -279,14 +279,23 @@ textarea { max-height: 80px!important; }
 
 /*Fijar footer*/
 html,
-body { height: 96%; }
+body { height: 96%!important; }
 
 .main-body {
-	min-height: -moz-calc(100vh - 120px);
+	min-height: -moz-calc(100vh - 120px);/*120 y 100% en body*/
 	min-height: -o-calc(100vh - 120px);
 	min-height: -webkit-calc(100vh - 120px);
 	min-height: calc(100vh - 120px);
 	position: relative;
+
+}
+
+.home .main-body {
+	min-height: -moz-calc(100vh - 152px);
+	min-height: -o-calc(100vh - 152px);
+	min-height: -webkit-calc(100vh - 152px);
+	min-height: calc(100vh - 152px);
+	overflow: hidden;/*espacio blanco inferior*/
 }
 
 footer{

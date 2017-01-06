@@ -244,7 +244,7 @@ button.fs-continue,
 
 @media(max-width: 479px){
 	.fs-fields input {
-		width: 160px;
+		width: 100%;
 	}
 }
 
@@ -375,10 +375,6 @@ button.fs-continue,
 .fs-form-overview .fs-fields textarea {
 	padding: 0;
 	border-color: transparent;
-}
-
-.fs-form-overview .fs-fields textarea:focus {
-	background: #595a5c;
 }
 
 .fs-form div.cs-select.cs-skin-boxes {
@@ -817,7 +813,7 @@ input[type=text]::-ms-clear {
 	button.fs-continue {
 		right: 20px;
 		bottom: 20px;
-		margin: 0;
+		margin: 0 0 0 30px;
 		padding: 50px 0 0 50px;
 		width: 50px;
 		height: 50px;
