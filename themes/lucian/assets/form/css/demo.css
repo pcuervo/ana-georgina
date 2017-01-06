@@ -107,13 +107,13 @@ html, body, .container {
 /*Ajustes*/
 @media(max-width:991px){
 	#myform {
-		min-height: 500px;
+		min-height: 370px;
 		padding-right: 50px;
 	}
 }
 @media(min-width:992px){
 	#myform {
-		min-height: 500px;
+		min-height: 370px;
 		padding-right: 30px;
 	}
 }

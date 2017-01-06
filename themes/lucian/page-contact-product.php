@@ -44,6 +44,7 @@
 														</li>
 													</ol><!-- /fs-fields -->
 													<button class="fs-submit" type="submit">Contact</button>
+													<div class="[ js-success-msg hidden ]"></div>
 												</form><!-- /fs-form -->
 											</div><!-- /fs-form-wrap -->
 										</div>

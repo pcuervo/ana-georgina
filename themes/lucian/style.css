@@ -200,6 +200,8 @@ body.home.page .wpb_single_image .vc_single_image-wrapper { margin-bottom: 0px; 
 		margin: auto;
 }
 
+.bg-light { background-color: #fff; }
+
 /*FOOTER*/
 .zo-social {
 	margin: 0px!important;
@@ -548,4 +550,13 @@ h2.title-section {
 
 .close-slider:hover {
 	border: 1px solid rgba(0, 0, 0, 1);
+}
+
+/*Form*/
+.js-success-msg {
+	text-align: center;
+	margin-top: 80px;
+	font-family: 'verblight'!important;
+	font-size: 17px;
+	letter-spacing: 1px;
 }

@@ -57,11 +57,12 @@ var $=jQuery.noConflict();
         $( "#row-animated2 a" ).click(function(e) {
             //$( "#row-animated2 a" ).on('click', function(e) {
             //e.preventDefault();
-          $( "#row-animated1, #row-animated2" ).animate({
-            bottom: "+=1000"
-          }, 1000, function() {
-            // Animation complete.
-          });
+            $('#zo-header > .container').addClass("bg-light");
+            $( "#row-animated1, #row-animated2" ).animate({
+                bottom: "+=1000"
+            }, 1000, function() {
+                // Animation complete.
+            });
         });
 
         $('#agenda-visita').on('submit', function(event){
