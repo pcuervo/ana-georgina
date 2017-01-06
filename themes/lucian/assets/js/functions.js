@@ -9,12 +9,42 @@ var $=jQuery.noConflict();
         \*------------------------------------*/
         $(window).ready(function(){
             footerBottom();
-            formWrap();
+
         });
 
         $(window).on('resize', function(){
             footerBottom();
         });
+
+        if( parseInt( isContactWedding ) ){
+            $(window).ready(function(){
+                formWrap();
+            });
+        }
+
+        if( parseInt( isContactOther ) ){
+            $(window).ready(function(){
+                formWrap();
+            });
+        }
+
+        if( parseInt( isContactPortrait ) ){
+            $(window).ready(function(){
+                formWrap();
+            });
+        }
+
+        if( parseInt( isContactProduct ) ){
+            $(window).ready(function(){
+                formWrap();
+            });
+        }
+
+        if( parseInt( isContactArquitecture ) ){
+            $(window).ready(function(){
+                formWrap();
+            });
+        }
 
         $(".btn-open-modal").click(function() {
             $('body').addClass("overflow-hidden");

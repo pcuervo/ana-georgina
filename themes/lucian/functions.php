@@ -883,7 +883,7 @@ if( function_exists('zo_image_resize')) {
 **/
 add_action( 'wp_enqueue_scripts', function(){
 
-	// if(is_page('contact-wedding')){
+	if(is_page(array('contact-arquitecture', 'contact-product', 'contact-other', 'contact-portrait', 'contact-wedding',)) ){
 		// styles
 		wp_enqueue_style( 'form-normalize', get_template_directory_uri() . '/assets/form/css/normalize.css');
 		wp_enqueue_style( 'form-demo', get_template_directory_uri() . '/assets/form/css/demo.css');
@@ -896,12 +896,17 @@ add_action( 'wp_enqueue_scripts', function(){
 		wp_enqueue_script( 'form-classie', get_template_directory_uri() . '/assets/form/js/classie.js', array('jquery'), '1.0', true );
 		wp_enqueue_script( 'form-selectFx', get_template_directory_uri() . '/assets/form/js/selectFx.js', array('jquery'), '1.0', true );
 		wp_enqueue_script( 'form-fullscreenForm', get_template_directory_uri() . '/assets/form/js/fullscreenForm.js', array('jquery'), '1.0', true );
-	//}
+	}
 
 		// localize scripts
 		wp_localize_script( 'functions', 'ajax_url', admin_url('admin-ajax.php') );
 		wp_localize_script( 'functions', 'site_url', site_url() );
 		wp_localize_script( 'functions', 'theme_url', THEMEPATH );
+		wp_localize_script( 'functions', 'isContactArquitecture', (string) is_page('contact-arquitecture') );
+		wp_localize_script( 'functions', 'isContactOther', (string) is_page('contact-other') );
+		wp_localize_script( 'functions', 'isContactPortrait', (string) is_page('contact-portrait') );
+		wp_localize_script( 'functions', 'isContactProduct', (string) is_page('contact-product') );
+		wp_localize_script( 'functions', 'isContactWedding', (string) is_page('contact-wedding') );
 
 });
 
