@@ -79,33 +79,11 @@
 
                     ?>
 
-               <!--  <a href="<?php the_permalink(); ?>" class="inline-block"> -->
-
-                    <!-- <div class="zo-masonry-inner prueba" style="background-image: url('<?php echo esc_url($thumbnail); ?>')" -->
+                   <!-- link a single -->
                     <div class="zo-masonry-inner" style="background-image: url('<?php echo esc_url($thumbnail); ?>')">
-                        <!-- <button onclick="document.getElementById('id01').style.display='block'" class="btn-open-modal"></button>
-                        <div id="id01" class="w3-modal">
-                            <div class="w3-modal-content">
-                                <div class="w3-container">
-                                    <span onclick="document.getElementById('id01').style.display='none'" class="w3-closebtn">&times;</span> -->
-                                    <!-- <iframe src="<?php the_permalink(); ?>" frameborder="0"></iframe> -->
-                                    <?php //get_template_part( 'single-templates/single/content', get_post_format() ); ?>
-                                    <?php //the_content(); ?>
-                              <!--   </div>
-                            </div>
-                        </div> -->
 
-                        <a href="<?php the_permalink(); ?>"  class="[ inline-block ][ width--100 ][ height--100 ]">
-                            <!-- <div class="zo-masonry-title">
-                                <?php //the_title();?>
-                            </div> -->
-                            <!-- <div class="zo-masonry-time">
-                                <?php //the_time('l, F jS, Y');?>
-                            </div> -->
-                            <!-- <div class="zo-masonry-categories">
-                                <?php //echo get_the_term_list( get_the_ID(), $taxonomy, 'Category: ', ', ', '' ); ?>
-                            </div> -->
-                        </a>
+                        <a href="<?php the_permalink(); ?>"  class="[ inline-block ][ width--100 ][ height--100 ]"></a>
+
                     </div>
                   <!-- </a> -->
 
