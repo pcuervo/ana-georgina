@@ -1,4 +1,23 @@
 <?php get_header(); ?>
+<form id="registo-contacto" name="registocontacto" role="form" method="POST" data-parsley-contacto>
+	<div class="[ row ]">
+		<div class="[ col-sm-6 ][ col-sm-offset-3 ][ form-group ][ margin-bottom ]">
+			<input type="text" name="nombre" id="nombre" class="[ form-control form-control-large ][ margin-bottom ]" placeholder="Nombre" required data-parsley-error-message="El nombre es obligatorio.">
+			<input type="email" name="correo" id="correo" class="[ form-control form-control-large ][ margin-bottom ]" placeholder="Correo" required data-parsley-type-message="La dirección de correo es inválida." data-parsley-required-message="El correo es obligatorio.">
+			<input type="text" name="telefono" id="telefono" class="[ form-control form-control-large ][ margin-bottom ]" placeholder="Teléfono" required data-parsley-type="digits" data-parsley-required-message="El teléfono es obligatorio." data-parsley-type-message="Este campo debe ser númerico." >
+			<select placeholder="Estado" name="estado" id="estado" class="[ form-control form-control-large ][ margin-bottom ][ arrow-secondary ][ contact ]" required data-parsley-required-message="El estado es obligatorio.">
+				<option value="">Estado</option>
+				<option value="">Prueba</option>
+			</select>
+			<textarea name="mensaje" id="mensaje" class="[ form-control form-control-large ][ margin-bottom ]" placeholder="Mensaje"></textarea>
+			<input type="hidden" name="action" value="save_contact_post">
+		</div>
+	</div>
+	<div class="[ text-center ][ margin-bottom--large ]">
+		<button type="submit" class="[ btn btn-primary ]">enviar</button>
+	</div>
+</form>
+
 <div id="page-default" class="container">
 	<div id="primary" class="row">
 		<div id="content" role="main">

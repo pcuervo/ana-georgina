@@ -1,4 +1,4 @@
-<?php
+<?php global $result;
 /**
  * Zo Theme functions and definitions
  *
@@ -898,25 +898,78 @@ add_action( 'wp_enqueue_scripts', function(){
 		wp_enqueue_script( 'form-fullscreenForm', get_template_directory_uri() . '/assets/form/js/fullscreenForm.js', array('jquery'), '1.0', true );
 	//}
 
+		// localize scripts
+		wp_localize_script( 'functions', 'ajax_url', admin_url('admin-ajax.php') );
+		wp_localize_script( 'functions', 'site_url', site_url() );
+		wp_localize_script( 'functions', 'theme_url', THEMEPATH );
+
 });
 
+	/**
+	* Add javascript to the footer of pages.
+	**/
+	add_action( 'wp_footer', 'footer_scripts', 21 );
 
-//Si existe el campo (nombre) y no esta vacio...
-// if(isset($_POST['nombre']) && !empty($_POST['nombre']) &&
-// 	isset($_POST['apellido']) && !empty($_POST['apellido']) &&
-// 	isset($_POST['asunto']) && !empty($_POST['asunto']) &&
-// 	isset($_POST['mensaje']) && !empty($_POST['mensaje'])){
+/**
+ * Save the data from the contact form as a post.
+ * @return JSON $message - A success/error message about the status of the post.
+*/
+function save_contact_post(){
 
-// 		$destino = "nayeli@pcuervo.com";
-// 		$desde = "From: " . "nayeli.jordan16@gmail.com";
-// 		$asunto = $_POST['asunto'];
-// 		$mensaje = $_POST['mensaje'];
-// 		//mail(to, subject, message)
-// 		mail($destino, $asunto, $mensaje, $desde);
-// 		echo "Correo enviado";
+	$name = $_POST['nombre'];
+	$email = $_POST['correo'];
+	$phone = $_POST['telefono'];
+	$state = $_POST['estado'];
+	$message = $_POST['mensaje'];
+	$to_email = 'nayeli@pcuervo.com';
 
-// } else {
+	$se_mando = send_email_contacto($name, $email, $phone, $message, $state, $to_email );
 
-// 		echo "Problemas al envíar";
+	if( $se_mando ){
+		$message = array(
+			'error'     => 0,
+			'message'   => '¡Gracias por su mensaje ' . $name . '! Pronto nos pondremos en contacto con usted.',
+		);
+		echo json_encode($message , JSON_FORCE_OBJECT);
+		exit();
+	}
 
-// }
+	$message = array(
+		'error'     => 1,
+		'message'   => 'Ha ocurrido un error al enviar el mensaje.',
+	);
+	echo json_encode($message , JSON_FORCE_OBJECT);
+	exit();
+}// save_contact_post
+add_action("wp_ajax_save_contact_post", "save_contact_post");
+add_action("wp_ajax_nopriv_save_contact_post", "save_contact_post");
+
+
+
+/**
+ * Mandar un correo para Carnival México.
+ * @param string $name - Name of person requesting more info
+ * @param string $email - Email of person requesting more info
+ * @param string $tel - Telephone numbre of person requesting more info
+ * @param string $state - State of person requesting more info
+ * @param string $to_email - Email to where the info has to be sent
+ */
+function send_email_contacto($name, $email, $tel, $msg, $state, $to_email ){
+
+	$subject = 'Informes acerca de Carnival México';
+	$headers = 'From: Carnival México <' . $to_email . '>' . "\r\n";
+	$message = '<html><body>';
+	$message .= '<h3>Contacto a través de Carnival México</h3>';
+	$message .= '<p>Nombre: '.$name.'</p>';
+	$message .= '<p>Email: '. $email . '</p>';
+	if( $tel != '' ) $message .= '<p>Teléfono: '. $tel . '</p>';
+	$message .= '<p>Estado: '. $state . '</p>';
+	if( $msg != '' ) $message .= '<p>Mensaje: '. $msg . '</p>';
+	$message .= '</body></html>';
+
+	add_filter('wp_mail_content_type',create_function('', 'return "text/html"; '));
+	$email = wp_mail($to_email, $subject, $message, $headers );
+
+	return $email;
+
+}// send_email_contacto
