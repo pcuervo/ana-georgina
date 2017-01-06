@@ -59,11 +59,11 @@ function atrib_imagen_destacada() {
 <?php zo_presets_selector(); ?>
 
 <!-- contact-form -->
-<!-- <script>
+<script>
 	dataLayer = [{
 		'event': ''
 	}];
-</script> -->
+</script>
 
 <div id="page">
 
