@@ -19,6 +19,9 @@ get_header(); ?>
                         <p class="[ padding-left--large ][ color-gray-dark ][ text-center ][ font-size--12 ][ font-family--typewriter ][ no-margin-bottom ]"><?php the_date(); ?></p>
                         <h1 class="[ padding-left--large ][ text-center ][ font-family--verb_ultra ][ font-size--16 ][ no-margin-bottom ]"><?php the_title(); ?></h1>
                     <?php } ?>
+                    <?php if ( in_category(array('portrait','arquitecture','prints','projects')) ) { ?>
+                        <a href="javascript:history.back()" class="[ close-slider ]"><span>x</span></a>
+                    <?php } ?>
 
                     <?php get_template_part( 'single-templates/single/content', get_post_format() ); ?>
 

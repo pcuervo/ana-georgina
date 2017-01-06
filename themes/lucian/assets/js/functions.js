@@ -86,9 +86,6 @@ var $=jQuery.noConflict();
 })(jQuery);
 
 //Footer Bottom
-
-
-
 function getHeaderHeight(){
     return $('.js-header').outerHeight();
 }// getHeaderHeight
@@ -102,6 +99,7 @@ function footerBottom(){
     $('.main-body').css('padding-bottom', alturaFooter );
     console.log(getFooterHeight());
 }
+
 
 function formWrap(){
     (function() {

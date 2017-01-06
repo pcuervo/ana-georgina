@@ -1011,7 +1011,7 @@ function save_contact_portrait_post(){
 	if( $se_mando ){
 		$message = array(
 			'error'     => 0,
-			'message'   => '¡WELCOME ON BOARD WE’LL CONTACT YOU SOON!',
+			'message'   => '¡WE’LL CONTACT YOU SOON!',
 		);
 		echo json_encode($message , JSON_FORCE_OBJECT);
 		exit();
@@ -1083,7 +1083,7 @@ function save_contact_arquitecture_post(){
 	if( $se_mando ){
 		$message = array(
 			'error'     => 0,
-			'message'   => '¡WELCOME ON BOARD WE’LL CONTACT YOU SOON!',
+			'message'   => '¡WE’LL CONTACT YOU SOON!',
 		);
 		echo json_encode($message , JSON_FORCE_OBJECT);
 		exit();
@@ -1157,7 +1157,7 @@ function save_contact_product_post(){
 	if( $se_mando ){
 		$message = array(
 			'error'     => 0,
-			'message'   => '¡WELCOME ON BOARD WE’LL CONTACT YOU SOON!',
+			'message'   => '¡WE’LL CONTACT YOU SOON!',
 		);
 		echo json_encode($message , JSON_FORCE_OBJECT);
 		exit();
