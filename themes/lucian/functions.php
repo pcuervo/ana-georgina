@@ -916,19 +916,24 @@ add_action( 'wp_enqueue_scripts', function(){
 */
 function save_contact_post(){
 
-	$name = $_POST['nombre'];
-	$email = $_POST['correo'];
-	$phone = $_POST['telefono'];
-	$state = $_POST['estado'];
-	$message = $_POST['mensaje'];
+	$name = $_POST['user_name'];
+	$ubication = $_POST['user_from'];
+	$email = $_POST['user_email'];
+	$page = $_POST['user_page'];
+	$date_event = $_POST['date_event'];
+	$price = $_POST['price_wedding'];
+	$idea = $_POST['wedding_idea'];
+	$location = $_POST['wedding_location'];
+	$heard = $_POST['heard_ag'];
+
 	$to_email = 'nayeli@pcuervo.com';
 
-	$se_mando = send_email_contacto($name, $email, $phone, $message, $state, $to_email );
+	$se_mando = send_email_contacto($name, $ubication, $email, $page, $date_event, $price, $idea, $location, $heard, $to_email );
 
 	if( $se_mando ){
 		$message = array(
 			'error'     => 0,
-			'message'   => '¡Gracias por su mensaje ' . $name . '! Pronto nos pondremos en contacto con usted.',
+			'message'   => '¡WELCOME ON BOARD WE’LL CONTACT YOU SOON!',
 		);
 		echo json_encode($message , JSON_FORCE_OBJECT);
 		exit();
@@ -936,7 +941,7 @@ function save_contact_post(){
 
 	$message = array(
 		'error'     => 1,
-		'message'   => 'Ha ocurrido un error al enviar el mensaje.',
+		'message'   => 'There was an error trying to send your message. Please try again later.',
 	);
 	echo json_encode($message , JSON_FORCE_OBJECT);
 	exit();
@@ -947,24 +952,28 @@ add_action("wp_ajax_nopriv_save_contact_post", "save_contact_post");
 
 
 /**
- * Mandar un correo para Carnival México.
+ * Mandar un correo para Ana Georgina.
  * @param string $name - Name of person requesting more info
  * @param string $email - Email of person requesting more info
  * @param string $tel - Telephone numbre of person requesting more info
  * @param string $state - State of person requesting more info
  * @param string $to_email - Email to where the info has to be sent
  */
-function send_email_contacto($name, $email, $tel, $msg, $state, $to_email ){
+function send_email_contacto($name, $ubication, $email, $page, $date_event, $price, $idea, $location, $heard, $to_email){
 
-	$subject = 'Informes acerca de Carnival México';
-	$headers = 'From: Carnival México <' . $to_email . '>' . "\r\n";
+	$subject = 'Contact form Wedding';
+	$headers = 'From: Site Ana Georgina <' . $to_email . '>' . "\r\n";
 	$message = '<html><body>';
-	$message .= '<h3>Contacto a través de Carnival México</h3>';
-	$message .= '<p>Nombre: '.$name.'</p>';
-	$message .= '<p>Email: '. $email . '</p>';
-	if( $tel != '' ) $message .= '<p>Teléfono: '. $tel . '</p>';
-	$message .= '<p>Estado: '. $state . '</p>';
-	if( $msg != '' ) $message .= '<p>Mensaje: '. $msg . '</p>';
+	$message .= '<h3>Contact form Wedding</h3>';
+	$message .= '<p>Hello my name is: '. $name . '</p>';
+	$message .= '<p>Im from: '. $ubication .'</p>';
+	$message .= '<p>You can reach me via email: ' . $email . '</p>';
+	if( $page != '' ) $message .= '<p>My page is: ' . $page . '</p>';
+	$message .= '<p>My wedding is on: ' . $date_event . '</p>';
+	$message .= '<p>How much are you willing to ivest: ' .$price. '</p>';
+	$message .= '<p>My wedding idea is: ' . $idea . '</p>';
+	$message .= '<p>My wedding location is in: ' . $location . '</p>';
+	$message .= '<p>I heard about AGBA from?: ' . $heard . '</p>';
 	$message .= '</body></html>';
 
 	add_filter('wp_mail_content_type',create_function('', 'return "text/html"; '));

@@ -33,10 +33,10 @@
 															<h1 class="fs-field-label fs-anim-upper [ font-family--verb_bold ]">How much are you willing to ivest:</h1>
 															<label class="fs-field-label fs-anim-upper [ hidden ]" for="price_wedding">How much are you willing to ivest:</label>
 															<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
-																<span><input id="price_wedding1" name="price_wedding" type="radio" value="price_wedding1" required/><label for="price_wedding1">27,000 MX /  LESS THAN 60 HUMANS</label></span>
-																<span><input id="price_wedding2" name="price_wedding" type="radio" value="price_wedding2"/><label for="price_wedding2">30,000 MX / I JUST WANT GOOD PHOTOS</label></span>
-																<span><input id="price_wedding3" name="price_wedding" type="radio" value="price_wedding3"/><label for="price_wedding3">35,000 MX / I WANT GOOD PHOTOS AND A PRETTY ALBUM</label></span>
-																<span><input id="price_wedding4" name="price_wedding" type="radio" value="price_wedding4"/><label for="price_wedding4">40,000 MX / ¡I WANT IT ALL!</label></span>
+																<span><input id="price_wedding1" name="price_wedding" type="radio" value="27,000 MX" required/><label for="price_wedding1">27,000 MX / LESS THAN 60 HUMANS</label></span>
+																<span><input id="price_wedding2" name="price_wedding" type="radio" value="30,000 MX"/><label for="price_wedding2">30,000 MX / I JUST WANT GOOD PHOTOS</label></span>
+																<span><input id="price_wedding3" name="price_wedding" type="radio" value="35,000 MX"/><label for="price_wedding3">35,000 MX / I WANT GOOD PHOTOS AND A PRETTY ALBUM</label></span>
+																<span><input id="price_wedding4" name="price_wedding" type="radio" value="40,000 MX"/><label for="price_wedding4">40,000 MX / ¡I WANT IT ALL!</label></span>
 															</div>
 														</li>
 														<li>
