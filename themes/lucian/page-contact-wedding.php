@@ -11,7 +11,7 @@
 									<div class="vc_column-inner ">
 										<div class="wpb_wrapper">
 											<div class="fs-form-wrap" id="fs-form-wrap">
-												<form id="myform" class="fs-form fs-form-full" autocomplete="off">
+												<form id="myform" class="fs-form fs-form-full" autocomplete="off" name="contactwedding" role="form" method="POST">
 													<ol class="fs-fields [ uppercase ]">
 														<li>
 															<h1 class="fs-field-label fs-anim-upper [ font-family--verb_bold ]">My basic info:</h1>
@@ -33,7 +33,7 @@
 															<h1 class="fs-field-label fs-anim-upper [ font-family--verb_bold ]">How much are you willing to ivest:</h1>
 															<label class="fs-field-label fs-anim-upper [ hidden ]" for="price_wedding">How much are you willing to ivest:</label>
 															<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
-																<span><input id="price_wedding1" name="price_wedding" type="radio" value="price_wedding1"/><label for="price_wedding1">27,000 MX /  LESS THAN 60 HUMANS</label></span>
+																<span><input id="price_wedding1" name="price_wedding" type="radio" value="price_wedding1" required/><label for="price_wedding1">27,000 MX /  LESS THAN 60 HUMANS</label></span>
 																<span><input id="price_wedding2" name="price_wedding" type="radio" value="price_wedding2"/><label for="price_wedding2">30,000 MX / I JUST WANT GOOD PHOTOS</label></span>
 																<span><input id="price_wedding3" name="price_wedding" type="radio" value="price_wedding3"/><label for="price_wedding3">35,000 MX / I WANT GOOD PHOTOS AND A PRETTY ALBUM</label></span>
 																<span><input id="price_wedding4" name="price_wedding" type="radio" value="price_wedding4"/><label for="price_wedding4">40,000 MX / ¡I WANT IT ALL!</label></span>
@@ -41,13 +41,16 @@
 														</li>
 														<li>
 															<label class="fs-field-label fs-anim-upper" for="wedding_idea">My wedding idea is</label>
-															<textarea class="fs-anim-lower" id="wedding_idea" name="wedding_idea" placeholder="Describe here"></textarea>
+															<textarea class="fs-anim-lower" id="wedding_idea" name="wedding_idea" placeholder="Describe here" required></textarea>
+														</li>
+														<li>
 															<label class="fs-field-label fs-anim-upper" for="wedding_location">My wedding location is in</label>
-															<textarea class="fs-anim-lower" id="wedding_location" name="wedding_location" placeholder="Describe here"></textarea>
+															<textarea class="fs-anim-lower" id="wedding_location" name="wedding_location" placeholder="Describe here" required></textarea>
 														</li>
 														<li>
 															<label class="fs-field-label fs-anim-upper [ margin-top--large ]" for="heard_ag">I heard about AGBA from?</label>
 															<input class="fs-anim-lower" id="heard_ag" name="heard_ag" type="text" required/> <label class="fs-field-label fs-anim-upper [ padding-left--xsmall ]">AND NOW MY PHOTOS WILL BE THE PRETTIEST OF THEM ALL.</label>
+															<input type="hidden" name="action" value="save_contact_post">
 														</li>
 													</ol><!-- /fs-fields -->
 													<button class="fs-submit" type="submit">Contact</button>

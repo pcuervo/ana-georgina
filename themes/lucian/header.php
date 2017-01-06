@@ -57,11 +57,14 @@ function atrib_imagen_destacada() {
 <body <?php body_class(); ?>>
 <?php zo_get_page_loading(); ?>
 <?php zo_presets_selector(); ?>
+
+<!-- contact-form -->
 <!-- <script>
 	dataLayer = [{
 		'event': ''
 	}];
 </script> -->
+
 <div id="page">
 
 	<?php if ( ! in_category(array('portrait','arquitecture','prints','projects')) ) { ?>
