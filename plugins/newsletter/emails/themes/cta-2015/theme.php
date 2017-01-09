@@ -133,6 +133,11 @@ $social_icon_url = plugins_url('newsletter') . '/emails/themes/cta-2015/images';
                                     <a href="<?php echo $theme_options['main_vimeo_url'] ?>"><img src="<?php echo $social_icon_url ?>/vimeo.png"></a>
                                 </td>
                             <?php } ?>
+                            <?php if (!empty($theme_options['main_instagram_url'])) { ?>
+                                <td align="center" valign="top">
+                                    <a href="<?php echo $theme_options['main_instagram_url'] ?>"><img src="<?php echo $social_icon_url ?>/instagram.png"></a>
+                                </td>
+                            <?php } ?>    
                         </tr>
                     </table>
 

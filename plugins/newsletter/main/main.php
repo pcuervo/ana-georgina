@@ -242,9 +242,7 @@ if (!empty($controls->data['contract_key'])) {
                             <td>
                                 <?php $controls->textarea('css'); ?>
                                 <p class="description">
-                                    Add here your own css to style the forms. The whole form is enclosed in a div with class
-                                    "newsletter" and it's made with a table (guys, I know about your table less design
-                                    mission, don't blame me too much!)
+                                    This option is obsolete and will be removed, use the custom style field in the subscription configuration panel.
                                 </p>
                             </td>
                         </tr>

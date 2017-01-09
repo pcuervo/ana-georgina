@@ -101,9 +101,9 @@ class NewsletterModule {
         $options = array_merge($default_options, $options);
         $this->save_options($options, $sub);
         if ($autoload) {
-            $this->upgrade_query('update ' . $wpdb->options . " set autoload='yes' where option_name='" . $this->get_prefix($sub) . "' limit 1");
+            $this->upgrade_query('update ' . $wpdb->options . " set autoload='yes' where option_name='" . esc_sql($this->get_prefix($sub)) . "' limit 1");
         } else {
-            $this->upgrade_query('update ' . $wpdb->options . " set autoload='no' where option_name='" . $this->get_prefix($sub) . "' limit 1");
+            $this->upgrade_query('update ' . $wpdb->options . " set autoload='no' where option_name='" . esc_sql($this->get_prefix($sub)) . "' limit 1");
         }
     }
 
@@ -760,6 +760,7 @@ class NewsletterModule {
         echo '<html><head></head><body>';
         echo '<form method="post" action="' . home_url('/') . '" id="form">';
         foreach ($_REQUEST as $name => $value) {
+            if ($name == 'submit') continue;
             if (is_array($value)) {
                 foreach ($value as $element) {
                     echo '<input type="hidden" name="';

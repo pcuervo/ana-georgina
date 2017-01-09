@@ -1,8 +1,8 @@
 === Newsletter ===
 Tags: newsletter,email,subscription,mass mail,list build,email marketing,direct mailing,automation,automated
 Requires at least: 3.4.0
-Tested up to: 4.6.1
-Stable tag: 4.6.8
+Tested up to: 4.7
+Stable tag: 4.7.5
 Contributors: satollo,webagile,michael-travan
 
 Add a real newsletter system to your blog. For free. With unlimited newsletters and subscribers.
@@ -76,6 +76,44 @@ Thank you, The Newsletter Team
 3. The Reports extension
 
 == Changelog ==
+
+= 4.7.5 =
+
+* Removed references to old css
+* Fixed the relative URLs problem in the composer
+
+= 4.7.4 =
+
+* Improved widget CSS
+
+= 4.7.3 =
+
+* Added custom CSS field to customize the forms appearance
+* Added codemirror for CSS edit
+* Added plugin version to style link
+* Added plugin version to script link
+* Corrected a tag in newsletter widget minimal
+* Added line height on form fields
+* Changed CSS class prefixes to tnp
+* Fixed a divide by zero on diagnostic panel
+* Improved the collection of emails sending speed data
+* Fixed a bug when adding a new subscriber from the admin panel
+
+= 4.7.2 =
+
+* Fixed a debug notice
+
+= 4.7.1 =
+
+* Fixed missing files in the package
+
+= 4.7.0 =
+
+* Added the selection for the Newsletter messages dedicated page
+* New forms CSS and validator
+* New widget for a minimal form
+* Use shortcode attribute "layout" to revert to old style table forms, using layout=table
+* Added reset button for diagnostic scheduler statistics
 
 = 4.6.8 =
 
@@ -371,7 +409,7 @@ Thank you, The Newsletter Team
 * Added import subscribers from CSV file
 * Updated the WP compatibility version number
 * Fixed the save button on sent emails
-* Fixed the List-§Unsubscribe header with new URL schema
+* Fixed the List-�Unsubscribe header with new URL schema
 
 = 3.7.8 =
 

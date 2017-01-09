@@ -70,12 +70,14 @@ Use it to make something cool, have fun, and share what you've learned with othe
 		font-style: normal;
 }
 
-.font-family--catalina 														{ font-family: 'catalinatypewriteuploadedfile'!important; }
-.font-family--typewriter, a, footer, body									{ font-family: 'typewritermedium'!important; }
-.font-family--verb_light, .font-family--verb_light a, h1, .post h1			{ font-family: 'verblight'!important; }
-.font-family--verb_regular, .font-family--verb_regular div					{ font-family: 'verbregular'!important; }
-.font-family--verb_bold, h2, .font-family--verb_bold div					{ font-family: 'verbbold'!important; }
-.font-family--verb_ultra													{ font-family: 'verbultra'!important; }
+.font-family--catalina 																{ font-family: 'catalinatypewriteuploadedfile'!important; }
+.font-family--typewriter 															{ font-family: 'typewritermedium'!important; }
+.font-family--verb_light, .font-family--verb_light a, h1, .post h1					{ font-family: 'verblight'!important; }
+.font-family--verb_regular, .font-family--verb_regular div, body, a, footer			{ font-family: 'verbregular'!important; }
+.font-family--verb_bold, h2, .font-family--verb_bold div							{ font-family: 'verbbold'!important; }
+.font-family--verb_ultra															{ font-family: 'verbultra'!important; }
+
+.letter-spacing--2 		{ letter-spacing: 2px; }
 
 /*Container*/
 @media(min-width: 1500px){ .container { width: 1400px; } }
@@ -109,7 +111,7 @@ body #page .main-body #main { margin-bottom: 30px; }
 	transform: scaleX(1);
 }
 
-.margin-top { margin-top: 20px; }
+.margin-top { margin-top: 20px!important; }
 .margin-top--large { margin-top: 40px; }
 .margin-bottom { margin-bottom: 20px; }
 .margin-bottom--small { margin-bottom: 10px; }
@@ -138,6 +140,7 @@ a, h2, footer { letter-spacing: 3px!important; }
 .font-size--16 { font-size: 16px; }
 
 .line-height--16 { line-height: 16px; }
+.line-height--20 { line-height: 20px; }
 
 /*Display*/
 .inline-block { display: inline-block; }
@@ -172,7 +175,7 @@ body.home.page .wpb_single_image .vc_single_image-wrapper { margin-bottom: 0px; 
 
 /*HEADER*/
 @media(min-width:1200px){.nav-inline .main-navigation .menu-main-menu { float: right!important; }}
-#zo-header-navigation .main-navigation .menu-main-menu > li > a { padding-bottom: 10px!important; font-family: 'typewritermedium'!important;}
+#zo-header-navigation .main-navigation .menu-main-menu > li > a { padding-bottom: 10px!important; font-family: 'verbregular'!important;}
 #zo-header-navigation.nav-inline .main-navigation .menu-main-menu > li > a { margin-left: 40px!important; margin-right: 0px!important; }
 #zo-header-navigation.nav-inline .main-navigation .menu-main-menu > li > a { margin-left: 20px!important; margin-right: 0px!important; }
 @media(min-width:992px){#zo-header-navigation.nav-inline .main-navigation .menu-main-menu > li.item-wedding > a { margin-left: 0px!important; }}
@@ -201,6 +204,8 @@ body.home.page .wpb_single_image .vc_single_image-wrapper { margin-bottom: 0px; 
 }
 
 .bg-light { background-color: #fff; }
+
+#zo-header-navigation .main-navigation .menu-main-menu > li:last-child > a { margin-right: 0px;}
 
 /*FOOTER*/
 .zo-social {

@@ -42,5 +42,10 @@ $social_icon_url = plugins_url('newsletter') . '/emails/themes/default/images';
                 <a href="<?php echo esc_attr($theme_options['main_vimeo_url']) ?>"><img src="<?php echo $social_icon_url ?>/vimeo.png"></a>
             </td>
         <?php } ?>
+        <?php if (!empty($theme_options['main_instagram_url'])) { ?>
+            <td style="text-align: center; vertical-align: top" align="center" valign="top">
+                <a href="<?php echo esc_attr($theme_options['main_instagram_url']) ?>"><img src="<?php echo $social_icon_url ?>/instagram.png"></a>
+            </td>
+        <?php } ?>    
     </tr>
 </table>

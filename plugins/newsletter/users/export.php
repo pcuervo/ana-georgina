@@ -22,7 +22,7 @@ for ($i = 1; $i <= NEWSLETTER_LIST_MAX; $i++) {
 
         <h2><?php _e('Export', 'newsletter') ?></h2>
         <p>
-            The import and export functions <strong>ARE NOT</strong> for backup. 
+            <strong>The import and export functions ARE NOT for backup</strong>. 
             If you want to backup you should consider to backup the <code><?php echo $wpdb->prefix ?>newsletter*</code> tables.
         </p>
 

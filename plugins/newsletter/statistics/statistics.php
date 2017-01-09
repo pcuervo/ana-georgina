@@ -1,5 +1,7 @@
 <?php
-if (!defined('ABSPATH')) exit;
+
+if (!defined('ABSPATH'))
+    exit;
 
 require_once NEWSLETTER_INCLUDES_DIR . '/module.php';
 
@@ -18,10 +20,7 @@ class NewsletterStatistics extends NewsletterModule {
     }
 
     function __construct() {
-        global $wpdb;
-
         parent::__construct('statistics', '1.1.6');
-
         add_action('wp_loaded', array($this, 'hook_wp_loaded'));
     }
 
@@ -34,67 +33,63 @@ class NewsletterStatistics extends NewsletterModule {
 
         // Newsletter Link Tracking
         if (isset($_GET['nltr'])) {
-            
-            list($email_id, $user_id, $url, $anchor, $key) = explode(';', base64_decode($_GET['nltr']), 5);
 
-            if (!is_user_logged_in()) {
-                if (empty($email_id) || empty($user_id) || empty($url)) {
-                    header("HTTP/1.0 404 Not Found");
-                    die();
-                }
+            list($email_id, $user_id, $url, $anchor, $signature) = explode(';', base64_decode($_GET['nltr']), 5);
+
+            $url = esc_url_raw($url);
+            $user_id = (int) $user_id;
+            $email_id = (int) $email_id;
+
+            if (empty($user_id) || empty($url)) {
+                header("HTTP/1.0 404 Not Found");
+                die('Invalid data');
             }
 
             $parts = parse_url($url);
 
             $verified = $parts['host'] == $_SERVER['HTTP_HOST'];
             if (!$verified) {
-                $verified = $key == md5($email_id . ';' . $user_id . ';' . $url . ';' . $anchor . $this->options['key']);
+                $verified = $signature == md5($email_id . ';' . $user_id . ';' . $url . ';' . $anchor . $this->options['key']);
             }
 
-            // For feed by mail tests
-            if ($verified && empty($email_id) && is_user_logged_in()) {
+            if (!$verified) {
+                header("HTTP/1.0 404 Not Found");
+                die('Url not verified');
+            }
+
+            $user = Newsletter::instance()->get_user($user_id);
+            if (!$user) {
+                header("HTTP/1.0 404 Not Found");
+                die('Invalid subscriber');
+            }
+
+            // Test emails
+            if (empty($email_id)) {
                 header('Location: ' . $url);
                 die();
             }
+
+            $email = $this->get_email($email_id);
+            if (!$email) {
+                header("HTTP/1.0 404 Not Found");
+                die('Invalid newsletter');
+            }
+
+            setcookie('newsletter', $user->id . '-' . $user->token, time() + 60 * 60 * 24 * 365, '/');
 
             $ip = preg_replace('/[^0-9a-fA-F:., ]/', '', $_SERVER['REMOTE_ADDR']);
 
-            if ($verified) {
-                $wpdb->insert(NEWSLETTER_STATS_TABLE, array(
-                    'email_id' => $email_id,
-                    'user_id' => $user_id,
-                    'url' => $url,
-                    'ip' => $ip
-                        )
-                );
+            $wpdb->insert(NEWSLETTER_STATS_TABLE, array(
+                'email_id' => $email_id,
+                'user_id' => $user_id,
+                'url' => $url,
+                'ip' => $ip
+                    )
+            );
 
-                $wpdb->query($wpdb->prepare("update " . NEWSLETTER_SENT_TABLE . " set open=2, ip=%s where email_id=%d and user_id=%d limit 1", $ip, $email_id, $user_id));
+            $wpdb->query($wpdb->prepare("update " . NEWSLETTER_SENT_TABLE . " set open=2, ip=%s where email_id=%d and user_id=%d limit 1", $ip, $email_id, $user_id));
 
-                $user = Newsletter::instance()->get_user($user_id);
-                if ($user) {
-                    setcookie('newsletter', $user->id . '-' . $user->token, time() + 60 * 60 * 24 * 365, '/');
-                }
-                header('Location: ' . $url);
-                die();
-            } else {
-                header("HTTP/1.0 404 Not Found");
-            }
-            ?><html>
-                <head>
-                    <style>
-                        body {
-                            font-family: sans-serif;
-                        }
-                    </style>
-                </head>
-                <body>
-                    <div style="max-width: 100%; width: 500px; margin: 40px auto; text-align: center">
-                        <p>The requested URL (<?php echo esc_html($url) ?>) has not been verified.</p>
-                        <p>You can follow it if you recognize it as a valid URL.</p>
-                    </div>
-                </body>
-            </html>
-            <?php
+            header('Location: ' . $url);
             die();
         }
 
@@ -132,7 +127,7 @@ class NewsletterStatistics extends NewsletterModule {
                 $this->logger->info('Open already registered');
                 // MAybe an update for some fields?
             } else {
-                
+
                 $res = $wpdb->insert(NEWSLETTER_STATS_TABLE, array(
                     'email_id' => (int) $email_id,
                     'user_id' => (int) $user_id,

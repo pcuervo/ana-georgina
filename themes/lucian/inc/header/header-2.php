@@ -116,7 +116,7 @@
         <div class="[ text-center ][ hidden--xs ]">
             <a rel="m_PageScroll2id" href="<?php echo get_the_permalink() ?>#start-scroll" class="_mPS2id-h">
                 <!-- <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/arrow.png" alt="flecha para scroll"> -->
-                <p class="[ margin-bottom--xsmall ][ font-size--10 ][ font-family--typewriter ]">Scroll</p>
+                <p class="[ margin-bottom--xsmall ][ font-size--10 ][ font-family--verb_regular ]">Scroll</p>
                 <div class="[ line ]"></div>
             </a>
         </div>

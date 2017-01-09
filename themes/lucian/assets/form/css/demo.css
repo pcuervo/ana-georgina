@@ -114,14 +114,14 @@ html, body, .container {
 }
 @media(min-width:600px) and (max-width:991px){
 	#myform {
-		min-height: 320px;
+		min-height: 380px;
 		padding-right: 30px;
 		padding-left: 30px;
 	}
 }
 @media(min-width:992px){
 	#myform {
-		min-height: 320px;
+		min-height: 390px;
 		padding-right: 30px;
 	}
 }

@@ -118,6 +118,13 @@ class NewsletterControls {
         }
         $this->messages .= __('Saved.', 'newsletter');
     }
+    
+    function add_message_done() {
+        if (!empty($this->messages)) {
+            $this->messages .= '<br><br>';
+        }
+        $this->messages .= __('Done.', 'newsletter');
+    }
 
     function hint($text, $url = '') {
         echo '<div class="hints">';
@@ -221,6 +228,15 @@ class NewsletterControls {
         }
 
         $this->checkboxes_group($name, $list);
+    }
+    
+    function page($name='page', $first = null) {
+        $pages = get_pages();
+        $options = array();
+        foreach ($pages as $page) {
+            $options[$page->ID] = $page->post_title;
+        }
+        $this->select($name, $options, $first);
     }
 
     /** Used to create a select which is part of a group of controls identified by $name that will
@@ -449,7 +465,7 @@ class NewsletterControls {
 
     function textarea($name, $width = '100%', $height = '50') {
         $value = $this->get_value($name);
-        echo '<textarea class="dynamic" name="options[' . esc_attr($name) . ']" wrap="off" style="width:' . esc_attr($width) . ';height:' . esc_attr($height) . '">';
+        echo '<textarea id="options-' . esc_attr($name) . '" class="dynamic" name="options[' . esc_attr($name) . ']" wrap="off" style="width:' . esc_attr($width) . ';height:' . esc_attr($height) . '">';
         echo esc_html($value);
         echo '</textarea>';
     }

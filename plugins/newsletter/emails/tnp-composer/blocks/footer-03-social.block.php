@@ -47,6 +47,11 @@
                                 <a href="<?php echo $block_options['soundcloud'] ?>"><img src="<?php echo $social_icon_url ?>/soundcloud.png" alt="SoundCloud"></a>
                             </span>
                         <?php } ?>
+                        <?php if (!empty($block_options['instagram_url'])) { $configured = true; ?>
+                            <span class="tnpc-row-edit" data-type="image">
+                                <a href="<?php echo $block_options['instagram'] ?>"><img src="<?php echo $social_icon_url ?>/instagram.png" alt="Instagram"></a>
+                            </span>
+                        <?php } ?>
                         <?php if (!$configured) { ?>
                             <p>Configure your social links in the <a href="?page=newsletter_main_info">Social configuration section</a>.<br/>
                                 Then remove and add again this block.</p>

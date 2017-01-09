@@ -41,6 +41,11 @@ if ($controls->is_action('engine_on')) {
     $controls->messages = 'Delivery engine reactivated.';
 }
 
+if ($controls->is_action('reset_stats')) {
+    update_option('newsletter_diagnostic_cron_calls', array(), false);
+    $controls->messages = 'Scheduler statistics reset.';
+}
+
 if ($controls->is_action('upgrade')) {
     // TODO: Compact them in a call to Newsletter which should be able to manage the installed modules
     Newsletter::instance()->upgrade();
@@ -167,7 +172,7 @@ if (count($calls) > 1) {
             $max = $diff;
         }
     }
-    $mean = $mean / count($calls) - 1;
+    $mean = $mean / (count($calls) - 1);
 }
 
 // Send calls stats
@@ -179,6 +184,8 @@ if (count($send_calls)) {
     $send_total_emails = 0;
     $send_completed = 0;
     for ($i = 0; $i < count($send_calls); $i++) {
+        if (empty($send_calls[$i][2])) continue;
+        
         $delta = $send_calls[$i][1] - $send_calls[$i][0];
         $send_total_time += $delta;
         $send_total_emails += $send_calls[$i][2];
@@ -316,11 +323,11 @@ if (count($send_calls)) {
 
                         <tbody>
                             <tr>
-                                <td>Scheduler execution interval mean</td>
+                                <td>Average scheduler activation interval</td>
                                 <td>
                                     <?php
                                     if (count($calls) > 10) {
-                                        echo (int) $mean . ' seconds';
+                                        echo (int) $mean . ' seconds/' . count($calls) . ' samples';
                                         if ($mean < NEWSLETTER_CRON_INTERVAL * 1.2) {
                                             echo ' (<span style="color: green; font-weight: bold">OK</span>)';
                                         } else {
@@ -330,6 +337,8 @@ if (count($send_calls)) {
                                         echo 'Still not enough data. It requires few hours to collect a relevant data set.';
                                     }
                                     ?>
+                                    
+                                    <?php $controls->button('reset_stats', 'Reset'); ?>
 
                                     <p class="description">
                                         Should be less than <?php echo esc_html(NEWSLETTER_CRON_INTERVAL) ?> seconds.
@@ -390,14 +399,7 @@ if (count($send_calls)) {
                                     </p>
                                 </td>
                             </tr>
-                            <tr>
-                                <td>Collected samples</td>
-                                <td>
-                                    <?php echo count($calls); ?>
-                                    <p class="description">Samples are collected in a maximum number of <?php echo Newsletter::MAX_CRON_SAMPLES; ?></p>
-                                </td>
-                            </tr>
-                            
+                           
                             <tr>
                                 <td>Sending statistics</td>
                                 <td>
@@ -582,23 +584,6 @@ if (count($send_calls)) {
                                 <td>Database Charset and Collate</td>
                                 <td>
                                     <?php echo DB_CHARSET; ?> <?php echo DB_COLLATE; ?>
-                                </td>
-                            </tr>
-                            
-                            <tr>
-                                <td>File permissions (obsolete)</td>
-                                <td>
-                                    <?php
-                                    $index_owner = fileowner(ABSPATH . '/index.php');
-                                    $index_permissions = fileperms(ABSPATH . '/index.php');
-                                    $subscribe_permissions = fileperms(NEWSLETTER_DIR . '/do/subscribe.php');
-                                    $subscribe_owner = fileowner(NEWSLETTER_DIR . '/do/subscribe.php');
-                                    if ($index_permissions != $subscribe_permissions || $index_owner != $subscribe_owner) {
-                                        echo 'Plugin file permissions or owner differ from blog index.php permissions, that may compromise the subscription process';
-                                    } else {
-                                        echo 'OK';
-                                    }
-                                    ?>
                                 </td>
                             </tr>
                         </tbody>

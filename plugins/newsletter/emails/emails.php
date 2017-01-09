@@ -38,13 +38,15 @@ class NewsletterEmails extends NewsletterModule {
                 }
 
                 if ($email->private == 1) {
-                    die('Email not found');
+                    die('No available for online view');
                 }
 
                 $user = NewsletterSubscription::instance()->get_user_from_request();
                 header('Content-Type: text/html;charset=UTF-8');
                 header('X-Robots-Tag: noindex,nofollow,noarchive');
                 header('Cache-Control: no-cache,no-store,private');
+                
+                // TODO: To be removed
                 if (is_file(WP_CONTENT_DIR . '/extensions/newsletter/view.php')) {
                     include WP_CONTENT_DIR . '/extensions/newsletter/view.php';
                     die();
@@ -179,13 +181,13 @@ class NewsletterEmails extends NewsletterModule {
         $this->upgrade_query("alter table " . NEWSLETTER_EMAILS_TABLE . " change column `type` `type` varchar(50) not null default ''");
         $this->upgrade_query("alter table " . NEWSLETTER_EMAILS_TABLE . " add column token varchar(10) not null default ''");
         $this->upgrade_query("alter table " . NEWSLETTER_EMAILS_TABLE . " drop column visibility");
-        $this->upgrade_query("update " . NEWSLETTER_EMAILS_TABLE . " set type='message' where type=''");
         $this->upgrade_query("alter table " . NEWSLETTER_EMAILS_TABLE . " add column private tinyint(1) not null default 0");
 
         // Force a token to email without one already set.
         //$token = self::get_token();
         //$wpdb->query("update " . NEWSLETTER_EMAILS_TABLE . " set token='" . $token . "' where token=''");
         if ($this->old_version < '1.1.5') {
+            $this->upgrade_query("update " . NEWSLETTER_EMAILS_TABLE . " set type='message' where type=''");
             $wpdb->query("update " . NEWSLETTER_EMAILS_TABLE . " set token=''");
         }
         $wpdb->query("update " . NEWSLETTER_EMAILS_TABLE . " set total=sent where status='sent' and type='message'");

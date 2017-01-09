@@ -605,7 +605,7 @@ function zo_post_nav($prev_title = NULL, $next_title = NULL) {
 		<div class="nav-links clearfix">
 			<!-- return -->
 			<a class="post-prev pull-left" href="javascript:history.go(-1)">
-				<i class="fa fa-angle-left"></i><span class="[ font-size--10 font-family--verb_light ]">BACK TO PROJECTS</span>
+				<i class="fa fa-angle-left"></i><span class="[ font-size--10 font-family--verb_regular ]">BACK TO PROJECTS</span>
 			</a>
 
 			<?php
@@ -614,7 +614,7 @@ function zo_post_nav($prev_title = NULL, $next_title = NULL) {
 				$next_title = empty($next_title) ? esc_attr($next_post->post_title) : $next_title;
 			?>
 			  <a class="post-next pull-right" href="<?php echo get_permalink( $next_post->ID ); ?>" title="<?php echo get_the_title( $next_post->post_title ); ?>">
-				<i class="fa fa-angle-right"></i><span class="[ font-size--10 font-family--verb_regular ]">NEX PROJECT: <strong class="[ font-family--verb_bold ]"><?php echo esc_attr($next_title); ?></strong></span>
+				<i class="fa fa-angle-right"></i><span class="[ font-size--10 font-family--verb_regular ]">NEX PROJECT: <?php echo esc_attr($next_title); ?></span>
 			  </a>
             <?php endif; ?>
         </div><!-- .nav-links -->
@@ -913,7 +913,7 @@ add_action( 'wp_enqueue_scripts', function(){
 	/**
 	* Add javascript to the footer of pages.
 	**/
-	add_action( 'wp_footer', 'footer_scripts', 21 );
+	// add_action( 'wp_footer', 'footer_scripts', 21 );
 
 /**
  * Save the data from the contact form as a post.
@@ -965,9 +965,6 @@ function send_email_wedding($name, $ubication, $email, $page, $date_event, $pric
 	$headers = 'From: Site Ana Georgina <' . $to_email . '>' . "\r\n";
 	$message = '<html><body>';
 		$message = '<div style="max-width: 500px; border: 5px solid #7f8082; padding: 20px; border-radius: 10px; ">';
-			$message .= '<div style="text-align: center;">';
-				$message .= '<img style="margin: auto;" src="http://localhost:8888/ana-georgina/wp-content/uploads/2016/10/logo-new.png" alt="Logo Ana Georgina">';
-			$message .= '</div>';
 			$message .= '<h3 style="text-align: center;">Contact form</h3>';
 			$message .= '<h2 style="text-align: center;">WEDDING</h2>';
 			$message .= '<p style="margin-bottom: 10px; font-size: 18px; color: #000;"><span style="font-size: 18px; color: #7f8082;">Hello my name is: </span >'. $name . '</p>';
@@ -1037,9 +1034,6 @@ function send_email_portrait($name, $ubication, $email, $page, $need, $price, $h
 	$headers = 'From: Site Ana Georgina <' . $to_email . '>' . "\r\n";
 	$message = '<html><body>';
 		$message = '<div style="max-width: 500px; border: 5px solid #7f8082; padding: 20px; border-radius: 10px; ">';
-			$message .= '<div style="text-align: center;">';
-				$message .= '<img style="margin: auto;" src="http://localhost:8888/ana-georgina/wp-content/uploads/2016/10/logo-new.png" alt="Logo Ana Georgina">';
-			$message .= '</div>';
 			$message .= '<h3 style="text-align: center;">Contact form</h3>';
 			$message .= '<h2 style="text-align: center;">PORTRAIT</h2>';
 			$message .= '<p style="margin-bottom: 10px; font-size: 18px; color: #000;"><span style="font-size: 18px; color: #7f8082;">Hello my name is: </span >'. $name . '</p>';
@@ -1109,9 +1103,6 @@ function send_email_arquitecture($name, $ubication, $email, $page, $company, $fo
 	$headers = 'From: Site Ana Georgina <' . $to_email . '>' . "\r\n";
 	$message = '<html><body>';
 		$message = '<div style="max-width: 500px; border: 5px solid #7f8082; padding: 20px; border-radius: 10px; ">';
-			$message .= '<div style="text-align: center;">';
-				$message .= '<img style="margin: auto;" src="http://localhost:8888/ana-georgina/wp-content/uploads/2016/10/logo-new.png" alt="Logo Ana Georgina">';
-			$message .= '</div>';
 			$message .= '<h3 style="text-align: center;">Contact form</h3>';
 			$message .= '<h2 style="text-align: center;">ARQUITECTURE</h2>';
 			$message .= '<p style="margin-bottom: 10px; font-size: 18px; color: #000;"><span style="font-size: 18px; color: #7f8082;">Hello my name is: </span >'. $name . '</p>';
@@ -1183,9 +1174,6 @@ function send_email_product($name, $ubication, $email, $page, $company, $focused
 	$headers = 'From: Site Ana Georgina <' . $to_email . '>' . "\r\n";
 	$message = '<html><body>';
 		$message = '<div style="max-width: 500px; border: 5px solid #7f8082; padding: 20px; border-radius: 10px; ">';
-			$message .= '<div style="text-align: center;">';
-				$message .= '<img style="margin: auto;" src="http://localhost:8888/ana-georgina/wp-content/uploads/2016/10/logo-new.png" alt="Logo Ana Georgina">';
-			$message .= '</div>';
 			$message .= '<h3 style="text-align: center;">Contact form</h3>';
 			$message .= '<h2 style="text-align: center;">PRODUCT</h2>';
 			$message .= '<p style="margin-bottom: 10px; font-size: 18px; color: #000;"><span style="font-size: 18px; color: #7f8082;">Hello my name is: </span >'. $name . '</p>';
@@ -1253,9 +1241,6 @@ function send_email_other($name, $ubication, $email, $page, $need, $to_email ){
 	$headers = 'From: Site Ana Georgina <' . $to_email . '>' . "\r\n";
 	$message = '<html><body>';
 		$message = '<div style="max-width: 500px; border: 5px solid #7f8082; padding: 20px; border-radius: 10px; ">';
-			$message .= '<div style="text-align: center;">';
-				$message .= '<img style="margin: auto;" src="http://localhost:8888/ana-georgina/wp-content/uploads/2016/10/logo-new.png" alt="Logo Ana Georgina">';
-			$message .= '</div>';
 			$message .= '<h3 style="text-align: center;">Contact form</h3>';
 			$message .= '<h2 style="text-align: center;">OTHER</h2>';
 			$message .= '<p style="margin-bottom: 10px; font-size: 18px; color: #000;"><span style="font-size: 18px; color: #7f8082;">Hello my name is: </span >'. $name . '</p>';

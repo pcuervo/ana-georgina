@@ -39,4 +39,8 @@ if (!defined('ABSPATH')) exit;
         <th>Soundcloud</th>
         <td><?php $controls->text_url('theme_soundcloud', 30); ?></td>
     </tr>
+     <tr>
+        <th>Instagram</th>
+        <td><?php $controls->text_url('theme_instagram', 30); ?></td>
+    </tr>
 </table>

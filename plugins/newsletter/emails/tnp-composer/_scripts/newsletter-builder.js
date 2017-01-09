@@ -93,6 +93,8 @@ jQuery.fn.hover_edit = function () {
                         tinymce.init({
                             selector: '#tnpc-edit-text .text',
                             menubar: false,
+                            relative_urls: false,
+                            remove_script_host: false,
                             toolbar: [
                                 'fontselect fontsizeselect forecolor | bold italic underline | link | bullist numlist | emoticons | alignleft aligncenter alignright alignjustify tnp'
                             ],

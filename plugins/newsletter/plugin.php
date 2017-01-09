@@ -4,17 +4,17 @@
   Plugin Name: Newsletter
   Plugin URI: http://www.thenewsletterplugin.com/plugins/newsletter
   Description: Newsletter is a cool plugin to create your own subscriber list, to send newsletters, to build your business. <strong>Before update give a look to <a href="http://www.thenewsletterplugin.com/category/release">this page</a> to know what's changed.</strong>
-  Version: 4.6.8
+  Version: 4.7.5
   Author: Stefano Lissa & The Newsletter Team
   Author URI: http://www.thenewsletterplugin.com
   Disclaimer: Use at your own risk. No warranty expressed or implied is provided.
   Text Domain: newsletter
 
-  Copyright 2009-2016 The Newsletter Team (email: info@thenewsletterplugin.com, web: http://www.thenewsletterplugin.com)
+  Copyright 2009-2017 The Newsletter Team (email: info@thenewsletterplugin.com, web: http://www.thenewsletterplugin.com)
  */
 
 // Used as dummy parameter on css and js links
-define('NEWSLETTER_VERSION', '4.6.8');
+define('NEWSLETTER_VERSION', '4.7.5');
 
 global $wpdb, $newsletter;
 
@@ -106,7 +106,7 @@ class Newsletter extends NewsletterModule {
     var $action = '';
     static $instance;
 
-    const MAX_CRON_SAMPLES = 300;
+    const MAX_CRON_SAMPLES = 100;
 
     /**
      * @return Newsletter
@@ -470,15 +470,6 @@ class Newsletter extends NewsletterModule {
             echo $this->options['css'];
             echo "</style>";
         }
-
-        // TODO: move on subscription module
-        $profile_options = get_option('newsletter_profile');
-        if (!empty($profile_options['style'])) {
-            echo '<link href="' . NewsletterSubscription::instance()->get_style_url($profile_options['style']) . '" type="text/css" rel="stylesheet">';
-        }
-        if (!empty($profile_options['widget_style'])) {
-            echo '<link href="' . NewsletterSubscription::instance()->get_style_url($profile_options['widget_style']) . '" type="text/css" rel="stylesheet">';
-        }
     }
 
     function relink($text, $email_id, $user_id, $email_token = '') {
@@ -494,16 +485,18 @@ class Newsletter extends NewsletterModule {
         $this->logger->debug('hook_newsletter> Start');
 
         // Do not accept job activation before at least 4 minutes are elapsed from the last run.
-        if (!$this->check_transient('engine', NEWSLETTER_CRON_INTERVAL))
+        if (!$this->check_transient('engine', NEWSLETTER_CRON_INTERVAL)) {
             return;
+        }
 
         // Retrieve all email in "sending" status
         $emails = $wpdb->get_results("select * from " . NEWSLETTER_EMAILS_TABLE . " where status='sending' and send_on<" . time() . " order by id asc");
         $this->logger->debug('hook_newsletter> Emails found in sending status: ' . count($emails));
-        foreach ($emails as &$email) {
+        foreach ($emails as $email) {
             $this->logger->debug('hook_newsletter> Sending email ' . $email->id);
-            if (!$this->send($email))
+            if (!$this->send($email)) {
                 break;
+            }
         }
         // Remove the semaphore so the delivery engine can be activated again
         $this->delete_transient('engine');
@@ -550,7 +543,7 @@ class Newsletter extends NewsletterModule {
             }
         }
         
-        $start_time = time();
+        $start_time = microtime(true);
         $count = 0;
         $result = true;
 
@@ -602,15 +595,16 @@ class Newsletter extends NewsletterModule {
             $this->email_limit--;
             $count++;
         }
-        $end_time = time();
+        $end_time = microtime(true);
         
-        $send_calls = get_option('newsletter_diagnostic_send_calls', array());
-        $send_calls[] = array($start_time, $end_time, $count, $result);
-        
-        if (count($send_calls) > self::MAX_CRON_SAMPLES) array_shift($send_calls);
-        
-        update_option('newsletter_diagnostic_send_calls', $send_calls, false);
+        if ($count > 0) {
+            $send_calls = get_option('newsletter_diagnostic_send_calls', array());
+            $send_calls[] = array($start_time, $end_time, $count, $result);
 
+            if (count($send_calls) > self::MAX_CRON_SAMPLES) array_shift($send_calls);
+
+            update_option('newsletter_diagnostic_send_calls', $send_calls, false);
+        }
         return $result;
     }
 
@@ -705,10 +699,10 @@ class Newsletter extends NewsletterModule {
 
     function mail($to, $subject, $message, $headers = null) {
         $this->mail_last_error = '';
-        $this->logger->debug('mail> To: ' . $to);
-        $this->logger->debug('mail> Subject: ' . $subject);
+        //$this->logger->debug('mail> To: ' . $to);
+        //$this->logger->debug('mail> Subject: ' . $subject);
         if (empty($subject)) {
-            $this->logger->debug('mail> Subject empty, skipped');
+            $this->logger->error('mail> Subject empty, skipped');
             return true;
         }
 
@@ -732,7 +726,7 @@ class Newsletter extends NewsletterModule {
         }
 
         if ($this->mail_method != null) {
-            $this->logger->debug('mail> alternative mail method found');
+            //$this->logger->debug('mail> alternative mail method found');
             return call_user_func($this->mail_method, $to, $subject, $message, $headers);
         }
 
@@ -837,13 +831,6 @@ class Newsletter extends NewsletterModule {
         require_once ABSPATH . WPINC . '/class-smtp.php';
 
         $smtp_options = $this->get_smtp_options();
-//        $smtp_options['enabled'] = $this->options['smtp_enabled'];
-//        $smtp_options['host'] = $this->options['smtp_host'];
-//        $smtp_options['port'] = $this->options['smtp_port'];
-//        $smtp_options['user'] = $this->options['smtp_user'];
-//        $smtp_options['pass'] = $this->options['smtp_pass'];
-//        $smtp_options['secure'] = $this->options['smtp_secure'];
-        //$smtp_options = apply_filters('newsletter_smtp', $smtp_options);
 
 
         if ($smtp_options['enabled'] == 1) {
@@ -972,43 +959,6 @@ class Newsletter extends NewsletterModule {
 
         $user = $this->get_user_by_wp_user_id($wp_user_id);
         return $user;
-
-
-        /*
-          if ($this->options_main['wp_integration'] != 1) {
-          return null;
-          }
-
-          get_currentuserinfo();
-
-          // Retrieve the related newsletter user
-          $user = $wpdb->get_row("select * from " . NEWSLETTER_USERS_TABLE . " where wp_user_id=" . $current_user->ID . " limit 1");
-          // There is an email matching?
-          if (empty($user)) {
-          $user = $wpdb->get_row($wpdb->prepare("select * from " . NEWSLETTER_USERS_TABLE . " where email=%s limit 1", strtolower($current_user->user_email)));
-          // If not found, create a new Newsletter user, else update the wp_user_id since this email must be linked
-          // to the WP user email.
-          if (empty($user)) {
-          return null;
-          //echo 'WP user not found';
-          $user = array();
-          $user['status'] = 'C';
-          $user['wp_user_id'] = $current_user->ID;
-          $user['token'] = $this->get_token();
-          $user['email'] = strtolower($current_user->user_email);
-
-          $id = $wpdb->insert(NEWSLETTER_USERS_TABLE, $user);
-          $user = NewsletterUsers::instance()->get_user($id);
-          } else {
-          //echo 'WP user found via email';
-          $wpdb->query($wpdb->prepare("update " . NEWSLETTER_USERS_TABLE . " set wp_user_id=" . $current_user->ID . ", email=%s", $current_user->user_email));
-          }
-          } else {
-          //echo 'WP user found via id';
-          }
-
-          return $user;
-         */
     }
 
     function replace_date($text) {
@@ -1098,7 +1048,7 @@ class Newsletter extends NewsletterModule {
             $text = str_replace('%7Bkey%7D', $user->id . '-' . $user->token, $text);
 
             if (strpos($text, '{profile_form}') !== false) {
-                $text = str_replace('{profile_form}', NewsletterSubscription::instance()->get_profile_form($user), $text);
+                $text = str_replace('{profile_form}', NewsletterSubscription::instance()->get_profile_form_html5($user), $text);
             }
 
             for ($i = 1; $i < NEWSLETTER_PROFILE_MAX; $i++) {
@@ -1485,7 +1435,8 @@ if (!is_dir(WP_PLUGIN_DIR . '/newsletter-mandrill')) {
 }
 
 
-require_once(dirname(__FILE__) . '/widget.php');
+require_once(dirname(__FILE__) . '/widget/standard.php');
+require_once(dirname(__FILE__) . '/widget/minimal.php');
 
 register_activation_hook(__FILE__, 'newsletter_activate');
 

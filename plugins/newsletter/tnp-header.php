@@ -179,7 +179,7 @@ function newsletter_print_entries($group) {
     </div>
 <?php } ?>
 
-<?php if (NEWSLETTER_DEBUG || !isset($dismissed['newsletter-page']) && empty(NewsletterSubscription::instance()->options['url'])) { ?>
+<?php if (NEWSLETTER_DEBUG || !isset($dismissed['newsletter-page']) && empty(NewsletterSubscription::instance()->options['page'])) { ?>
     <div class="tnp-notice">
         <a href="<?php echo $_SERVER['REQUEST_URI'] . '&noheader=1&dismiss=newsletter-page' ?>" class="tnp-dismiss">&times;</a>
 

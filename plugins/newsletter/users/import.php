@@ -103,7 +103,7 @@ if ($controls->is_action('import')) {
 
                 foreach ($controls->data['preferences'] as $i) {
                     $subscriber['list_' . $i] = 1;
-            }
+                }
             }
 
             if ($mode == 'update') {
@@ -113,11 +113,11 @@ if ($controls->is_action('import')) {
                     $subscriber['sex'] = $newsletter->normalize_sex($data[3]);
                 }
                 if (isset($controls->data['override_status'])) {
-                $subscriber['status'] = $controls->data['import_as'];
+                    $subscriber['status'] = $controls->data['import_as'];
                 }
                 foreach ($controls->data['preferences'] as $i) {
                     $subscriber['list_' . $i] = 1;
-            }
+                }
             }
 
             NewsletterUsers::instance()->save_user($subscriber);

@@ -287,7 +287,7 @@ if ($email['editor'] == 0) {
     <form method="post" action="" id="newsletter-form">
         <?php $controls->init(array('cookie_name' => 'newsletter_emails_edit_tab')); ?>
 
-        <p class="submit">
+        <div class="tnp-submit">
             <?php $controls->button_back('?page=newsletter_emails_index') ?>
             <?php if ($email['status'] != 'sending' && $email['status'] != 'sent') $controls->button_save(); ?>
             <?php if ($email['status'] != 'sending' && $email['status'] != 'sent') $controls->button_confirm('test', 'Save and test', 'Save and send test emails to test addresses?'); ?>
@@ -297,7 +297,7 @@ if ($email['editor'] == 0) {
             <?php if ($email['status'] == 'paused') $controls->button_confirm('continue', __('Continue', 'newsletter'), 'Continue the delivery?'); ?>
             <?php if ($email['status'] == 'paused') $controls->button_confirm('abort', __('Stop', 'newsletter'), __('This totally stop the delivery, ok?', 'newsletter')); ?>
             <?php if ($email['status'] != 'sending' && $email['status'] != 'sent') $controls->button_confirm('editor', 'Save and switch to ' . ($email['editor'] == 0 ? 'HTML source' : 'visual') . ' editor', 'Sure?'); ?>
-        </p>
+        </div>
 
         <div id="tabs">
             <ul>

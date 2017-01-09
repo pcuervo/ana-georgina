@@ -14,7 +14,7 @@
 												<form id="myform" class="fs-form fs-form-full" autocomplete="off" name="contactportrait" role="form" method="POST">
 													<ol class="fs-fields [ uppercase ]">
 														<li>
-															<h1 class="fs-field-label fs-anim-upper [ font-family--verb_bold ]">My basic info:</h1>
+															<h1 class="fs-field-label fs-anim-upper [ font-family--verb_regular ]">My basic info:</h1>
 															<label class="fs-field-label fs-anim-upper" for="user_name">Hello my name is </label>
 															<input class="fs-anim-lower" id="user_name" name="user_name" type="text" required/>
 															<label class="fs-field-label fs-anim-upper [ padding-left--xsmall ]" for="user_from">Im from </label>
@@ -29,7 +29,7 @@
 															<input class="fs-anim-lower" id="user_need" name="user_need" type="text" placeholder="Dean Moriarty" required/>
 														</li>
 														<li data-input-trigger>
-															<h1 class="fs-field-label fs-anim-upper [ font-family--verb_bold ]">How much are you willing to ivest:</h1>
+															<h1 class="fs-field-label fs-anim-upper [ font-family--verb_regular ]">How much are you willing to ivest:</h1>
 															<label class="fs-field-label fs-anim-upper [ hidden ]" for="price">How much are you willing to ivest:</label>
 															<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
 																<span><input id="price1" name="price" type="radio" value="6,000 MX"/><label for="price1">6,000 MX /  LESS THAN 60 HUMANS</label></span>

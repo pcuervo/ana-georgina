@@ -14,7 +14,7 @@
 												<form id="myform" class="fs-form fs-form-full" autocomplete="off" name="contactarquitecture" role="form" method="POST">
 													<ol class="fs-fields [ uppercase ]">
 														<li>
-															<h1 class="fs-field-label fs-anim-upper [ font-family--verb_bold ]">My basic info:</h1>
+															<h1 class="fs-field-label fs-anim-upper [ font-family--verb_regular ]">My basic info:</h1>
 															<label class="fs-field-label fs-anim-upper" for="user_name">Hello my name is </label>
 															<input class="fs-anim-lower" id="user_name" name="user_name" type="text" required/>
 															<label class="fs-field-label fs-anim-upper [ padding-left--xsmall ]" for="user_from">Im from </label>

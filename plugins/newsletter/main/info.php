@@ -177,6 +177,15 @@ if (!$controls->is_action()) {
                             </p>
                         </td>
                     </tr>
+                    <tr valign="top">
+                        <th>Instagram</th>
+                        <td>
+                            <?php $controls->text('instagram_url', 40); ?>
+                            <p class="description">
+                                Your Vimeo url (e.g. http://instagram.com/...)
+                            </p>
+                        </td>
+                    </tr>
                 </table>
             </div>
         </div>
