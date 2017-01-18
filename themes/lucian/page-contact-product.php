@@ -24,7 +24,7 @@
 															<label class="fs-field-label fs-anim-upper [ padding-left--xsmall ]" for="user_page">My page is </label>
 															<input class="fs-anim-lower" id="user_page" name="user_page" type="text" />
 														</li>
-														<!-- (igual a arquitecture)-->
+														<!-- (igual a architecture)-->
 														<li>
 															<label class="fs-field-label fs-anim-upper" for="name_company">The name of the company is</label>
 															<input class="fs-anim-lower" id="name_company" name="name_company" type="text" required/>

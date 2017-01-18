@@ -11,7 +11,7 @@
 									<div class="vc_column-inner ">
 										<div class="wpb_wrapper">
 											<div class="fs-form-wrap" id="fs-form-wrap">
-												<form id="myform" class="fs-form fs-form-full" autocomplete="off" name="contactarquitecture" role="form" method="POST">
+												<form id="myform" class="fs-form fs-form-full" autocomplete="off" name="contactarchitecture" role="form" method="POST">
 													<ol class="fs-fields [ uppercase ]">
 														<li>
 															<h1 class="fs-field-label fs-anim-upper [ font-family--verb_regular ]">My basic info:</h1>
@@ -40,7 +40,7 @@
 														<li>
 															<label class="fs-field-label fs-anim-upper [ margin-top--large ]" for="heard_ag">I heard about AGBA from?</label>
 															<input class="fs-anim-lower" id="heard_ag" name="heard_ag" type="text" required/> <label class="fs-field-label fs-anim-upper [ padding-left--xsmall ]">AND NOW MY PHOTOS WILL BE THE PRETTIEST OF THEM ALL.</label>
-															<input type="hidden" name="action" value="save_contact_arquitecture_post">
+															<input type="hidden" name="action" value="save_contact_architecture_post">
 														</li>
 													</ol><!-- /fs-fields -->
 													<button class="fs-submit" type="submit">Contact</button>

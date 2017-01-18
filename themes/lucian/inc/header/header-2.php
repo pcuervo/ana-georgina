@@ -68,7 +68,11 @@
                 <?php if( $smof_data['sticky_logo_enable'] || (isset($zo_meta->_zo_sticky_logo_enable) && !empty($zo_meta->_zo_sticky_logo_enable)) ) : ?>
                 <a class="sticky-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>"><img alt="" src="<?php echo esc_url(zo_page_header_sticky_logo()); ?>"></a>
                 <?php endif; ?>
-                <a class="main-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+            <?php if ( is_page('category') ) { ?>
+                <a class="main-logo logo-initial" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+            <?php } else { ?>
+                <a class="main-logo" href="<?php echo esc_url( home_url( '/category' ) ); ?>">
+            <?php } ?>
                     <?php if(is_page('category') ) { ?>
                          <img alt="logo ana georgina" class="[ logo-desktop ]" src="<?php echo esc_url(zo_page_header_logo()); ?>">
                     <?php } ?>

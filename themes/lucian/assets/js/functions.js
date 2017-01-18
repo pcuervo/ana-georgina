@@ -40,7 +40,7 @@ var $=jQuery.noConflict();
             });
         }
 
-        if( parseInt( isContactArquitecture ) ){
+        if( parseInt( isContactArchitecture ) ){
             $(window).ready(function(){
                 formWrap();
             });

@@ -13,7 +13,7 @@
 </div><!-- #main -->
 <footer>
 
-<?php if ( ! in_category(array('portrait','arquitecture','prints','projects')) ) { ?>
+<?php if ( ! in_category(array('portrait','architecture','prints','projects')) ) { ?>
 
 	<?php if ( zo_get_smof_data('enable_footer_top') =='1'): ?>
 		<div id="zo-footer-top">

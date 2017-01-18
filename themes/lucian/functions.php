@@ -599,7 +599,7 @@ function zo_post_nav($prev_title = NULL, $next_title = NULL) {
         return;
     ?>
 
-	<?php if ( ! in_category(array('portrait','arquitecture','prints','projects')) ) { ?>
+	<?php if ( ! in_category(array('portrait','architecture','prints','projects')) ) { ?>
 
 	<nav class="navigation post-navigation" role="navigation">
 		<div class="nav-links clearfix">
@@ -883,7 +883,7 @@ if( function_exists('zo_image_resize')) {
 **/
 add_action( 'wp_enqueue_scripts', function(){
 
-	if(is_page(array('contact-arquitecture', 'contact-product', 'contact-other', 'contact-portrait', 'contact-wedding',)) ){
+	if(is_page(array('contact-architecture', 'contact-product', 'contact-other', 'contact-portrait', 'contact-wedding',)) ){
 		// styles
 		wp_enqueue_style( 'form-normalize', get_template_directory_uri() . '/assets/form/css/normalize.css');
 		wp_enqueue_style( 'form-demo', get_template_directory_uri() . '/assets/form/css/demo.css');
@@ -902,7 +902,7 @@ add_action( 'wp_enqueue_scripts', function(){
 		wp_localize_script( 'functions', 'ajax_url', admin_url('admin-ajax.php') );
 		wp_localize_script( 'functions', 'site_url', site_url() );
 		wp_localize_script( 'functions', 'theme_url', THEMEPATH );
-		wp_localize_script( 'functions', 'isContactArquitecture', (string) is_page('contact-arquitecture') );
+		wp_localize_script( 'functions', 'isContactArchitecture', (string) is_page('contact-architecture') );
 		wp_localize_script( 'functions', 'isContactOther', (string) is_page('contact-other') );
 		wp_localize_script( 'functions', 'isContactPortrait', (string) is_page('contact-portrait') );
 		wp_localize_script( 'functions', 'isContactProduct', (string) is_page('contact-product') );
@@ -1058,7 +1058,7 @@ function send_email_portrait($name, $ubication, $email, $page, $need, $price, $h
  * Save the data from the contact form as a post.
  * @return JSON $message - A success/error message about the status of the post.
 */
-function save_contact_arquitecture_post(){
+function save_contact_architecture_post(){
 
 	$name = $_POST['user_name'];
 	$ubication = $_POST['user_from'];
@@ -1072,7 +1072,7 @@ function save_contact_arquitecture_post(){
 
 	$to_email = 'nayeli@pcuervo.com';
 
-	$se_mando = send_email_arquitecture($name, $ubication, $email, $page, $company, $focused, $need, $event, $heard, $to_email );
+	$se_mando = send_email_architecture($name, $ubication, $email, $page, $company, $focused, $need, $event, $heard, $to_email );
 
 	if( $se_mando ){
 		$message = array(
@@ -1089,22 +1089,22 @@ function save_contact_arquitecture_post(){
 	);
 	echo json_encode($message , JSON_FORCE_OBJECT);
 	exit();
-}// save_contact_arquitecture_post
-add_action("wp_ajax_save_contact_arquitecture_post", "save_contact_arquitecture_post");
-add_action("wp_ajax_nopriv_save_contact_arquitecture_post", "save_contact_arquitecture_post");
+}// save_contact_architecture_post
+add_action("wp_ajax_save_contact_architecture_post", "save_contact_architecture_post");
+add_action("wp_ajax_nopriv_save_contact_architecture_post", "save_contact_architecture_post");
 
 
 /**
  * Mandar un correo para Ana Georgina.
  */
-function send_email_arquitecture($name, $ubication, $email, $page, $company, $focused, $need, $event, $heard, $to_email){
+function send_email_architecture($name, $ubication, $email, $page, $company, $focused, $need, $event, $heard, $to_email){
 
-	$subject = 'Contact form ARQUITECTURE';
+	$subject = 'Contact form ARCHITECTURE';
 	$headers = 'From: Site Ana Georgina <' . $to_email . '>' . "\r\n";
 	$message = '<html><body>';
 		$message = '<div style="max-width: 500px; border: 5px solid #7f8082; padding: 20px; border-radius: 10px; ">';
 			$message .= '<h3 style="text-align: center;">Contact form</h3>';
-			$message .= '<h2 style="text-align: center;">ARQUITECTURE</h2>';
+			$message .= '<h2 style="text-align: center;">ARCHITECTURE</h2>';
 			$message .= '<p style="margin-bottom: 10px; font-size: 18px; color: #000;"><span style="font-size: 18px; color: #7f8082;">Hello my name is: </span >'. $name . '</p>';
 			$message .= '<p style="margin-bottom: 10px; font-size: 18px; color: #000;"><span style="font-size: 18px; color: #7f8082;">Im from: </span >'. $ubication .'</p>';
 			$message .= '<p style="margin-bottom: 10px; font-size: 18px; color: #000;"><span style="font-size: 18px; color: #7f8082;">You can reach me via email: </span >' . $email . '</p>';
@@ -1122,7 +1122,7 @@ function send_email_arquitecture($name, $ubication, $email, $page, $company, $fo
 
 	return $email;
 
-}// send_email_arquitecture
+}// send_email_architecture
 
 
 /**

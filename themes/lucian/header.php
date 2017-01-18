@@ -22,7 +22,7 @@ function atrib_imagen_destacada() {
 }
 
 ?><!DOCTYPE html>
-<html <?php language_attributes(); ?>>
+<html <?php language_attributes(); ?> class="prueba ">
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -33,7 +33,7 @@ function atrib_imagen_destacada() {
 	<!-- Facebook, Twitter metas -->
 	<meta property="og:title" content="Ana Georgina Photography">
 	<meta property="og:type" content="article" />
-	<meta name="og:description" content="Ana Georgina photography: wedding, portrait, arquitecture, projects, prints." />
+	<meta name="og:description" content="Ana Georgina photography: wedding, portrait, architecture, projects, prints." />
 	<meta name="og:url" content="<?php echo get_the_permalink(); ?>" />
 	<meta property="og:image" content="<?php echo atrib_imagen_destacada(); ?>" alt="photography Ana Georgina">
 	<meta property="og:image:width" content="210" />
@@ -42,7 +42,7 @@ function atrib_imagen_destacada() {
 	<meta name="twitter:card" content="summary" />
 	<meta name="twitter:site" content="@anageorginaphoto" />
 	<meta name="twitter:title" content="Ana Georgina Photography" />
-	<meta name="twitter:description" content="Ana Georgina photography: wedding, portrait, arquitecture, projects, prints." />
+	<meta name="twitter:description" content="Ana Georgina photography: wedding, portrait, architecture, projects, prints." />
 	<meta name="twitter:image" content="<?php echo atrib_imagen_destacada(); ?>" alt="photography Ana Georgina">
 
 	<!-- Sitemap Google Verify -->
@@ -50,6 +50,8 @@ function atrib_imagen_destacada() {
 
 <!-- TYPEKIT -->
 <script src="https://use.typekit.net/rfc6sqm.js"></script>
+<script>try{Typekit.load({ async: true });}catch(e){}</script>
+<script src="https://use.typekit.net/etu8gxj.js"></script>
 <script>try{Typekit.load({ async: true });}catch(e){}</script>
 
 <?php wp_head(); ?>
@@ -67,7 +69,7 @@ function atrib_imagen_destacada() {
 
 <div id="page">
 
-	<?php if ( ! in_category(array('portrait','arquitecture','prints','projects')) ) { ?>
+	<?php if ( ! in_category(array('portrait','architecture','prints','projects')) ) { ?>
 
 		<header id="masthead" class="site-header [ js-header ]">
 			<?php zo_header(); ?>
