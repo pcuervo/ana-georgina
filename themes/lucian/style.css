@@ -34,7 +34,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 	src: url('fonts/typewriter-regular-webfont.woff2') format('woff2'),
 		url('fonts/typewriter-regular-webfont.woff') format('woff');
 	font-weight: normal;
-	font-style: normal;
+	font-style: 400;
 }
 
 @font-face {
@@ -42,7 +42,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 		src: url('fonts/typewriter-medium-webfont.woff2') format('woff2'),
 				 url('fonts/typewriter-medium-webfont.woff') format('woff');
 		font-weight: 500;
-		font-style: normal;
+		font-style: 500;
 }
 
 @font-face {
@@ -79,9 +79,9 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 .font-family--catalina 																{ font-family: 'catalinatypewriteuploadedfile'!important; }
 .font-family--typewriter--regular													{ font-family: 'typewriterlight'!important; }
-.font-family--typewriter 															{ font-family: 'typewritermedium'!important; }
+.font-family--typewriter, footer 															{ font-family: 'typewritermedium'!important; }
 .font-family--verb_light, .font-family--verb_light a, h1, .post h1					{ font-family: 'verblight'!important; }
-.font-family--verb_regular, .font-family--verb_regular div, body, a, footer			{ font-family: 'verbregular'!important; }
+.font-family--verb_regular, .font-family--verb_regular div, body, a			{ font-family: 'verbregular'!important; }
 .font-family--verb_bold, h2, .font-family--verb_bold div							{ font-family: 'verbbold'!important; }
 .font-family--verb_ultra															{ font-family: 'verbultra'!important; }
 
@@ -188,7 +188,7 @@ body.home.page .wpb_single_image .vc_single_image-wrapper { margin-bottom: 0px; 
 }
 
 @media(min-width:1200px){.nav-inline .main-navigation .menu-main-menu { float: right!important; }}
-#zo-header-navigation .main-navigation .menu-main-menu > li > a { padding-bottom: 10px!important; font-family: 'verbregular'!important;}
+#zo-header-navigation .main-navigation .menu-main-menu > li > a { padding-bottom: 10px!important; font-family: 'typewritermedium'!important;}
 #zo-header-navigation.nav-inline .main-navigation .menu-main-menu > li > a { margin-left: 40px!important; margin-right: 0px!important; }
 #zo-header-navigation.nav-inline .main-navigation .menu-main-menu > li > a { margin-left: 20px!important; margin-right: 0px!important; }
 @media(min-width:992px){#zo-header-navigation.nav-inline .main-navigation .menu-main-menu > li.item-wedding > a { margin-left: 0px!important; }}
@@ -238,6 +238,13 @@ footer .textwidget { font-size: 10px; }
 
 footer .zo-social.default li a { color: #9e9e9e!important; }
 footer .zo-social.default li a:hover { color: #676767!important; }
+
+#back_to_top { border: 0px!important; }
+#back_to_top span {
+	color: #9e9e9e!important;
+	background-color: transparent!important;
+}
+.back_to_top.on { bottom: 35px!important; }
 
 /*SINGLE POST*/
 .single-post .wpb_single_image .vc_single_image-wrapper { margin-bottom: 10px; }
@@ -365,17 +372,25 @@ footer{
 
 /*Carrete*/
 h1.title-carrete {
-	padding-top: 80px;
+	padding-top: 60px;
 	padding-bottom: 0px;
 	font-size: 16px;
 	line-height: 18px;
+	font-family: 'verblight'!important;
+}
+.page h1.title-carrete {
+	padding-top: 0px;
 }
 p.description-carrete {
 	font-size: 8px;
 	line-height: 25px;
-	margin-bottom: 80px;
-	font-family: 'verbbold'!important;
+	margin-bottom: 60px;
+	font-family: 'typewriter'!important;
 	letter-spacing: 2px;
+	font-weight: 600;
+}
+.page p.description-carrete {
+	margin-bottom: 70px;
 }
 
 .single-post .zo-blog-detail,
@@ -544,25 +559,13 @@ h2.title-section {
 /*Slider revolution*/
 
 @media(min-width: 870px){
-	.fullwidthbanner-container {
-		height: 600px!important;
-		/*@media(max-width:800px){ height: 300px; }*/
-	}
-	.fullwidthbanner-container .fullwidthabanner {
-		/*left: 0px;*/
-		height: 600px!important;
-		/*@media(max-width:800px){ height: 300px; }*/
-	}
-	.fullwidthbanner-container .fullwidthabanner { height: 600px!important; }
+
 	.tp-carousel-wrapper { width: 3000px!important;}
-	.rev_slider li.tp-revslider-slidesli {
-		width: 1170px!important;
-		margin-left: -150px!important;
-	}
 	.rev_slider li.tp-revslider-slidesli.active-revslide {
 		border-left: 10px solid #fff;
 		border-right: 10px solid #fff;
 	}
+	.home .rev_slider li.tp-revslider-slidesli.active-revslide { border: 0px; }
 }
 
 .home .rev_slider li.tp-revslider-slidesli { width: 100%!important; }

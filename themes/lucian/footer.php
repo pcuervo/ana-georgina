@@ -10,6 +10,13 @@
  */
 ?>
 
+	<?php if ( is_page(array('lovebirds','portraits','architecture','prints','projects-2')) ) { ?>
+		<div class="[ container ]">
+			<h3 style="font-size: 10px;text-align: left" class="vc_custom_heading default">
+				<a href="<?php echo esc_url( home_url( '/category' ) ); ?>">BACK TO MENU</a>
+			</h3>
+		</div>
+	<?php } ?>
 </div><!-- #main -->
 <footer>
 
