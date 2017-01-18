@@ -203,9 +203,12 @@ body.home.page .wpb_single_image .vc_single_image-wrapper { margin-bottom: 0px; 
 @media(min-width:768px){
 	.logo-initial { margin-bottom: 30px; }
 	.main-logo img { max-width: 100%; }
+	#zo-header-logo a img { padding-top: 5px; }
 }
 @media(max-width:600px){
-	.main-logo img { max-width: 250px; }
+	.main-logo img {
+		max-width: 250px;
+	}
 }
 #zo-menu-mobile { top: 45px!important; }
 
