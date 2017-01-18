@@ -605,7 +605,7 @@ function zo_post_nav($prev_title = NULL, $next_title = NULL) {
 		<div class="nav-links clearfix">
 			<!-- return -->
 			<a class="post-prev pull-left" href="javascript:history.go(-1)">
-				<i class="fa fa-angle-left"></i><span class="[ font-size--10 font-family--verb_regular ]">BACK TO PROJECTS</span>
+				<i class="fa fa-angle-left"></i><span class="[ font-size--10 verb_light ]">BACK TO PROJECTS</span>
 			</a>
 
 			<?php
@@ -614,7 +614,7 @@ function zo_post_nav($prev_title = NULL, $next_title = NULL) {
 				$next_title = empty($next_title) ? esc_attr($next_post->post_title) : $next_title;
 			?>
 			  <a class="post-next pull-right" href="<?php echo get_permalink( $next_post->ID ); ?>" title="<?php echo get_the_title( $next_post->post_title ); ?>">
-				<i class="fa fa-angle-right"></i><span class="[ font-size--10 font-family--verb_regular ]">NEX PROJECT: <?php echo esc_attr($next_title); ?></span>
+				<i class="fa fa-angle-right"></i><span class="[ font-size--10 verb_light ]">NEX PROJECT: <span class="[ font-family--verb_bold ]"><?php echo esc_attr($next_title); ?></span></span>
 			  </a>
             <?php endif; ?>
         </div><!-- .nav-links -->

@@ -293,6 +293,24 @@ textarea { max-height: 80px!important; }
 .wpcf7-form .wpcf7-validation-errors { color: #595a5c!important; }
 .ajax-loader { width: 20px; }
 
+/*Category's*/
+.link-category { margin-top: 25px!important; }
+.link-category a {
+	font-family: 'typewritermedium'!important;
+	font-size: 10px;
+}
+
+.title-category h2 {
+	text-align: center;
+	font-family: 'verblight'!important;
+	font-size: 15px;
+}
+
+.title-category h2 span {
+	font-family: 'verbultra'!important;
+}
+
+
 /*Single category*/
 .vc_grid-item-mini.vc_is-hover .vc_gitem-animate-scaleRotateIn .vc_gitem-zone-a {
 	-webkit-transform: scale(1.0) rotate(0deg)!important; /* Chrome, Safari, Opera */
@@ -301,6 +319,37 @@ textarea { max-height: 80px!important; }
 	-o-transform: scale(1.0) rotate(0deg)!important; /* Opera */
 	transform: scale(1.0) rotate(0deg)!important;
 }
+
+/*Single wedding*/
+.date-wedding,
+.title-wedding {
+	padding-left: 30px!important;
+	margin-bottom: 0px!important;
+	text-align: center;
+}
+.date-wedding {
+	font-size: 10px;
+	font-family: 'typewritermedium'!important;
+	color: #3c3c3c;
+	letter-spacing: 2px;
+}
+.title-wedding {
+	font-size: 16px;
+	line-height: 20px;
+	font-family: 'verbultra'!important;
+}
+.category-lovebirds p.description-carrete {
+	letter-spacing: 2px;
+	font-size: 10px;
+}
+
+	/*.cita-inicial*/
+.frase {
+	max-width: 200px;
+	margin: auto!important;
+	line-height: 16px;
+}
+
 
 /*Fijar footer*/
 html,
@@ -382,12 +431,12 @@ h1.title-carrete {
 	padding-top: 0px;
 }
 p.description-carrete {
-	font-size: 8px;
+	font-size: 10px;
 	line-height: 25px;
 	margin-bottom: 60px;
 	font-family: 'typewriter'!important;
 	letter-spacing: 2px;
-	font-weight: 600;
+	/*font-weight: 600;*/
 }
 .page p.description-carrete {
 	margin-bottom: 70px;
@@ -433,13 +482,6 @@ body.single-post #page .main-body #main,
 	display: block;
 	width: 100%;
 	height: 100%;
-}
-
-/*.cita-inicial*/
-.frase {
-	max-width: 200px;
-	margin: auto!important;
-	line-height: 16px;
 }
 
 /*Contact lucian*/
@@ -620,13 +662,10 @@ h2.title-section {
 	letter-spacing: 1px;
 }
 
-
-/*.vc_grid-item.vc_col-sm-4 {
-	position: relative!important;
-	display: inline-block!important;
-	top: inherit!important;
-	left: inherit!important;
-	visibility: visible!important;
-	transition-property: initial!important;
-    transition-duration: 0s!important;
-}*/
+/*About me*/
+.text-about {
+	line-height: 16px;
+	font-size: 9px;
+	font-family: 'catalinatypewriteuploadedfile'!important;
+	text-align: justify;
+}

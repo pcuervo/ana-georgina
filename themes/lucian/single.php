@@ -16,8 +16,8 @@ get_header(); ?>
                 <?php while ( have_posts() ) : the_post(); ?>
 
                     <?php if ( ! in_category(array('portrait','architecture','prints','projects')) ) { ?>
-                        <p class="[ padding-left--large ][ color-gray-dark ][ text-center ][ font-size--10 ][ font-family--verb_regular ][ no-margin-bottom ][ letter-spacing--2 ]"><?php the_date(); ?></p>
-                        <h1 class="[ padding-left--large ][ text-center ][ font-family--verb_regular ][ font-size--16 ][ no-margin-bottom ][ line-height--20 ]"><?php the_title(); ?></h1>
+                        <p class="[ date-wedding ]"><?php the_date(); ?></p>
+                        <h1 class="[ title-wedding ]"><?php the_title(); ?></h1>
                     <?php } ?>
                     <?php if ( in_category(array('portrait','architecture','prints','projects')) ) { ?>
                         <a href="javascript:history.back()" class="[ close-slider ]"><span>x</span></a>
