@@ -365,7 +365,7 @@ footer{
 
 /*Carrete*/
 h1.title-carrete {
-	padding-top: 60px;
+	padding-top: 80px;
 	padding-bottom: 0px;
 	font-size: 16px;
 	line-height: 18px;
@@ -373,7 +373,7 @@ h1.title-carrete {
 p.description-carrete {
 	font-size: 8px;
 	line-height: 25px;
-	margin-bottom: 60px;
+	margin-bottom: 80px;
 	font-family: 'verbbold'!important;
 	letter-spacing: 2px;
 }
@@ -556,7 +556,12 @@ h2.title-section {
 	.fullwidthbanner-container .fullwidthabanner { height: 600px!important; }
 	.tp-carousel-wrapper { width: 3000px!important;}
 	.rev_slider li.tp-revslider-slidesli {
-		width: 870px!important;
+		width: 1170px!important;
+		margin-left: -150px!important;
+	}
+	.rev_slider li.tp-revslider-slidesli.active-revslide {
+		border-left: 10px solid #fff;
+		border-right: 10px solid #fff;
 	}
 }
 
