@@ -12,7 +12,7 @@
 
 	<?php if ( is_page(array('lovebirds','portraits','architecture','prints','projects-2')) ) { ?>
 		<div class="[ container ]">
-			<h3 style="font-size: 10px;text-align: left" class="vc_custom_heading default">
+			<h3 style="font-size: 7px;text-align: left" class="vc_custom_heading default [ font-size--7 ]">
 				<a href="<?php echo esc_url( home_url( '/category' ) ); ?>">BACK TO MENU</a>
 			</h3>
 		</div>
@@ -48,27 +48,21 @@
 							<div class="col-xs-12 col-sm-6 footer-second"><?php dynamic_sidebar('sidebar-6'); ?></div>
 						<?php endif; ?>
 						<?php if (is_active_sidebar('sidebar-7')) : ?>
-							<div class="col-xs-12 col-sm-3 footer-third [ clear-inherit no-margin-bottom ]">
-								<div class="social-share [ margin-top--12 ]">
-									<?php zo_social_share() ?>
+							<div class="col-xs-12 col-sm-5 footer-third [ clear-inherit no-margin-bottom text-right ]">
+								<ul class="social-list">
+									<li>
+										<a href="mailto:?subject=Ana Georgina photography.&amp;body=Visit the site <?php echo "http://" . $host . $url; ?>">
+											<i class="fa fa-envelope"></i>
+										</a>
+									</li>
+								</ul>
+								<!-- <div class="social-share [ margin-top--12 ]">
+									<?php //zo_social_share() ?>
 									<?php
-										$host= $_SERVER["HTTP_HOST"];
-										$url= $_SERVER["REQUEST_URI"];
+										//$host= $_SERVER["HTTP_HOST"];
+										//$url= $_SERVER["REQUEST_URI"];
 									?>
-									<ul class="social-list">
-										<li>
-											<a href="mailto:?subject=Ana Georgina photography.&amp;body=Visit the site <?php echo "http://" . $host . $url; ?>">
-												<i class="fa fa-envelope"></i>
-											</a>
-										</li>
-										<li>
-											<a rel="m_PageScroll2id" href="<?php echo "http://" . $host . $url; ?>#masthead" class="_mPS2id-h">
-												<i class="fa fa-long-arrow-up"></i>
-											</a>
-										</li>
-									</ul>
-
-								</div>
+								</div> -->
 							</div>
 						<?php endif; ?>
 						<?php if (is_active_sidebar('sidebar-7')) : ?>

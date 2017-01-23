@@ -80,8 +80,8 @@ Use it to make something cool, have fun, and share what you've learned with othe
 .font-family--catalina 																{ font-family: 'catalinatypewriteuploadedfile'!important; }
 .font-family--typewriter--regular													{ font-family: 'typewriterlight'!important; }
 .font-family--typewriter, footer 															{ font-family: 'typewritermedium'!important; }
-.font-family--verb_light, .font-family--verb_light a, h1, .post h1					{ font-family: 'verblight'!important; }
-.font-family--verb_regular, .font-family--verb_regular div, body, a			{ font-family: 'verbregular'!important; }
+.font-family--verb_light, .font-family--verb_light a, h1, .post h1, a					{ font-family: 'verblight'!important; }
+.font-family--verb_regular, .font-family--verb_regular div, body			{ font-family: 'verbregular'!important; }
 .font-family--verb_bold, h2, .font-family--verb_bold div							{ font-family: 'verbbold'!important; }
 .font-family--verb_ultra															{ font-family: 'verbultra'!important; }
 
@@ -141,7 +141,8 @@ a, h2, footer { letter-spacing: 3px!important; }
 
 .color-dark { color: #000000; }
 
-.font-size--8 { font-size: 8px; }
+.font-size--8,
+.font-size--7 { font-size: 7px; }
 .font-size--10 { font-size: 10px; }
 .font-size--12 { font-size: 12px; }
 .font-size--15 { font-size: 15px; }
@@ -270,11 +271,12 @@ footer .zo-social.default li a:hover { color: #676767!important; }
 .social-share .social-list { display: inline-block; }
 
 .single .social-list li a {
-	border:1px solid #565656;
+	border:none;
 	border-radius: 0px!important;
 	width: 30px!important;
 	height: 30px!important;
 	line-height: 30px!important;
+	margin-top: 11px;
 }
 
 .single .social-list li a i.fa { margin-left: 4px; }
@@ -337,7 +339,7 @@ textarea { max-height: 80px!important; }
 	letter-spacing: 2px;
 }
 .title-wedding {
-	font-size: 16px;
+	font-size: 13px;
 	line-height: 20px;
 	font-family: 'verbultra'!important;
 }
