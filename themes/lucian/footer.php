@@ -20,7 +20,7 @@
 </div><!-- #main -->
 <footer>
 
-<?php if ( ! in_category(array('portrait','architecture','prints','projects')) ) { ?>
+<?php if ( ! in_category(array('portrait','architecture','prints')) ) { ?>
 
 	<?php if ( zo_get_smof_data('enable_footer_top') =='1'): ?>
 		<div id="zo-footer-top">
@@ -45,10 +45,10 @@
 							<div class="col-xs-12 col-sm-1 footer-first"><?php dynamic_sidebar('sidebar-5'); ?></div>
 						<?php endif; ?>
 						<?php if (is_active_sidebar('sidebar-6')) : ?>
-							<div class="col-xs-12 col-sm-6 footer-second"><?php dynamic_sidebar('sidebar-6'); ?></div>
+							<div class="col-xs-12 col-sm-10 footer-second"><?php dynamic_sidebar('sidebar-6'); ?></div>
 						<?php endif; ?>
 						<?php if (is_active_sidebar('sidebar-7')) : ?>
-							<div class="col-xs-12 col-sm-5 footer-third [ clear-inherit no-margin-bottom text-right ]">
+							<div class="col-xs-12 col-sm-1 footer-third [ clear-inherit no-margin-bottom text-right ]">
 								<ul class="social-list">
 									<li>
 										<a href="mailto:?subject=Ana Georgina photography.&amp;body=Visit the site <?php echo "http://" . $host . $url; ?>">

@@ -14,14 +14,14 @@
 												<form id="myform" class="fs-form fs-form-full" autocomplete="off" name="contactportrait" role="form" method="POST">
 													<ol class="fs-fields [ uppercase ]">
 														<li>
-															<h1 class="fs-field-label fs-anim-upper [ font-family--verb_regular ]">My basic info:</h1>
+															<h1 class="fs-field-label fs-anim-upper ">My basic info:</h1>
 															<label class="fs-field-label fs-anim-upper" for="user_name">Hello my name is </label>
 															<input class="fs-anim-lower" id="user_name" name="user_name" type="text" required/>
-															<label class="fs-field-label fs-anim-upper [ padding-left--xsmall ]" for="user_from">Im from </label>
+															<label class="fs-field-label fs-anim-upper " for="user_from">Im from </label>
 															<input class="fs-anim-lower" id="user_from" name="user_from" type="text" required/>
-															<label class="fs-field-label fs-anim-upper [ padding-left--xsmall ]" for="user_email">You can reach me via email </label>
+															<label class="fs-field-label fs-anim-upper " for="user_email">You can reach me via email </label>
 															<input class="fs-anim-lower" id="user_email" name="user_email" type="email" required/>
-															<label class="fs-field-label fs-anim-upper [ padding-left--xsmall ]" for="user_page">My page is </label>
+															<label class="fs-field-label fs-anim-upper " for="user_page">My page is </label>
 															<input class="fs-anim-lower" id="user_page" name="user_page" type="text" />
 														</li>
 														<li>
@@ -29,7 +29,7 @@
 															<input class="fs-anim-lower" id="user_need" name="user_need" type="text" placeholder="Dean Moriarty" required/>
 														</li>
 														<li data-input-trigger>
-															<h1 class="fs-field-label fs-anim-upper [ font-family--verb_regular ]">How much are you willing to ivest:</h1>
+															<h1 class="fs-field-label fs-anim-upper ">How much are you willing to ivest:</h1>
 															<label class="fs-field-label fs-anim-upper [ hidden ]" for="price">How much are you willing to ivest:</label>
 															<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
 																<span><input id="price1" name="price" type="radio" value="6,000 MX"/><label for="price1">6,000 MX /  LESS THAN 60 HUMANS</label></span>
@@ -40,7 +40,7 @@
 														</li>
 														<li>
 															<label class="fs-field-label fs-anim-upper [ margin-top--large ]" for="heard_ag">I heard about AGBA from?</label>
-															<input class="fs-anim-lower" id="heard_ag" name="heard_ag" type="text" required/> <label class="fs-field-label fs-anim-upper [ padding-left--xsmall ]">AND NOW MY PHOTOS WILL BE THE PRETTIEST OF THEM ALL.</label>
+															<input class="fs-anim-lower" id="heard_ag" name="heard_ag" type="text" required/> <label class="fs-field-label fs-anim-upper ">AND NOW MY PHOTOS WILL BE THE PRETTIEST OF THEM ALL.</label>
 															<input type="hidden" name="action" value="save_contact_portrait_post">
 														</li>
 													</ol><!-- /fs-fields -->

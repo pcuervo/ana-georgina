@@ -69,7 +69,7 @@ function atrib_imagen_destacada() {
 
 <div id="page">
 
-	<?php if ( ! in_category(array('portrait','architecture','prints','projects')) ) { ?>
+	<?php if ( ! in_category(array('portrait','architecture','prints')) ) { ?>
 
 		<header id="masthead" class="site-header [ js-header ]">
 			<?php zo_header(); ?>

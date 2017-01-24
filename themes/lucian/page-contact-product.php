@@ -14,14 +14,14 @@
 												<form id="myform" class="fs-form fs-form-full" autocomplete="off" name="contactproduct" role="form" method="POST">
 													<ol class="fs-fields [ uppercase ]">
 														<li>
-															<h1 class="fs-field-label fs-anim-upper [ font-family--verb_regular ]">My basic info:</h1>
+															<h1 class="fs-field-label fs-anim-upper ">My basic info:</h1>
 															<label class="fs-field-label fs-anim-upper" for="user_name">Hello my name is </label>
 															<input class="fs-anim-lower" id="user_name" name="user_name" type="text" required/>
-															<label class="fs-field-label fs-anim-upper [ padding-left--xsmall ]" for="user_from">Im from </label>
+															<label class="fs-field-label fs-anim-upper " for="user_from">Im from </label>
 															<input class="fs-anim-lower" id="user_from" name="user_from" type="text" required/>
-															<label class="fs-field-label fs-anim-upper [ padding-left--xsmall ]" for="user_email">You can reach me via email </label>
+															<label class="fs-field-label fs-anim-upper " for="user_email">You can reach me via email </label>
 															<input class="fs-anim-lower" id="user_email" name="user_email" type="email" required/>
-															<label class="fs-field-label fs-anim-upper [ padding-left--xsmall ]" for="user_page">My page is </label>
+															<label class="fs-field-label fs-anim-upper " for="user_page">My page is </label>
 															<input class="fs-anim-lower" id="user_page" name="user_page" type="text" />
 														</li>
 														<!-- (igual a architecture)-->
@@ -39,7 +39,7 @@
 														</li>
 														<li>
 															<label class="fs-field-label fs-anim-upper [ margin-top--large ]" for="heard_ag">I heard about AGBA from?</label>
-															<input class="fs-anim-lower" id="heard_ag" name="heard_ag" type="text" required/> <label class="fs-field-label fs-anim-upper [ padding-left--xsmall ]">AND NOW MY PHOTOS WILL BE THE PRETTIEST OF THEM ALL.</label>
+															<input class="fs-anim-lower" id="heard_ag" name="heard_ag" type="text" required/> <label class="fs-field-label fs-anim-upper ">AND NOW MY PHOTOS WILL BE THE PRETTIEST OF THEM ALL.</label>
 															<input type="hidden" name="action" value="save_contact_product_post">
 														</li>
 													</ol><!-- /fs-fields -->

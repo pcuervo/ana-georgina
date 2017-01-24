@@ -15,7 +15,10 @@
 }
 
 /* Title */
-h1 { font-size: 18px!important; }
+h1 {
+	font-size: 11px!important;
+	font-family: 'verbultra'!important;
+}
 .fs-title {
 	position: absolute;
 	top: 0;
@@ -172,8 +175,11 @@ button.fs-continue,
 
 .fs-fields > li label.fs-field-label {
 	display: inline-block;
-	padding: 0 5px 1em 0;
+	padding: 0 15px 1em 0;
 	pointer-events: none;
+	font-family: 'typewriterlight'!important;
+	font-size: 8px;
+	line-height: 30px;
 }
 
 .fs-form-full .fs-fields > li label[data-info]::after {
@@ -232,14 +238,22 @@ button.fs-continue,
 	display: inline-block;
 	margin: 0;
 	padding: 0 0 0.15em;
-	width: 250px;
+	margin-right: 15px;
+	width: 340px;
 	border: none;
 	border-bottom: 2px solid rgba(0,0,0,0.2);
 	background-color: transparent;
 	color: #595a5c;
 	text-overflow: ellipsis;
-	font-size: 12px;
+	font-size: 8px!important;
+	font-family: 'typewriterlight'!important;
 	border-radius: 0;
+}
+
+@media(max-width: 992px){
+	.fs-fields input {
+		width: 225px;
+	}
 }
 
 @media(max-width: 479px){
@@ -255,14 +269,11 @@ button.fs-continue,
 .fs-form-overview .fs-fields input {
 	border-bottom-color: transparent;
 	color: rgba(0,0,0,0.7);
-	font-size: 12px!important;
+	font-size: 8px!important;
 }
 
 .fs-fields [required] {
-	background-image: url(../img/abacusstar.svg);
-	background-position: top right;
-	background-size: 18px;
-	background-repeat: no-repeat;
+	background-image: none;
 }
 
 .fs-fields .fs-radio-custom input[type="radio"] {
@@ -306,10 +317,11 @@ button.fs-continue,
 
 .fs-fields > li .fs-radio-custom label {
 	display: inline-block;
-	padding-top: 0%; /*padding-top: 0%;
-	width: 100%;*/
+	padding-top: 0%;
 	height: 30px;
 	cursor: pointer;
+	font-family: 'typewriterlight'!important;
+	font-size: 8px;
 }
 
 .fs-fields .fs-radio-custom label:hover::after,
@@ -336,7 +348,8 @@ button.fs-continue,
 	background-color: transparent;
 	margin-bottom: 20px;
 	color: #595a5c;
-	font-size: 12px;
+	font-size: 8px!important;
+	font-family: 'typewriterlight'!important;
 	resize: none;
 }
 
@@ -577,11 +590,12 @@ button.fs-continue,
 /* Continue button and submit button */
 button.fs-submit,
 button.fs-continue {
-	padding: 0.6em 1.5em;
-	border: 2px solid #232529;
-	border-radius: 40px;
-	font-weight: 700;
-	color: rgba(0,0,0,0.4);
+	padding: 5px 10px;
+	border: 1px solid #232529;
+	border-radius: 0px;
+	font-size: 11px!important;
+	color: #000;
+	font-family: 'verbbold'!important;
 }
 
 .fs-form-overview .fs-submit,
@@ -600,8 +614,8 @@ button.fs-continue {
 	left: 0;
 	bottom: 0;
 	margin: 0 0px 30px 0;
-	font-size: 16px;
 }
+@media( max-width:992px ){ button.fs-continue { left: 30px!important; } }
 
 button.fs-submit:hover,
 button.fs-submit:focus,
@@ -785,31 +799,6 @@ input[type=text]::-ms-clear {
 
 	.fs-nav-dots {
 		right: 25px;
-	}
-
-	button.fs-continue {
-		right: 20px;
-		bottom: 20px;
-		margin: 0 0 0 30px;
-		padding: 50px 0 0 50px;
-		width: 50px;
-		height: 50px;
-		border-radius: 50%;
-		font-size: 16px;
-		color: transparent;
-	}
-
-	button.fs-continue::before {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		content: '\27A1';
-		text-align: center;
-		font-size: 12px;
-		line-height: 50px;
-		color: rgba(0,0,0,0.4)
 	}
 
 	.fs-continue::after {

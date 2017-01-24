@@ -16,6 +16,10 @@ var $=jQuery.noConflict();
             footerBottom();
         });
 
+        $(window).scroll(function(){
+            lineScroll();
+        });
+
         if( parseInt( isContactWedding ) ){
             $(window).ready(function(){
                 formWrap();
@@ -121,4 +125,19 @@ function formWrap(){
             }
         } );
     })();
+}
+
+function lineScroll(){
+    //var go = true;
+    if ($(window).scrollTop() > 50) {
+        $( ".line" ).animate({
+            height: "120px"
+        }, 500);
+        //go = false;
+    }//  else if ($(window).scrollTop() < 50) {
+    //     $( ".line" ).animate({
+    //         height: "30px"
+    //     }, 200);
+    //     go = true;
+    // };
 }

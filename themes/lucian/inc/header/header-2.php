@@ -63,7 +63,7 @@
                 <div id="zo-header-logo" class="col-xs-12 [ text-center ]">
             <?php } ?>
             <?php if( ! is_page('category') ) { ?>
-                <div id="zo-header-logo" class="col-xs-12 col-lg-3 [ padding-left ]">
+                <div id="zo-header-logo" class="col-xs-12 col-sm-3 [ padding-left ]">
             <?php } ?>
                 <?php if( $smof_data['sticky_logo_enable'] || (isset($zo_meta->_zo_sticky_logo_enable) && !empty($zo_meta->_zo_sticky_logo_enable)) ) : ?>
                 <a class="sticky-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>"><img alt="" src="<?php echo esc_url(zo_page_header_sticky_logo()); ?>"></a>
@@ -89,7 +89,7 @@
                     <div id="zo-header-navigation" class="col-xs-12 [ nav-initial ]">
                 <?php } ?>
                 <?php if( ! is_page('category') ) { ?>
-                    <div id="zo-header-navigation" class="col-xs-12 col-lg-9 [ nav-inline ]">
+                    <div id="zo-header-navigation" class="col-xs-12 col-sm-9 col-lg-9 [ nav-inline ]">
                 <?php } ?>
 
             <?php endif; ?>
@@ -120,7 +120,7 @@
         <div class="[ text-center ][ hidden--xs ]">
             <a rel="m_PageScroll2id" href="<?php echo get_the_permalink() ?>#start-scroll" class="_mPS2id-h">
                 <!-- <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/arrow.png" alt="flecha para scroll"> -->
-                <p class="[ margin-bottom--xsmall ][ font-size--10 ][ font-family--typewriter ]">Scroll</p>
+                <p class="[ margin-bottom--xsmall ][ font-size--7 ][ font-family--typewriter ]">Scroll</p>
                 <div class="[ line ]"></div>
             </a>
         </div>

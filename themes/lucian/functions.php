@@ -599,24 +599,22 @@ function zo_post_nav($prev_title = NULL, $next_title = NULL) {
         return;
     ?>
 
-	<?php if ( ! in_category(array('portrait','architecture','prints','projects')) ) { ?>
+	<?php if ( ! in_category(array('portrait','architecture','prints')) ) { ?>
 
 	<nav class="navigation post-navigation" role="navigation">
 		<div class="nav-links clearfix">
 			<!-- return -->
-			<a class="post-prev pull-left" href="javascript:history.go(-1)">
-				<i class="fa fa-angle-left"></i><span class="[ font-size--10 verb_light ]">BACK TO PROJECTS</span>
+			<!-- <a class="post-prev pull-left" href="javascript:history.go(-1)"> -->
+		<?php if ( in_category(array('lovebirds')) ) { ?>
+			<a class="post-prev pull-left" href="<?php echo esc_url( home_url( '/lovebirds' ) ); ?>">
+				<i class="fa fa-angle-left"></i><span class="[ font-size--7 verb_light ]">BACK TO PROJECTS</span>
 			</a>
-
-			<?php
-			$next_post = get_next_post();
-			if ( is_a( $next_post , 'WP_Post' ) ) :
-				$next_title = empty($next_title) ? esc_attr($next_post->post_title) : $next_title;
-			?>
-			  <a class="post-next pull-right" href="<?php echo get_permalink( $next_post->ID ); ?>" title="<?php echo get_the_title( $next_post->post_title ); ?>">
-				<i class="fa fa-angle-right"></i><span class="[ font-size--10 verb_light ]">NEX PROJECT: <span class="[ font-family--verb_bold ]"><?php echo esc_attr($next_title); ?></span></span>
-			  </a>
-            <?php endif; ?>
+		<?php } else if ( in_category(array('projects')) ) { ?>
+			<a class="post-prev pull-left" href="<?php echo esc_url( home_url( '/projects-2' ) ); ?>">
+				<i class="fa fa-angle-left"></i><span class="[ font-size--7 verb_light ]">BACK TO PROJECTS</span>
+			</a>
+		<?php } ?>
+			<span class="[ link-next ]"><?php previous_post_link( '%link', 'NEX PROJECT', TRUE ); ?><i class="fa fa-angle-right"></i></span>
         </div><!-- .nav-links -->
 	</nav><!-- .navigation -->
 

@@ -15,11 +15,11 @@ get_header(); ?>
 
                 <?php while ( have_posts() ) : the_post(); ?>
 
-                    <?php if ( ! in_category(array('portrait','architecture','prints','projects')) ) { ?>
+                    <?php if ( ! in_category(array('portrait','architecture','prints')) ) { ?>
                         <!-- <p class="[ date-wedding ]"><?php //the_date(); ?></p> -->
                         <h1 class="[ title-wedding ]"><?php the_title(); ?></h1>
                     <?php } ?>
-                    <?php if ( in_category(array('portrait','architecture','prints','projects')) ) { ?>
+                    <?php if ( in_category(array('portrait','architecture','prints')) ) { ?>
                         <a href="javascript:history.back()" class="[ close-slider ]"><span>x</span></a>
                     <?php } ?>
 

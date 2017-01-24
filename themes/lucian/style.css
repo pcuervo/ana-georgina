@@ -89,6 +89,8 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 /*Container*/
 @media(min-width: 1500px){ .container { width: 1400px; } }
+@media(min-width: 1025px){ .container { padding-left: 0px; padding-right: 0px; } }
+
 /**/
 body #page .main-body #main { margin-bottom: 30px; }
 
@@ -144,6 +146,7 @@ a, h2, footer { letter-spacing: 3px!important; }
 .font-size--8,
 .font-size--7 { font-size: 7px; }
 .font-size--10 { font-size: 10px; }
+.font-size--11 { font-size: 11px; }
 .font-size--12 { font-size: 12px; }
 .font-size--15 { font-size: 15px; }
 .font-size--16 { font-size: 16px; }
@@ -191,7 +194,6 @@ body.home.page .wpb_single_image .vc_single_image-wrapper { margin-bottom: 0px; 
 @media(min-width:1200px){.nav-inline .main-navigation .menu-main-menu { float: right!important; }}
 #zo-header-navigation .main-navigation .menu-main-menu > li > a { padding-bottom: 10px!important; font-family: 'typewritermedium'!important;}
 #zo-header-navigation.nav-inline .main-navigation .menu-main-menu > li > a { margin-left: 40px!important; margin-right: 0px!important; }
-#zo-header-navigation.nav-inline .main-navigation .menu-main-menu > li > a { margin-left: 20px!important; margin-right: 0px!important; }
 @media(min-width:992px){#zo-header-navigation.nav-inline .main-navigation .menu-main-menu > li.item-wedding > a { margin-left: 0px!important; }}
 #zo-header-navigation.nav-initial .main-navigation .menu-main-menu > .item-contact > a { margin-right: 0px!important; }
 #zo-header-navigation .main-navigation .menu-main-menu > li:hover > a,
@@ -250,6 +252,12 @@ footer .zo-social.default li a:hover { color: #676767!important; }
 }
 .back_to_top.on { bottom: 35px!important; }
 
+@media(max-width:767px){
+	.footer-third {
+		text-align: center;
+	}
+}
+
 /*SINGLE POST*/
 .single-post .wpb_single_image .vc_single_image-wrapper { margin-bottom: 10px; }
 .single-post .vc_column_container>.vc_column-inner { padding-left: 5px!important; padding-right: 5px!important; }
@@ -302,17 +310,18 @@ textarea { max-height: 80px!important; }
 .link-category { margin-top: 25px!important; }
 .link-category a {
 	font-family: 'typewritermedium'!important;
-	font-size: 10px;
+	font-size: 7px;
 }
 
 .title-category h2 {
 	text-align: center;
 	font-family: 'verblight'!important;
-	font-size: 15px;
+	font-size: 11px;
 }
 
 .title-category h2 span {
 	font-family: 'verbultra'!important;
+	font-size: 13px;
 }
 
 
@@ -323,6 +332,17 @@ textarea { max-height: 80px!important; }
 	-ms-transform: scale(1.0) rotate(0deg)!important; /* IE 9 */
 	-o-transform: scale(1.0) rotate(0deg)!important; /* Opera */
 	transform: scale(1.0) rotate(0deg)!important;
+}
+/*Hover builder*/
+.title-project-grid div {
+	margin-top: 20px;
+	font-family: 'verbbold'!important;
+	font-size: 11px!important;
+}
+.description-project-grid {
+	font-family: 'typewritermedium'!important;
+	font-size: 7px;
+	color: #000;
 }
 
 /*Single wedding*/
@@ -343,9 +363,26 @@ textarea { max-height: 80px!important; }
 	line-height: 20px;
 	font-family: 'verbultra'!important;
 }
+
+.link-next {
+	font-size: 7px;
+	font-family: 'verblight'!important;
+	text-align: right;
+	display: block;
+	margin-top: 8px;
+}
+.link-next a {
+	font-size: 7px!important;
+	font-family: 'verblight'!important;
+}
+.link-next i {
+	font-size: 14px;
+	margin-left: 20px;
+}
+/*.category-lovebirds p.description-carrete*/
 .category-lovebirds p.description-carrete {
 	letter-spacing: 2px;
-	font-size: 10px;
+	font-size: 7px;
 }
 
 	/*.cita-inicial*/
@@ -428,7 +465,7 @@ footer{
 h1.title-carrete {
 	padding-top: 60px;
 	padding-bottom: 0px;
-	font-size: 16px;
+	font-size: 11px;
 	line-height: 18px;
 	font-family: 'verblight'!important;
 }
@@ -436,7 +473,7 @@ h1.title-carrete {
 	padding-top: 0px;
 }
 p.description-carrete {
-	font-size: 10px;
+	font-size: 7px;
 	line-height: 25px;
 	margin-bottom: 60px;
 	font-family: 'typewriter'!important;
@@ -617,10 +654,20 @@ h2.title-section {
 
 .home .rev_slider li.tp-revslider-slidesli { width: 100%!important; }
 
-// body *:hover{
-// 	-webkit-animation-name: slideInUp;
-//     animation-name: slideInUp;
-// }
+/*Slider project*/
+/*.post.category-architecture {
+	min-height: 100vh;
+}
+.post.category-architecture .zo-blog-content {
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	width: 100%;
+}*/
 
 #row-animated1,
 #row-animated2 {
@@ -663,7 +710,7 @@ h2.title-section {
 	text-align: center;
 	margin-top: 80px;
 	font-family: 'verblight'!important;
-	font-size: 17px;
+	font-size: 11px;
 	letter-spacing: 1px;
 }
 

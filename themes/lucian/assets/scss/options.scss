@@ -1,6 +1,6 @@
 .zo_extra_font1{font-family:'Damion';}.zo_extra_font2{font-family:'Crimson Text';}.zo_extra_font3{font-family:'Crimson Text';}$primary_color:#595a5c;
 $header_height:120px;
-$main_logo_height:120px;
+$main_logo_height:110px;
 $menu_sticky_height:80px;
 $sticky_logo_height:80px;
 #zo-header-logo a { line-height: $header_height; }#zo-header-logo a img { max-height: $main_logo_height; }#zo-header { background-color:255,255,255; }#zo-header.header-fixed { height: $menu_sticky_height; }#zo-header.zo-main-header.header-fixed { background-color:0,0,0; }#zo-header.header-fixed #zo-header-logo a img { max-height: $sticky_logo_height; }#zo-header.header-fixed #zo-header-logo a,
