@@ -20,36 +20,6 @@ var $=jQuery.noConflict();
             lineScroll();
         });
 
-        if( parseInt( isContactWedding ) ){
-            $(window).ready(function(){
-                formWrap();
-            });
-        }
-
-        if( parseInt( isContactOther ) ){
-            $(window).ready(function(){
-                formWrap();
-            });
-        }
-
-        if( parseInt( isContactPortrait ) ){
-            $(window).ready(function(){
-                formWrap();
-            });
-        }
-
-        if( parseInt( isContactProduct ) ){
-            $(window).ready(function(){
-                formWrap();
-            });
-        }
-
-        if( parseInt( isContactArchitecture ) ){
-            $(window).ready(function(){
-                formWrap();
-            });
-        }
-
         $(".btn-open-modal").click(function() {
             $('body').addClass("overflow-hidden");
         });
@@ -67,24 +37,6 @@ var $=jQuery.noConflict();
             }, 1000, function() {
                 // Animation complete.
             });
-        });
-
-        $('#agenda-visita').on('submit', function(event){
-            event.preventDefault();
-
-            var nombre = $('#nombre_visita').val();
-            var email = $('#email_visita').val();
-            var telefono = $('#telefono_visita').val();
-            var personas = $('#n_personas_visita').val();
-            var fecha = $('#fecha_visita').val();
-
-
-            if (nombre == '' || email == '' || telefono == '' || personas == '' || fecha == '') {
-                alert('Favor de llenar todos los campos');
-            }else{
-                document.agendavisita.submit();
-            };
-
         });
 
     });
@@ -134,10 +86,5 @@ function lineScroll(){
             height: "120px"
         }, 500);
         //go = false;
-    }//  else if ($(window).scrollTop() < 50) {
-    //     $( ".line" ).animate({
-    //         height: "30px"
-    //     }, 200);
-    //     go = true;
-    // };
+    }
 }
