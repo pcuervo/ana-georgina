@@ -427,7 +427,7 @@ footer{
 }
 
 footer .zo-social {
-	margin-top: 20px;
+	margin-top: 15px!important;
 }
 
 /*icon nav*/
@@ -824,3 +824,22 @@ hr.line-contact {
 	font-size: 10px;
 	letter-spacing: normal!important;
 }
+
+.wpcf7-response-output {
+	border: 0px!important;
+	margin: 0px!important;
+}
+
+.wpcf7-not-valid-tip {
+	padding-left: 15px;
+	color: #8c1300!important;
+}
+
+.wpcf7-form .wpcf7-response-output {
+	color: #000!important;
+	text-align: left!important;
+	font-size: 11px;
+	font-family: 'verbbold'!important;
+}
+
+.ajax-loader { display: none!important; }

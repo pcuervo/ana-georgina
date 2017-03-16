@@ -74,12 +74,12 @@
                 <a class="main-logo" href="<?php echo esc_url( home_url( '/category' ) ); ?>">
             <?php } ?>
                     <?php if(is_page('category') ) { ?>
-                         <img alt="logo ana georgina" class="[ logo-desktop ]" src="<?php echo esc_url(zo_page_header_logo()); ?>">
+                         <img style="width: 190px;" alt="logo ana georgina" class="[ logo-desktop ]" src="<?php echo THEMEPATH; ?>assets/images/logo.svg">
                     <?php } ?>
                     <?php if( ! is_page('category') ) { ?>
-                         <img alt="logo ana georgina" class="[ logo-desktop ]" src="<?php echo esc_url(zo_page_header_logo()); ?>">
+                         <img style="width: 190px;" alt="logo ana georgina" class="[ logo-desktop ]" src="<?php echo THEMEPATH; ?>assets/images/logo.svg">
                     <?php } ?>
-                    <img alt="logo ana georgina" class="[ logo-mobile ]" src="<?php echo esc_url(zo_page_header_logo()); ?>">
+                    <img style="width: 190px;" alt="logo ana georgina" class="[ logo-mobile ]" src="<?php echo THEMEPATH; ?>assets/images/logo.svg">
                 </a>
             </div>
             <?php if (is_active_sidebar('header-right')): ?>
