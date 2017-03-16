@@ -92,29 +92,7 @@
 <?php wp_footer(); ?>
 
 <!-- footer Contact form -->
-	<script>
-		$('form').submit( function(e){
-			e.preventDefault();
-			var formData = $(this).serialize();
-			$.post(
-				ajax_url,
-				formData,
-				function( response ){
-					var jsonResponse = $.parseJSON( response );
-					if( 0 === jsonResponse.error ){
-						dataLayer.push({'event': 'contacto-exitoso'});
-					} else {
-						dataLayer.push({'event': 'contacto-error'});
-					}
-					if( 0 === jsonResponse.error ){
-						$('.js-success-msg').text( jsonResponse.message );
-						$('.js-success-msg').removeClass('hidden');
-						return;
-					}
-				}
-			);
-		});
-	</script>
+
 </div>
 </body>
 </html>
